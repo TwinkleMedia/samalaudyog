@@ -1,0 +1,14 @@
+  /* --------Carosusel Slider */
+  
+
+.carousel-inner img {
+    object-fit: cover !important;
+    width: 100% !important;
+    height: auto !important; /* Adjusts the height automatically based on width */
+}
+
+@media (max-width: 768px) {
+    .carousel-inner img {
+        max-height: 300px !important; /* Reduce height further for smaller screens */
+    }
+}

@@ -1,0 +1,477 @@
+ .about-banner {
+    background-image: url('./assest/slider/samala\ \ july-11\ \(1\).png');
+    /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .banner-content h1 {
+    font-size: 3.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #291385;
+  }
+
+  @media (max-width: 768px) {
+    .about-banner {
+      height: 40vh;
+    }
+
+    .banner-content h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-banner {
+      height: 30vh;
+    }
+
+    .banner-content h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  .product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .product-card {
+    background: linear-gradient(135deg, #ffffff, #f1f1f1);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    /* Optional border for a better look */
+  }
+
+  /* Category Heading Styling */
+  .category-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    /* Darker shade for contrast */
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  /* Adding an underline effect to headings */
+  .category-heading:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #3498db;
+    /* Highlight color */
+  }
+
+  /* Container for categories (adjusting margins and paddings) */
+  .category-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px auto;
+  }
+/* Category Heading Styling */
+.category {
+  margin: 60px 0; /* Increased margin for more space between categories */
+  text-align: center; /* Center align the entire category section */
+}
+
+.category h2 {
+  font-size: 2.5rem; /* Slightly larger font size */
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: center;
+  padding: 15px 0; /* Added padding above and below the text */
+  margin-bottom: 30px; /* Increased bottom margin */
+  letter-spacing: 1px; /* Slight letter spacing for better readability */
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase; /* Make the text uppercase for more impact */
+}
+
+.category h2::after {
+  content: '';
+  display: block;
+  width: 80px; /* Increased width of the underline */
+  height: 4px;
+  background-color: #3498db;
+  margin: 10px auto 0; /* Centered the underline */
+  border-radius: 2px;
+}
+
+/* Add a subtle background to make the heading stand out */
+.category h2::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%; /* Wider than the text */
+  height: 120%; /* Taller than the text */
+  background-color: rgba(52, 152, 219, 0.1); /* Light blue background */
+  z-index: -1;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .category h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .category {
+    margin: 40px 0; /* Slightly less margin on smaller screens */
+  }
+}
+  /* Product Card Alignment */
+  .product-card {
+    margin: 0 15px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    /* Ensure content doesn't overflow */
+  }
+
+  /* Hover Effect for Product Cards */
+  .product-card:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Product Card Image */
+  .product-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease;
+  }
+
+  /* Image Hover Effect */
+  .product-card:hover img {
+    transform: scale(1.1);
+  }
+
+  /* Product Title */
+  .product-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+    overflow: hidden;
+    /* Ensure no overflow */
+    text-overflow: ellipsis;
+    /* Add ellipsis if text is too long */
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+  }
+
+  /* Product Description */
+  .product-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    /* Improve readability */
+    height: 3.6em;
+    /* Limit the height */
+    overflow: hidden;
+    /* Hide overflow */
+    text-overflow: ellipsis;
+    /* Add ellipsis if text is too long */
+    display: -webkit-box;
+    /* Required for text-overflow: ellipsis with -webkit-line-clamp */
+    -webkit-line-clamp: 3;
+    /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    /* Required for text-overflow: ellipsis with -webkit-line-clamp */
+  }
+
+  /* Product Price */
+  .product-card .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+
+  /* Buy Button */
+  .buy-btn {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.4s ease, transform 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .buy-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    transform: scale(1.05);
+  }
+
+  /* Optional additional hover effect for buttons */
+  .buy-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.4s ease;
+  }
+
+  .buy-btn:hover:before {
+    left: 100%;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .product-cards {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .product-card {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product-card {
+      width: calc(100% - 20px);
+    }
+
+    .small-card {
+      width: calc(100% - 20px);
+    }
+  }
+
+  .category h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .category h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #3498db;
+    margin: 8px auto 0;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    .category h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+  }
+.big-card {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.big-card.hidden {
+    display: none;
+}
+
+/* Big Card Content */
+.big-card-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    position: relative;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header and Image Container */
+.big-card-header {
+    text-align: center;
+    max-height: 40vh;
+    overflow: hidden;
+}
+
+/* Main Product Image */
+.big-card-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 40vh;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Thumbnail Gallery */
+.thumbnail-gallery {
+    margin: 15px 0;
+    padding: 0 15px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnails img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.thumbnails img:hover {
+    border-color: #3498db;
+    transform: scale(1.05);
+}
+
+/* Title and Description */
+#bigCardTitle {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    padding: 0 15px;
+}
+
+.big-card-body {
+    padding: 0 15px;
+}
+
+/* Price Section */
+.big-card-price {
+    color: green;
+    font-weight: bold;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+/* Product Links */
+.find-product-title {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.product-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+.product-logo {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.product-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    z-index: 1000;
+    transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .big-card-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .big-card-header {
+        max-height: 35vh;
+    }
+
+    .big-card-image {
+        max-height: 35vh;
+    }
+
+    .thumbnails img {
+        width: 50px;
+        height: 50px;
+    }
+
+    #bigCardTitle {
+        font-size: 1.3rem;
+    }
+}
