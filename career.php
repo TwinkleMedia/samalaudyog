@@ -14,15 +14,91 @@
 
 
     <title>Career</title>
+
+
+<!-- css -->
+<style>
+    .apply-box {
+        max-width:600px;
+        padding:20px;
+        background-color:#fff;
+        margin:0 auto;
+        margin-top: 50px;
+        border-radius:50px;
+        box-shadow: 4px 3px 5px rgba(1,1,1,0.1);
+      }
+      
+      .title_small {
+        font-size: 20px;
+        color:orangered;
+      }
+      
+      .form_container {
+        margin-top:20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+        gap:20px;
+      }
+      
+      .form_control {
+        display:flex;
+        flex-direction:column;
+      }
+      
+      .textarea_control {
+        grid-column: 1 / span 2;
+      }
+      
+      .textarea_control textarea {
+        width: 100%;
+      }
+      
+      label {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      
+      input,select,textarea{
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+      }
+      
+      input:focus, textarea:focus,select:focus {
+        outline-color:red;
+      }
+      
+      .button_container {
+        display:flex;
+        justify-content:flex-end;
+        margin-top:20px;
+      }
+      
+      .button_container button {
+        background:orangered;
+        border:transparent solid 2px;
+        padding: 5px 10px;
+        color:#fff;
+        border-radius: 10px;
+        transition: 0.3s ease-in;
+        cursor: pointer;
+      }
+      
+      @media screen and (max-width: 550px) {
+        .textarea_control {
+          grid-column: 1 / span 1;
+        }
+      }
+</style>
+
 </head>
 <body>
+<?php include './header.php';?>
     <div class="container">
       <div class="apply-box">
          <h1>
            Job Applicaiton
-            <span class="title_small">
-            (WEB)
-            </span>
          </h1>
 <!-- form starts -->
         <form action="#">
@@ -39,7 +115,7 @@
                   <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Enter email id" required>
               </div>
-            <div class="form_control">
+            <!-- <div class="form_control">
                 <label for="job_role">Job Role</label>
               <select name="job_role" id="job_role">
                   <option value="null">Choose Job Role</option>
@@ -48,7 +124,7 @@
                   <option value="ui">UI-Development</option>
                   <option value="mobile">Mobile App Development</option>
               </select>
-            </div>
+            </div> -->
             <div class="textarea_control">
                 <label for="address">Address</label>
               <textarea name="address" id="address" cols="50" rows="4" required></textarea>
@@ -77,5 +153,7 @@
 <!-- form end -->
       </div>
     </div>
+
+    <?php include './footer.php'; ?>
 </body>
 </html>
