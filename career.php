@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" teype="text/css"   href="hmainstyle.css">
-    <link rel="stylesheet" teype="text/css" href="new.css">
+    <link rel="stylesheet" teype="text/css" href="./new.css">
     <link rel="stylesheet" teype="text/css" href="footer.css">
     <link rel="stylesheet" teype="text/css" href="sliderc.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
