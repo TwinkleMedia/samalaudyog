@@ -1,24 +1,4 @@
-<?php
-// Include database configuration
-include('./admin/dbconfig.php'); 
 
-$sliderImages = [];
-
-// Fetch images from the database
-$query = "SELECT image_path FROM slider_images"; 
-$result = $conn->query($query);
-
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $sliderImages[] = $row;
-    }
-} else {
-    echo "Error fetching slider images: " . $conn->error;
-}
-
-// Close the database connection after use
-$conn->close();
-?>
 
 
 <!DOCTYPE html>
@@ -126,7 +106,27 @@ $conn->close();
 
 
 
+    <?php
+// Include database configuration
+include('./admin/dbconfig.php'); 
 
+$sliderImages = [];
+
+// Fetch images from the database
+$query = "SELECT image_path FROM slider_images"; 
+$result = $conn->query($query);
+
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $sliderImages[] = $row;
+    }
+} else {
+    echo "Error fetching slider images: " . $conn->error;
+}
+
+// Close the database connection after use
+$conn->close();
+?>
  
     <!-- Carousel slider -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
