@@ -108,7 +108,7 @@
                 <input type="text" name="first" id="first" placeholder="Enter first name" required>
               </div>
               <div class="form_control">
-                <label for="last">Last Name D</label>
+                <label for="last">Last Name</label>
                 <input type="text" name="last" id="last" placeholder="Enter last name" required>
               </div>
               <div class="form_control">
