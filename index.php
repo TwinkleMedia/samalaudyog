@@ -92,6 +92,7 @@
 
 <body>
     <?php include './header.php';?>
+    
     <?php
     // Include database configuration
     include('./admin/dbconfig.php'); // Adjust path as needed
@@ -616,7 +617,7 @@ foreach ($categories as $category) {
     
     
     
-</body>
+
 
  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -749,4 +750,5 @@ foreach ($categories as $category) {
     productModal.show();
 }
 </script>
+</body>
 </html>
