@@ -1,21 +1,16 @@
 <?php
-$servername = "localhost";
-$username = "samalaudyog";
-$password = "Samala@0118";
-$dbname = "samalaudyog";
+$servername = "localhost"; // or your GoDaddy database host
+$username = "samalaudyog"; // Check in GoDaddy's cPanel under MySQL Databases
+$password = "Samala@0118"; // Your actual database password
+$dbname = "samalaudyog"; // This is your database name
 
-
-
-
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Make $conn global so it can be accessed in other files
 global $conn;
+
 ?>
 

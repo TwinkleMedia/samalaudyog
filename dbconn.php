@@ -1,22 +1,17 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "Samala@0118";
-$dbname = "samalaudyog";
+$servername = "localhost"; // or your GoDaddy database host
+$username = "samalaudyog"; // Check in GoDaddy's cPanel under MySQL Databases
+$password = "Samala@0118"; // Your actual database password
+$dbname = "samalaudyog"; // This is your database name
 
-// Enable error reporting for mysqli
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-try {
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    $conn->set_charset("utf8mb4"); // Set character set for better compatibility
-} catch (Exception $e) {
-    exit("Connection failed: " . $e->getMessage());
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-// Make $conn global so it can be accessed in other files
 global $conn;
+
 ?>
 
 
