@@ -15,7 +15,7 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.samalaudyog.co.in
+          server: ftp.samalaudyog.com
           username: admin@samalaudyog.co.in
           password: Admin@0118
 
