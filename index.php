@@ -1,4 +1,24 @@
+<?php
+// Include database configuration
+include('./admin/dbconfig.php'); 
 
+$sliderImages = [];
+
+// Fetch images from the database
+$query = "SELECT image_path FROM slider_images"; 
+$result = $conn->query($query);
+
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $sliderImages[] = $row;
+    }
+} else {
+    echo "Error fetching slider images: " . $conn->error;
+}
+
+// Close the database connection after use
+$conn->close();
+?>
 
 
 <!DOCTYPE html>
@@ -98,32 +118,7 @@
 <body>
     <?php include './header.php';?>
     
-    <?php
-    // Include database configuration
-    include('./admin/dbconfig.php'); // Adjust path as needed
-
-    // Initialize the $sliderImages array
-    $sliderImages = [];
-
-    // Check if the connection was established
-    if (isset($conn)) {
-        // Fetch images from the database
-        $query = "SELECT image_path FROM slider_images"; // Adjust the query based on your table structure
-        $result = $conn->query($query);
-
-        if ($result) {
-            // Fetch all rows as associative array
-            $sliderImages = $result->fetch_all(MYSQLI_ASSOC);
-        } else {
-            echo "Error fetching slider images: " . $conn->error;
-        }
-
-        // Close the database connection
-        $conn->close();
-    } else {
-        echo "Database connection is not established.";
-    }
-    ?>
+    
 
 
     <!----product display--->
@@ -187,7 +182,7 @@
                             <h2></h2>
                             <span>Founder</span>
                         </div>
-                        <figure class="image-1"><a href="#" class="lightbox-image" data-fancybox="images"><img title="Rahul Kumar Yadav" src="https:./assest/Founder.png" alt=""></a></figure>
+                        <figure class="image-1"><a href="#" class="lightbox-image" data-fancybox="images"><img title="Rahul Kumar Yadav" src="./assest/Founder.png" alt=""></a></figure>
 
                     </div>
                 </div>
