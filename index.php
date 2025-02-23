@@ -16,7 +16,73 @@
     <title>Samala Udyog </title>
     
     <style>
+.testimonial-container {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
 
+.testimonial-item {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.testimonial-content {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px 40px;
+}
+
+.testimonial-content::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 3rem;
+    color: #ccc;
+    font-family: serif;
+}
+
+.testimonial-content::after {
+    content: '"';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 3rem;
+    color: #ccc;
+    font-family: serif;
+}
+
+.testimonial-author {
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #0d6efd;
+}
+
+.swiper-pagination-bullet-active {
+    background: #0d6efd;
+}
+
+/* Ensure proper spacing for navigation arrows */
+.testimonial-slider {
+    padding: 40px 80px;
+}
+
+@media (max-width: 768px) {
+    .testimonial-slider {
+        padding: 40px 30px;
+    }
+}
 </style>
 
     <!-- AOS CSS -->
@@ -28,7 +94,7 @@
     <?php include './header.php';?>
     <?php
     // Include database configuration
-    include('../admin/dbconfig.php'); // Adjust path as needed
+    include('./admin/dbconfig.php'); // Adjust path as needed
 
     // Initialize the $sliderImages array
     $sliderImages = [];
