@@ -1,8 +1,9 @@
 <?php
 $servername = "localhost";
-$username = "u694280384_samalaDemoDB";
-$password = "Samalapass@123";
-$dbname = "u694280384_samalaDemoDB";
+$username = "samalaudyog";
+$password = "Samala@0118";
+$dbname = "samalaudyog";
+
 
 
 
@@ -17,3 +18,4 @@ if ($conn->connect_error) {
 // Make $conn global so it can be accessed in other files
 global $conn;
 ?>
+
