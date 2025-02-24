@@ -661,15 +661,15 @@ foreach ($categories as $category) {
     </script>
     <!-- JavaScript for Modal Functionality -->
 <script>
-   function showProductModal(product) {
+    function showProductModal(product) {
     // Set modal content
-    document.getElementById('modalProductTitle').textContent = product.title || 'Product Title';
-    document.getElementById('productDescription').textContent = product.description || 'No description available.';
-    document.getElementById('originalPrice').textContent = product.final_price ? `₹${product.final_price}` : '';
-    document.getElementById('discountedPrice').textContent = product.discounted_price ? `₹${product.discounted_price}` : '';
-    document.getElementById('productCategory').textContent = product.subject || 'Unknown Category';
+    document.getElementById('modalProductTitle').innerText = product.title || 'Product Title';
+    document.getElementById('productDescription').innerText = product.description || 'No description available.';
+    document.getElementById('originalPrice').innerText = product.final_price ? `Rs. ${product.final_price}` : '';
+    document.getElementById('discountedPrice').innerText = product.discounted_price ? `Rs. ${product.discounted_price}` : '';
+    document.getElementById('productCategory').innerText = product.subject || 'Unknown Category';
 
-    // Handle images
+    // Handle images (existing code)
     const mainImage = document.getElementById('mainImage');
     const thumbnailGallery = document.getElementById('thumbnailGallery');
     thumbnailGallery.innerHTML = '';
@@ -682,10 +682,7 @@ foreach ($categories as $category) {
             const thumbnail = document.createElement('img');
             thumbnail.src = imagePath;
             thumbnail.alt = product.title || 'Thumbnail';
-            thumbnail.className = 'img-thumbnail rounded me-2';
-            thumbnail.style.width = '60px';
-            thumbnail.style.height = '60px';
-            thumbnail.style.objectFit = 'cover';
+            thumbnail.classList.add('img-thumbnail', 'rounded', 'me-2');
             thumbnail.style.cursor = 'pointer';
             thumbnail.addEventListener('click', () => {
                 mainImage.src = imagePath;
@@ -699,8 +696,9 @@ foreach ($categories as $category) {
 
     // Handle e-commerce links
     const ecommerceLinks = document.getElementById('ecommerceLinks');
-    ecommerceLinks.innerHTML = '';
+    ecommerceLinks.innerHTML = ''; // Clear existing links
 
+    // Define e-commerce platforms with their icons and URLs from the product
     const platforms = [
         {
             name: 'Flipkart',
@@ -728,13 +726,14 @@ foreach ($categories as $category) {
         }
     ];
 
+    // Create and append platform links
     platforms.forEach(platform => {
         if (platform.url) {
             const link = document.createElement('a');
             link.href = platform.url;
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
-            link.className = 'btn btn-light border d-inline-flex align-items-center gap-2';
+            link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
             link.style.color = platform.color;
             
             link.innerHTML = `
