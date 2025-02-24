@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,7 +104,55 @@
 
 
 
-  
+    <?php
+// Include database configuration
+include('./admin/dbconfig.php'); 
+
+$sliderImages = [];
+
+// Fetch images from the database
+$query = "SELECT image_path FROM slider_images"; 
+$result = $conn->query($query);
+
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $sliderImages[] = $row;
+    }
+} else {
+    echo "Error fetching slider images: " . $conn->error;
+}
+
+// Close the database connection after use
+$conn->close();
+?>
+ 
+    <!-- Carousel slider -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner mt-5">
+        <?php if (!empty($sliderImages)): ?>
+            <?php foreach ($sliderImages as $index => $image): ?>
+                <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                    <?php
+                    // Adjust the path to reflect the correct relative directory
+                    $fullPath = '../admin/' . trim($image['image_path']);
+                    ?>
+                    <img src="<?php echo $fullPath; ?>" 
+                         class="d-block w-100 img-fluid" 
+                         alt="Slider Image" 
+                         style="object-fit: cover; max-height: 400px;">
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="carousel-item active">
+                <img src="path/to/default/image.jpg" 
+                     class="d-block w-100 img-fluid" 
+                     alt="Default Image" 
+                     style="object-fit: cover; max-height: 400px;">
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+
 
     <section class="about-section mt-3">
         <div class="container">
@@ -199,52 +245,54 @@ if (isset($conn)) {
 
     // Function to render product section
     // Function to render product section
-function renderProductSection($category, $products)
-{
-    ?>
-    <section>
-        <div class="container">
-            <div class="sec-title">
-                <h2><?php echo htmlspecialchars($category); ?></h2>
-            </div>
-            <div class="slick-slider">
-                <?php if (!empty($products)): ?>
-                    <?php foreach ($products as $product): ?>
-                        <div class="me-3">
-                            <div class="box-img mb-3">
-                                <!-- Display the first image if available -->
-                                <?php if (!empty($product['images'])): ?>
-                                    <img src="<?php echo htmlspecialchars($product['images'][0]); ?>"
-                                        alt="<?php echo htmlspecialchars($product['title'] ?? ''); ?>"
-                                        class="img-fluid"
-                                        style="border-radius: 10px;">
-                                <?php else: ?>
-                                    <img src="../admin/default-image.png"
-                                        alt="Default Image"
-                                        class="img-fluid"
-                                        style="border-radius: 10px;">
-                                <?php endif; ?>
-                            </div>
-                            <div class="box-heading">
-                                <h2><?php echo htmlspecialchars($product['title']); ?></h2>
-                                <p class="description"><?php echo htmlspecialchars(substr($product['description'], 0, 100)) . '...'; ?></p>
-                                <h5 class="mb-3">
-                                    <s class="text-danger">Rs.<?php echo htmlspecialchars($product['final_price']); ?></s>
-                                    <span>Rs.<?php echo htmlspecialchars($product['discounted_price']); ?></span>
-                                </h5>
-                                <button onclick="showProductModal(<?php echo htmlspecialchars(json_encode($product)); ?>)" class="btn bg-danger text-white w-100">Buy</button>
-
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <p>No products available in this category.</p>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-    <?php
-}
+    function renderProductSection($category, $products) {
+        ?>
+            <section>
+                <div class="container">
+                    <div class="sec-title">
+                        <h2><?php echo htmlspecialchars($category); ?></h2>
+                    </div>
+                    <div class="slick-slider">
+                        <?php if (!empty($products)): ?>
+                            <?php foreach ($products as $product): ?>
+                                <div class="me-3">
+                                    <div class="box-img mb-3">
+                                        <?php if (!empty($product['images'])): ?>
+                                            <img src="<?php echo htmlspecialchars($product['images'][0]); ?>"
+                                                alt="<?php echo htmlspecialchars($product['title'] ?? ''); ?>"
+                                                class="img-fluid"
+                                                style="border-radius: 10px;">
+                                        <?php else: ?>
+                                            <img src="../admin/default-image.png"
+                                                alt="Default Image"
+                                                class="img-fluid"
+                                                style="border-radius: 10px;">
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="box-heading">
+                                        <h2><?php echo htmlspecialchars($product['title']); ?></h2>
+                                        <p class="description"><?php echo htmlspecialchars(substr($product['description'], 0, 100)) . '...'; ?></p>
+                                        <h5 class="mb-3">
+                                            <s class="text-danger">₹<?php echo htmlspecialchars($product['final_price']); ?></s>
+                                            <span>₹<?php echo htmlspecialchars($product['discounted_price']); ?></span>
+                                        </h5>
+                                        <button 
+                                            onclick='showProductModal(<?php echo json_encode($product, JSON_HEX_APOS | JSON_HEX_QUOT); ?>)' 
+                                            class="btn bg-danger text-white w-100">
+                                            Buy
+                                        </button>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <p>No products available in this category.</p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </section>
+        <?php
+        }
+  
 
 // Render product sections
 $categories = array_keys($productsByCategory);
@@ -613,15 +661,15 @@ foreach ($categories as $category) {
     </script>
     <!-- JavaScript for Modal Functionality -->
 <script>
-    function showProductModal(product) {
+   function showProductModal(product) {
     // Set modal content
-    document.getElementById('modalProductTitle').innerText = product.title || 'Product Title';
-    document.getElementById('productDescription').innerText = product.description || 'No description available.';
-    document.getElementById('originalPrice').innerText = product.final_price ? `Rs. ${product.final_price}` : '';
-    document.getElementById('discountedPrice').innerText = product.discounted_price ? `Rs. ${product.discounted_price}` : '';
-    document.getElementById('productCategory').innerText = product.subject || 'Unknown Category';
+    document.getElementById('modalProductTitle').textContent = product.title || 'Product Title';
+    document.getElementById('productDescription').textContent = product.description || 'No description available.';
+    document.getElementById('originalPrice').textContent = product.final_price ? `₹${product.final_price}` : '';
+    document.getElementById('discountedPrice').textContent = product.discounted_price ? `₹${product.discounted_price}` : '';
+    document.getElementById('productCategory').textContent = product.subject || 'Unknown Category';
 
-    // Handle images (existing code)
+    // Handle images
     const mainImage = document.getElementById('mainImage');
     const thumbnailGallery = document.getElementById('thumbnailGallery');
     thumbnailGallery.innerHTML = '';
@@ -634,7 +682,10 @@ foreach ($categories as $category) {
             const thumbnail = document.createElement('img');
             thumbnail.src = imagePath;
             thumbnail.alt = product.title || 'Thumbnail';
-            thumbnail.classList.add('img-thumbnail', 'rounded', 'me-2');
+            thumbnail.className = 'img-thumbnail rounded me-2';
+            thumbnail.style.width = '60px';
+            thumbnail.style.height = '60px';
+            thumbnail.style.objectFit = 'cover';
             thumbnail.style.cursor = 'pointer';
             thumbnail.addEventListener('click', () => {
                 mainImage.src = imagePath;
@@ -648,9 +699,8 @@ foreach ($categories as $category) {
 
     // Handle e-commerce links
     const ecommerceLinks = document.getElementById('ecommerceLinks');
-    ecommerceLinks.innerHTML = ''; // Clear existing links
+    ecommerceLinks.innerHTML = '';
 
-    // Define e-commerce platforms with their icons and URLs from the product
     const platforms = [
         {
             name: 'Flipkart',
@@ -678,14 +728,13 @@ foreach ($categories as $category) {
         }
     ];
 
-    // Create and append platform links
     platforms.forEach(platform => {
         if (platform.url) {
             const link = document.createElement('a');
             link.href = platform.url;
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
-            link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
+            link.className = 'btn btn-light border d-inline-flex align-items-center gap-2';
             link.style.color = platform.color;
             
             link.innerHTML = `
