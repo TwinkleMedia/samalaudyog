@@ -106,55 +106,7 @@
 
 
 
-    <?php
-// Include database configuration
-include('./admin/dbconfig.php'); 
-
-$sliderImages = [];
-
-// Fetch images from the database
-$query = "SELECT image_path FROM slider_images"; 
-$result = $conn->query($query);
-
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $sliderImages[] = $row;
-    }
-} else {
-    echo "Error fetching slider images: " . $conn->error;
-}
-
-// Close the database connection after use
-$conn->close();
-?>
- 
-    <!-- Carousel slider -->
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner mt-5">
-        <?php if (!empty($sliderImages)): ?>
-            <?php foreach ($sliderImages as $index => $image): ?>
-                <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                    <?php
-                    // Adjust the path to reflect the correct relative directory
-                    $fullPath = '../admin/' . trim($image['image_path']);
-                    ?>
-                    <img src="<?php echo $fullPath; ?>" 
-                         class="d-block w-100 img-fluid" 
-                         alt="Slider Image" 
-                         style="object-fit: cover; max-height: 400px;">
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <div class="carousel-item active">
-                <img src="path/to/default/image.jpg" 
-                     class="d-block w-100 img-fluid" 
-                     alt="Default Image" 
-                     style="object-fit: cover; max-height: 400px;">
-            </div>
-        <?php endif; ?>
-    </div>
-</div>
-
+  
 
     <section class="about-section mt-3">
         <div class="container">
