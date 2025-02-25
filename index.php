@@ -136,7 +136,7 @@ function getProductImages($productId, $conn)
     $result = $stmt->get_result();
 
     while ($row = $result->fetch_assoc()) {
-        $images[] = "../admin/" . $row['image_path']; // Add the base path
+        $images[] = "./admin/" . $row['image_path']; // Add the base path
     }
 
     return $images;
@@ -187,7 +187,7 @@ if (isset($conn)) {
                                                 class="img-fluid"
                                                 style="border-radius: 10px;">
                                         <?php else: ?>
-                                            <img src="../admin/default-image.png"
+                                            <img src="./admin/default-image.png"
                                                 alt="Default Image"
                                                 class="img-fluid"
                                                 style="border-radius: 10px;">
