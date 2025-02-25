@@ -1,24 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" teype="text/css"   href="hmainstyle.css">
     <link rel="stylesheet" teype="text/css" href="new.css">
     <link rel="stylesheet" teype="text/css" href="footer.css">
     <link rel="stylesheet" teype="text/css" href="sliderc.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+    
     <?php include './mainlink.php'  ?>
-   <link rel="stylesheet" href="product.css">
-  <?php include './mainlink.php'   ?>
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <title>Samala Udyog </title>
     
-   
+    <style>
+.testimonial-container {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.testimonial-item {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.testimonial-content {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px 40px;
+}
+
+.testimonial-content::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 3rem;
+    color: #ccc;
+    font-family: serif;
+}
+
+.testimonial-content::after {
+    content: '"';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 3rem;
+    color: #ccc;
+    font-family: serif;
+}
+
+.testimonial-author {
+    font-size: 1.1rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #0d6efd;
+}
+
+.swiper-pagination-bullet-active {
+    background: #0d6efd;
+}
+
+/* Ensure proper spacing for navigation arrows */
+.testimonial-slider {
+    padding: 40px 80px;
+}
+
+@media (max-width: 768px) {
+    .testimonial-slider {
+        padding: 40px 30px;
+    }
+}
+</style>
 
     <!-- AOS CSS -->
     <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
@@ -27,14 +92,7 @@
 
 <body>
     <?php include './header.php';?>
-    
-    
-
-
-
- <!----product display--->
-
- <?php
+    <?php
     // Include database configuration
     include('./admin/dbconfig.php'); // Adjust path as needed
 
@@ -241,8 +299,6 @@ foreach ($categories as $category) {
     renderProductSection($category, $productsByCategory[$category]);
 }
     ?>
-
-
 
     <!-- Product Modal Structure -->
   <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
@@ -560,7 +616,7 @@ foreach ($categories as $category) {
     
     
     
-
+</body>
 
  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
@@ -596,96 +652,101 @@ foreach ($categories as $category) {
 
     <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    <!-- <script>
+    <script>
         AOS.init({
             duration: 1500, 
             once: true 
         });
-    </script> -->
+    </script>
     <!-- JavaScript for Modal Functionality -->
 <script>
-   function showProductModal(product) {
-    try {
-        console.log('Opening Modal for:', product);
+    function showProductModal(product) {
+    // Set modal content
+    document.getElementById('modalProductTitle').innerText = product.title || 'Product Title';
+    document.getElementById('productDescription').innerText = product.description || 'No description available.';
+    document.getElementById('originalPrice').innerText = product.final_price ? `Rs. ${product.final_price}` : '';
+    document.getElementById('discountedPrice').innerText = product.discounted_price ? `Rs. ${product.discounted_price}` : '';
+    document.getElementById('productCategory').innerText = product.subject || 'Unknown Category';
 
-        // Set modal content
-        document.getElementById('modalProductTitle').innerText = product.title || 'Product Title';
-        document.getElementById('productDescription').innerText = product.description || 'No description available.';
-        document.getElementById('originalPrice').innerText = product.final_price ? `Rs. ${product.final_price}` : '';
-        document.getElementById('discountedPrice').innerText = product.discounted_price ? `Rs. ${product.discounted_price}` : '';
-        document.getElementById('productCategory').innerText = product.subject || 'Unknown Category';
+    // Handle images (existing code)
+    const mainImage = document.getElementById('mainImage');
+    const thumbnailGallery = document.getElementById('thumbnailGallery');
+    thumbnailGallery.innerHTML = '';
 
-        // Handle images safely
-        const mainImage = document.getElementById('mainImage');
-        const thumbnailGallery = document.getElementById('thumbnailGallery');
-        thumbnailGallery.innerHTML = '';
+    if (product.images && product.images.length > 0) {
+        mainImage.src = product.images[0];
+        mainImage.alt = product.title || 'Product Image';
 
-        if (product.images && Array.isArray(product.images) && product.images.length > 0) {
-            mainImage.src = product.images[0];
-            mainImage.alt = product.title || 'Product Image';
-
-            product.images.forEach(imagePath => {
-                const thumbnail = document.createElement('img');
-                thumbnail.src = imagePath;
-                thumbnail.alt = product.title || 'Thumbnail';
-                thumbnail.classList.add('img-thumbnail', 'rounded', 'me-2');
-                thumbnail.style.cursor = 'pointer';
-
-                thumbnail.addEventListener('click', () => {
-                    mainImage.src = imagePath;
-                });
-
-                thumbnailGallery.appendChild(thumbnail);
+        product.images.forEach(imagePath => {
+            const thumbnail = document.createElement('img');
+            thumbnail.src = imagePath;
+            thumbnail.alt = product.title || 'Thumbnail';
+            thumbnail.classList.add('img-thumbnail', 'rounded', 'me-2');
+            thumbnail.style.cursor = 'pointer';
+            thumbnail.addEventListener('click', () => {
+                mainImage.src = imagePath;
             });
-        } else {
-            mainImage.src = '../admin/default-image.png';
-            mainImage.alt = 'Default Product Image';
-        }
-
-        // Handle e-commerce links
-        const ecommerceLinks = document.getElementById('ecommerceLinks');
-        ecommerceLinks.innerHTML = '';
-
-        // Define e-commerce platforms with their icons and URLs
-        const platforms = [
-            { name: 'Flipkart', icon: 'bi-cart-fill', url: product.flipkart_url, color: '#2874f0' },
-            { name: 'Amazon', icon: 'bi-amazon', url: product.amazon_url, color: '#ff9900' },
-            { name: 'IndiaMART', icon: 'bi-shop', url: product.indiamart_url, color: '#2e3192' },
-            { name: 'JioMart', icon: 'bi-bag-fill', url: product.jiomart_url, color: '#0f4a8a' }
-        ];
-
-        // Create and append platform links
-        platforms.forEach(platform => {
-            if (platform.url) {
-                const link = document.createElement('a');
-                link.href = platform.url;
-                link.target = '_blank';
-                link.rel = 'noopener noreferrer';
-                link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
-                link.style.color = platform.color;
-
-                link.innerHTML = `
-                    <i class="bi ${platform.icon}"></i>
-                    <span>${platform.name}</span>
-                `;
-
-                ecommerceLinks.appendChild(link);
-            }
+            thumbnailGallery.appendChild(thumbnail);
         });
-
-        // Show the modal safely
-        const productModalElement = document.getElementById('productModal');
-        if (productModalElement) {
-            const productModal = new bootstrap.Modal(productModalElement);
-            productModal.show();
-        } else {
-            console.error('Modal element not found');
-        }
-    } catch (error) {
-        console.error('Error in showProductModal:', error);
+    } else {
+        mainImage.src = '../admin/default-image.png';
+        mainImage.alt = 'Default Product Image';
     }
-}
 
+    // Handle e-commerce links
+    const ecommerceLinks = document.getElementById('ecommerceLinks');
+    ecommerceLinks.innerHTML = ''; // Clear existing links
+
+    // Define e-commerce platforms with their icons and URLs from the product
+    const platforms = [
+        {
+            name: 'Flipkart',
+            icon: 'bi-cart-fill',
+            url: product.flipkart_url,
+            color: '#2874f0'
+        },
+        {
+            name: 'Amazon',
+            icon: 'bi-amazon',
+            url: product.amazon_url,
+            color: '#ff9900'
+        },
+        {
+            name: 'IndiaMART',
+            icon: 'bi-shop',
+            url: product.indiamart_url,
+            color: '#2e3192'
+        },
+        {
+            name: 'JioMart',
+            icon: 'bi-bag-fill',
+            url: product.jiomart_url,
+            color: '#0f4a8a'
+        }
+    ];
+
+    // Create and append platform links
+    platforms.forEach(platform => {
+        if (platform.url) {
+            const link = document.createElement('a');
+            link.href = platform.url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
+            link.style.color = platform.color;
+            
+            link.innerHTML = `
+                <i class="bi ${platform.icon}"></i>
+                <span>${platform.name}</span>
+            `;
+            
+            ecommerceLinks.appendChild(link);
+        }
+    });
+
+    // Show the modal
+    const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+    productModal.show();
+}
 </script>
-</body>
 </html>
