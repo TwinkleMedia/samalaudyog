@@ -7,121 +7,58 @@
     <title>Document</title>
 </head>
 <body>
-<?php include './header.php';?>
+<!-- <?php include './header.php';?> -->
 
 <!-- ----------------------- -->
-
 <?php
-// Enable error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 // Include database configuration
-include('./admin/dbconfig.php');
+include('./admin/dbconfig.php'); 
 
-// Check database connection
-if (!$conn) {
-    die("Database connection failed: " . mysqli_connect_error());
-}
+$sliderImages = [];
 
-// Categories to display
-$categories = ['Home Care', 'Personal Care', 'Hospital Care', 'Speciality Chemicals'];
-$productsByCategory = [];
+// Fetch images from the database
+$query = "SELECT image_path FROM slider_images"; 
+$result = $conn->query($query);
 
-// Function to fetch product images
-function getProductImages($productId, $conn) {
-    $images = [];
-    $query = "SELECT image_path FROM product_images WHERE product_id = ?";
-    $stmt = $conn->prepare($query);
-    
-    if ($stmt) {
-        $stmt->bind_param('i', $productId);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        
-        while ($row = $result->fetch_assoc()) {
-            $images[] = "../admin/" . htmlspecialchars($row['image_path']);
-        }
-        
-        $stmt->close();
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $sliderImages[] = $row;
     }
-    
-    return $images ?: ["../admin/default-image.png"];
+} else {
+    echo "Error fetching slider images: " . $conn->error;
 }
 
-// Fetch products by category
-foreach ($categories as $category) {
-    $query = "SELECT * FROM allproducts WHERE subject = ?";
-    $stmt = $conn->prepare($query);
-    
-    if ($stmt) {
-        $stmt->bind_param('s', $category);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        $products = [];
-        while ($row = $result->fetch_assoc()) {
-            $row['images'] = getProductImages($row['id'], $conn);
-            $products[] = $row;
-        }
-
-        $productsByCategory[$category] = $products;
-        $stmt->close();
-    } else {
-        echo "Error in SQL query: " . $conn->error;
-    }
-}
-
-// Close database connection
+// Close the database connection after use
 $conn->close();
-
-// Function to render product section
-function renderProductSection($category, $products) {
-    ?>
-    <section>
-        <div class="container">
-            <div class="sec-title">
-                <h2><?php echo htmlspecialchars($category); ?></h2>
-            </div>
-            <div class="slick-slider">
-                <?php if (!empty($products)): ?>
-                    <?php foreach ($products as $product): ?>
-                        <div class="me-3">
-                            <div class="box-img mb-3">
-                                <img src="<?php echo htmlspecialchars($product['images'][0]); ?>"
-                                     alt="<?php echo htmlspecialchars($product['title'] ?? 'No Title'); ?>"
-                                     class="img-fluid"
-                                     style="border-radius: 10px;">
-                            </div>
-                            <div class="box-heading">
-                                <h2><?php echo htmlspecialchars($product['title'] ?? ''); ?></h2>
-                                <p class="description"><?php echo htmlspecialchars(substr($product['description'] ?? '', 0, 100)) . '...'; ?></p>
-                                <h5 class="mb-3">
-                                    <s class="text-danger">₹<?php echo htmlspecialchars($product['final_price'] ?? '0'); ?></s>
-                                    <span>₹<?php echo htmlspecialchars($product['discounted_price'] ?? '0'); ?></span>
-                                </h5>
-                                <button 
-                                    onclick='showProductModal(<?php echo json_encode($product, JSON_HEX_APOS | JSON_HEX_QUOT); ?>)' 
-                                    class="btn bg-danger text-white w-100">
-                                    Buy
-                                </button>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <p>No products available in this category.</p>
-                <?php endif; ?>
-            </div>
-        </div>
-    </section>
-    <?php
-}
-
-// Render all product sections
-foreach ($productsByCategory as $category => $products) {
-    renderProductSection($category, $products);
-}
 ?>
+
+    <!-- Carousel slider -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner mt-5">
+        <?php if (!empty($sliderImages)): ?>
+            <?php foreach ($sliderImages as $index => $image): ?>
+                <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                    <?php
+                    // Adjust the path to reflect the correct relative directory
+                    $fullPath = '../admin/' . trim($image['image_path']);
+                    ?>
+                    <img src="<?php echo $fullPath; ?>" 
+                         class="d-block w-100 img-fluid" 
+                         alt="Slider Image" 
+                         style="object-fit: cover; max-height: 400px;">
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="carousel-item active">
+                <img src="path/to/default/image.jpg" 
+                     class="d-block w-100 img-fluid" 
+                     alt="Default Image" 
+                     style="object-fit: cover; max-height: 400px;">
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+
 
 
   <!-- Product Modal Structure -->
