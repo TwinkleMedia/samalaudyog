@@ -1,16 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include './mainlink.php'  ?>
-    <title>Document</title>
-</head>
-<body>
-<!-- <?php include './header.php';?> -->
+    <title>Samala Udyog </title>
+    
+   
 
-<!-- ----------------------- -->
-<?php
+    <!-- AOS CSS -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
+</head>
+
+
+<body>
+    <?php include './header.php';?>
+    
+    
+
+
+    <!----product display--->
+
+
+
+
+    <?php
 // Include database configuration
 include('./admin/dbconfig.php'); 
 
@@ -31,9 +49,9 @@ if ($result) {
 // Close the database connection after use
 $conn->close();
 ?>
-
+ 
     <!-- Carousel slider -->
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner mt-5">
         <?php if (!empty($sliderImages)): ?>
             <?php foreach ($sliderImages as $index => $image): ?>
@@ -60,8 +78,154 @@ $conn->close();
 </div>
 
 
+    <section class="about-section mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2" data-aos="fade-left">
+                    <div class="inner-column">
+                        <div class="sec-title">
+                            <span class="title">About </span>
+                            <h2>Nature-Driven Innovation for a Better, Safer World</h2>
+                        </div>
+                        <div class="text">Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative products made with natural chemicals and special clay minerals to customers who prioritize the environment and health. The company was founded by a duo with a combined 40 years of experience in the chemical industry and a passion for creating sustainable and effective products.</div>
+                        <div class="text">
+                            With a focus on natures’ bounty, we are committed to providing our customers with the best of natural ingredients for Home care, Personal care, and Industrial care applications. Join us in our mission to create a healthier and more sustainable world, one natural product at a time.
+                        </div>
+                        <div class="btn-box">
+                            <a href="./contact.php" class="theme-btn btn-style-one">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Product Modal Structure -->
+                <!-- Image Column -->
+                <div class="image-column col-lg-6 col-md-12 col-sm-12" data-aos="fade-right">
+                    <div class="inner-column wow fadeInLeft">
+                        <div class="author-desc">
+                            <h2></h2>
+                            <span>Founder</span>
+                        </div>
+                        <figure class="image-1"><a href="#" class="lightbox-image" data-fancybox="images"><img title="Rahul Kumar Yadav" src="./assest/Founder.png" alt=""></a></figure>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+ <!----product display--->
+
+    <?php
+    // Include database configuration
+include('./admin/dbconfig.php');
+
+// Initialize arrays for categories
+$categories = ['Home Care', 'Personal Care', 'Hospital Care', 'Speciality Chemicals'];
+
+// Array to hold products by category
+$productsByCategory = [];
+
+// Function to fetch images related to a product
+function getProductImages($productId, $conn)
+{
+    $images = [];
+    $query = "SELECT image_path FROM product_images WHERE product_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param('i', $productId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    while ($row = $result->fetch_assoc()) {
+        $images[] = "../admin/" . $row['image_path']; // Add the base path
+    }
+
+    return $images;
+}
+
+// Check if the connection was established
+if (isset($conn)) {
+    foreach ($categories as $category) {
+        $query = "SELECT * FROM allproducts WHERE subject = ?";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param('s', $category);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $products = $result->fetch_all(MYSQLI_ASSOC);
+
+        // Fetch related images for each product
+        foreach ($products as &$product) {
+            $product['images'] = getProductImages($product['id'], $conn);
+        }
+
+        $productsByCategory[$category] = $products;
+    }
+
+    // Close the database connection
+    $conn->close();
+} else {
+    echo "Database connection is not established.";
+}
+
+    // Function to render product section
+    // Function to render product section
+    function renderProductSection($category, $products) {
+        ?>
+            <section>
+                <div class="container">
+                    <div class="sec-title">
+                        <h2><?php echo htmlspecialchars($category); ?></h2>
+                    </div>
+                    <div class="slick-slider">
+                        <?php if (!empty($products)): ?>
+                            <?php foreach ($products as $product): ?>
+                                <div class="me-3">
+                                    <div class="box-img mb-3">
+                                        <?php if (!empty($product['images'])): ?>
+                                            <img src="<?php echo htmlspecialchars($product['images'][0]); ?>"
+                                                alt="<?php echo htmlspecialchars($product['title'] ?? ''); ?>"
+                                                class="img-fluid"
+                                                style="border-radius: 10px;">
+                                        <?php else: ?>
+                                            <img src="../admin/default-image.png"
+                                                alt="Default Image"
+                                                class="img-fluid"
+                                                style="border-radius: 10px;">
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="box-heading">
+                                        <h2><?php echo htmlspecialchars($product['title']); ?></h2>
+                                        <p class="description"><?php echo htmlspecialchars(substr($product['description'], 0, 100)) . '...'; ?></p>
+                                        <h5 class="mb-3">
+                                            <s class="text-danger">₹<?php echo htmlspecialchars($product['final_price']); ?></s>
+                                            <span>₹<?php echo htmlspecialchars($product['discounted_price']); ?></span>
+                                        </h5>
+                                        <button 
+                                            onclick='showProductModal(<?php echo json_encode($product, JSON_HEX_APOS | JSON_HEX_QUOT); ?>)' 
+                                            class="btn bg-danger text-white w-100">
+                                            Buy
+                                        </button>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <p>No products available in this category.</p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </section>
+        <?php
+        }
+  
+
+// Render product sections
+$categories = array_keys($productsByCategory);
+foreach ($categories as $category) {
+    renderProductSection($category, $productsByCategory[$category]);
+}
+    ?>
+
+    <!-- Product Modal Structure -->
   <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -123,8 +287,11 @@ $conn->close();
 </div>
 
 
-<!-- Video Section--------------------- -->
-<section id="video-section" class="my-5">
+
+<!-- --------------------------video Section-------------------------------------  -->
+
+<!-- --------video------------------ -->
+    <section id="video-section" class="my-5">
       <div class="container">
         <div class="row">
           <!-- Video 1 -->
@@ -199,8 +366,21 @@ $conn->close();
       </div>
     </section>
 
-<!-- -------------------Faq  -->
-<div class="faq-container">
+
+
+
+
+<!---------------------- video section end----------------------------- -->
+
+
+
+
+
+
+
+    <!-- F -->
+
+    <div class="faq-container">
         <h1>Frequently Asked Questions</h1>
 
         <div class="faq">
@@ -311,13 +491,12 @@ $conn->close();
         </div>
 
 
-        
+        <!-- Add more FAQs as needed -->
+
     </div>
-    <!-- Add more FAQs as needed -->
-
-
-<!-- -----------------Textimonial -->
-<div class="container">
+    
+    <!---------------------------------------------------Testimonail page------------------------------------->
+    <div class="container">
     
     <div class="testimonial-container">
     <h2 style="text-align: center; margin-bottom: 30px;">What Our Clients Say</h2>
@@ -344,7 +523,156 @@ $conn->close();
   </div>
   
 </div>
-<!-- -----Footer -->
-<?php include './footer.php'; ?>
+
+   
+   
+    
+    <!--Footer-->
+    
+    <?php include './footer.php'; ?>
+
+  
+    <?php include './jslink.php' ?>
+    
+    
+  
+    
+    
+    
+    
+    
+
+
+ <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const swiper = new Swiper('.testimonial-slider', {
+        slidesPerView: 1,  // Force single slide view
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        // Disable any breakpoints to ensure only one slide shows
+        breakpoints: {}
+    });
+});
+  </script>
+
+
+
+
+
+
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <!-- <script>
+        AOS.init({
+            duration: 1500, 
+            once: true 
+        });
+    </script> -->
+    <!-- JavaScript for Modal Functionality -->
+<script>
+    function showProductModal(product) {
+    // Set modal content
+    document.getElementById('modalProductTitle').innerText = product.title || 'Product Title';
+    document.getElementById('productDescription').innerText = product.description || 'No description available.';
+    document.getElementById('originalPrice').innerText = product.final_price ? `Rs. ${product.final_price}` : '';
+    document.getElementById('discountedPrice').innerText = product.discounted_price ? `Rs. ${product.discounted_price}` : '';
+    document.getElementById('productCategory').innerText = product.subject || 'Unknown Category';
+
+    // Handle images (existing code)
+    const mainImage = document.getElementById('mainImage');
+    const thumbnailGallery = document.getElementById('thumbnailGallery');
+    thumbnailGallery.innerHTML = '';
+
+    if (product.images && product.images.length > 0) {
+        mainImage.src = product.images[0];
+        mainImage.alt = product.title || 'Product Image';
+
+        product.images.forEach(imagePath => {
+            const thumbnail = document.createElement('img');
+            thumbnail.src = imagePath;
+            thumbnail.alt = product.title || 'Thumbnail';
+            thumbnail.classList.add('img-thumbnail', 'rounded', 'me-2');
+            thumbnail.style.cursor = 'pointer';
+            thumbnail.addEventListener('click', () => {
+                mainImage.src = imagePath;
+            });
+            thumbnailGallery.appendChild(thumbnail);
+        });
+    } else {
+        mainImage.src = '../admin/default-image.png';
+        mainImage.alt = 'Default Product Image';
+    }
+
+    // Handle e-commerce links
+    const ecommerceLinks = document.getElementById('ecommerceLinks');
+    ecommerceLinks.innerHTML = ''; // Clear existing links
+
+    // Define e-commerce platforms with their icons and URLs from the product
+    const platforms = [
+        {
+            name: 'Flipkart',
+            icon: 'bi-cart-fill',
+            url: product.flipkart_url,
+            color: '#2874f0'
+        },
+        {
+            name: 'Amazon',
+            icon: 'bi-amazon',
+            url: product.amazon_url,
+            color: '#ff9900'
+        },
+        {
+            name: 'IndiaMART',
+            icon: 'bi-shop',
+            url: product.indiamart_url,
+            color: '#2e3192'
+        },
+        {
+            name: 'JioMart',
+            icon: 'bi-bag-fill',
+            url: product.jiomart_url,
+            color: '#0f4a8a'
+        }
+    ];
+
+    // Create and append platform links
+    platforms.forEach(platform => {
+        if (platform.url) {
+            const link = document.createElement('a');
+            link.href = platform.url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
+            link.style.color = platform.color;
+            
+            link.innerHTML = `
+                <i class="bi ${platform.icon}"></i>
+                <span>${platform.name}</span>
+            `;
+            
+            ecommerceLinks.appendChild(link);
+        }
+    });
+
+    // Show the modal
+    const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+    productModal.show();
+}
+</script>
 </body>
 </html>
