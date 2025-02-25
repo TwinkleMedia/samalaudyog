@@ -4,86 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" teype="text/css"   href="hmainstyle.css">
-    <link rel="stylesheet" teype="text/css" href="new.css">
-    <link rel="stylesheet" teype="text/css" href="footer.css">
-    <link rel="stylesheet" teype="text/css" href="sliderc.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-
-    
-    <?php include './mainlink.php'  ?>
-
     <title>Samala Udyog </title>
     
-    <style>
-.testimonial-container {
-    padding: 60px 0;
-    background-color: #f8f9fa;
-}
 
-.testimonial-item {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 30px 20px;
-}
+    <!-- Css Link  -->
+    <?php include './mainlink.php'  ?>
 
-.testimonial-content {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 20px;
-    position: relative;
-    padding: 20px 40px;
-}
 
-.testimonial-content::before {
-    content: '"';
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 3rem;
-    color: #ccc;
-    font-family: serif;
-}
-
-.testimonial-content::after {
-    content: '"';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    font-size: 3rem;
-    color: #ccc;
-    font-family: serif;
-}
-
-.testimonial-author {
-    font-size: 1.1rem;
-    color: #666;
-    font-style: italic;
-    margin-top: 15px;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    color: #0d6efd;
-}
-
-.swiper-pagination-bullet-active {
-    background: #0d6efd;
-}
-
-/* Ensure proper spacing for navigation arrows */
-.testimonial-slider {
-    padding: 40px 80px;
-}
-
-@media (max-width: 768px) {
-    .testimonial-slider {
-        padding: 40px 30px;
-    }
-}
-</style>
 
     <!-- AOS CSS -->
     <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">-->
@@ -95,6 +22,9 @@
     
 
 
+   
+   <!-- -----------------About -section     -->
+   
     <section class="about-section mt-3">
         <div class="container">
             <div class="row">
@@ -379,7 +309,7 @@
     <?php include './footer.php'; ?>
 
   
-    <?php include './jslink.php' ?>
+    
     
     
   
@@ -390,31 +320,7 @@
     
 </body>
 
- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
-  <script>
-   document.addEventListener('DOMContentLoaded', function() {
-    const swiper = new Swiper('.testimonial-slider', {
-        slidesPerView: 1,  // Force single slide view
-        spaceBetween: 30,
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        // Disable any breakpoints to ensure only one slide shows
-        breakpoints: {}
-    });
-});
-  </script>
+<?php include './jslink.php' ?>   
 
 
 
@@ -423,13 +329,13 @@
 
 
     <!-- AOS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    <script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script> -->
+    <!-- <script>
         AOS.init({
             duration: 1500, 
             once: true 
         });
-    </script>
+    </script> -->
     <!-- JavaScript for Modal Functionality -->
 <script>
     function showProductModal(product) {
@@ -521,4 +427,8 @@
     productModal.show();
 }
 </script>
+
+
+
+
 </html>

@@ -62,3 +62,35 @@
             });
         });
     </script>
+
+
+
+
+
+<!--  -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+  const swiper = new Swiper('.testimonial-slider', {
+      slidesPerView: 1,  // Force single slide view
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+      },
+      navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+      },
+      autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+      },
+      // Disable any breakpoints to ensure only one slide shows
+      breakpoints: {}
+  });
+});
+</script>
