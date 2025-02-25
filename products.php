@@ -5,15 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product</title>
- <link rel="stylesheet" teype="text/css"   href="hmainstyle.css">
-    <link rel="stylesheet" teype="text/css" href="new.css">
-    <link rel="stylesheet" teype="text/css" href="footer.css">
-    <link rel="stylesheet" teype="text/css" href="sliderc.css">
-    <?php include './mainlink.php'  ?>
-   <link rel="stylesheet" href="product.css">
-  <?php include './mainlink.php'   ?>
-  <!-- AOS CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
