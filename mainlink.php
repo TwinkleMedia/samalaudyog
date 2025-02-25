@@ -26,5 +26,13 @@
     
     
     
-    
+    <!-- --------------css------- -->
     <link rel="stylesheet" teype="text/css" href="whatsappb.css">
+    <link rel="stylesheet" teype="text/css"   href="hmainstyle.css">
+    <link rel="stylesheet" teype="text/css" href="new.css">
+    <link rel="stylesheet" teype="text/css" href="footer.css">
+    <link rel="stylesheet" teype="text/css" href="sliderc.css">
+
+
+    <!-- ----Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
