@@ -176,7 +176,66 @@
 <!---------------------- video section end----------------------------- -->
 
 
-
+ <!-- Product Modal Structure -->
+ <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <h5 class="modal-title fs-4 fw-bold" id="productModalLabel">Product Details</h5>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body px-4 py-3">
+                <div class="row g-4">
+                    <!-- Product Images Gallery -->
+                    <div class="col-lg-6">
+                        <div class="product-gallery">
+                            <!-- Main Product Image Container -->
+                            <div class="position-relative mb-3 main-image-container">
+                                <img id="mainImage" src="" alt="Main Product Image" 
+                                     class="img-fluid rounded shadow-sm w-100 object-fit-cover" 
+                                     style="max-height: 400px;">
+                            </div>
+                            <!-- Thumbnails Gallery -->
+                            <div class="thumbnails-container">
+                                <div id="thumbnailGallery" 
+                                     class="d-flex gap-2 overflow-x-auto py-2 thumbnail-wrapper">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Information -->
+                    <div class="col-lg-6">
+                        <div class="product-details">
+                            <h3 class="product-title h4 mb-3 fw-bold" id="modalProductTitle"></h3>
+                            
+                            <div class="product-price mb-3 d-flex align-items-center">
+                                <span class="h5 text-muted text-decoration-line-through me-3" id="originalPrice"></span>
+                                <span class="h4 text-danger fw-bold" id="discountedPrice"></span>
+                            </div>
+                            
+                            <div class="product-category mb-3 d-flex align-items-center">
+                                <strong class="me-2">Category:</strong>
+                                <span id="productCategory" class="badge bg-secondary"></span>
+                            </div>
+                            
+                            <div class="product-description mb-4">
+                                <h6 class="fw-bold mb-2">Product Description:</h6>
+                                <p id="productDescription" class="text-muted"></p>
+                            </div>
+                            
+                            
+                            
+                            <div class="ecommerce-links">
+                                <h6 class="fw-bold mb-3">Buy from other platforms:</h6>
+                                <div class="d-flex flex-wrap gap-3" id="ecommerceLinks"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
