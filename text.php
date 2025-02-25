@@ -1,6 +1,6 @@
 <?php
-    // Include database configuration
-    include('./admin/dbconfig.php'); // Adjust path as needed
+  
+    include('./admin/dbconfig.php');
 
     // Initialize the $sliderImages array
     $sliderImages = [];
