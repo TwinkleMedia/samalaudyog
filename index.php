@@ -27,28 +27,41 @@
  <!----product display--->
 
  <?php
-// Include database configuration
-include('./admin/dbconfig.php');
+    // Include database configuration
+    include('./admin/dbconfig.php'); // Adjust path as needed
 
-$sliderImages = [];
+    // Initialize the $sliderImages array
+    $sliderImages = [];
 
-// Fetch images from the database
-$query = "SELECT image_path FROM slider_images";
-$result = $conn->query($query);
+    // Check if the connection was established
+    if (isset($conn)) {
+        // Fetch images from the database
+        $query = "SELECT image_path FROM slider_images"; // Adjust the query based on your table structure
+        $result = $conn->query($query);
 
-if ($result) {
-    while ($row = $result->fetch_assoc()) {
-        $sliderImages[] = $row;
+        if ($result) {
+            // Fetch all rows as associative array
+            $sliderImages = $result->fetch_all(MYSQLI_ASSOC);
+        } else {
+            echo "Error fetching slider images: " . $conn->error;
+        }
+
+        // Close the database connection
+        $conn->close();
+    } else {
+        echo "Database connection is not established.";
     }
-} else {
-    echo "Error fetching slider images: " . $conn->error;
-}
+    ?>
 
-// Close the database connection after use
-$conn->close();
-?>
 
-<!-- Carousel slider -->
+    <!----product display--->
+
+
+
+
+
+ 
+    <!-- Carousel slider -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner mt-5">
         <?php if (!empty($sliderImages)): ?>
@@ -56,7 +69,7 @@ $conn->close();
                 <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
                     <?php
                     // Adjust the path to reflect the correct relative directory
-                    $fullPath = './admin/' . trim($image['image_path']);
+                    $fullPath = '../admin/' . trim($image['image_path']);
                     ?>
                     <img src="<?php echo $fullPath; ?>" 
                          class="d-block w-100 img-fluid" 
@@ -75,54 +88,57 @@ $conn->close();
     </div>
 </div>
 
-<!-- About Section -->
-<section class="about-section mt-3">
-    <div class="container">
-        <div class="row">
-            <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2" data-aos="fade-left">
-                <div class="inner-column">
-                    <div class="sec-title">
-                        <span class="title">About </span>
-                        <h2>Nature-Driven Innovation for a Better, Safer World</h2>
-                    </div>
-                    <div class="text">
-                        Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative products made with natural chemicals and special clay minerals to customers who prioritize the environment and health.
-                    </div>
-                    <div class="text">
-                        With a focus on nature’s bounty, we provide natural ingredients for Home Care, Personal Care, and Industrial Care applications.
-                    </div>
-                    <div class="btn-box">
-                        <a href="./contact.php" class="theme-btn btn-style-one">Contact Us</a>
+
+    <section class="about-section mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2" data-aos="fade-left">
+                    <div class="inner-column">
+                        <div class="sec-title">
+                            <span class="title">About </span>
+                            <h2>Nature-Driven Innovation for a Better, Safer World</h2>
+                        </div>
+                        <div class="text">Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative products made with natural chemicals and special clay minerals to customers who prioritize the environment and health. The company was founded by a duo with a combined 40 years of experience in the chemical industry and a passion for creating sustainable and effective products.</div>
+                        <div class="text">
+                            With a focus on natures’ bounty, we are committed to providing our customers with the best of natural ingredients for Home care, Personal care, and Industrial care applications. Join us in our mission to create a healthier and more sustainable world, one natural product at a time.
+                        </div>
+                        <div class="btn-box">
+                            <a href="./contact.php" class="theme-btn btn-style-one">Contact Us</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Image Column -->
+                <div class="image-column col-lg-6 col-md-12 col-sm-12" data-aos="fade-right">
+                    <div class="inner-column wow fadeInLeft">
+                        <div class="author-desc">
+                            <h2></h2>
+                            <span>Founder</span>
+                        </div>
+                        <figure class="image-1"><a href="#" class="lightbox-image" data-fancybox="images"><img title="Rahul Kumar Yadav" src="https:./assest/Founder.png" alt=""></a></figure>
+
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Founder Image -->
-            <div class="image-column col-lg-6 col-md-12 col-sm-12" data-aos="fade-right">
-                <div class="inner-column wow fadeInLeft">
-                    <div class="author-desc">
-                        <h2></h2>
-                        <span>Founder</span>
-                    </div>
-                    <figure class="image-1">
-                        <a href="#" class="lightbox-image" data-fancybox="images">
-                            <img title="Rahul Kumar Yadav" src="./assest/Founder.png" alt="">
-                        </a>
-                    </figure>
-                </div>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
+ <!----product display--->
 
-<!-- Product Display Section -->
-<?php
+    <?php
+    // Include database configuration
 include('./admin/dbconfig.php');
 
+// Initialize arrays for categories
 $categories = ['Home Care', 'Personal Care', 'Hospital Care', 'Speciality Chemicals'];
+
+// Array to hold products by category
 $productsByCategory = [];
 
-function getProductImages($productId, $conn) {
+// Function to fetch images related to a product
+function getProductImages($productId, $conn)
+{
     $images = [];
     $query = "SELECT image_path FROM product_images WHERE product_id = ?";
     $stmt = $conn->prepare($query);
@@ -131,12 +147,13 @@ function getProductImages($productId, $conn) {
     $result = $stmt->get_result();
 
     while ($row = $result->fetch_assoc()) {
-        $images[] = "./admin/" . $row['image_path'];
+        $images[] = "../admin/" . $row['image_path']; // Add the base path
     }
 
     return $images;
 }
 
+// Check if the connection was established
 if (isset($conn)) {
     foreach ($categories as $category) {
         $query = "SELECT * FROM allproducts WHERE subject = ?";
@@ -147,6 +164,7 @@ if (isset($conn)) {
 
         $products = $result->fetch_all(MYSQLI_ASSOC);
 
+        // Fetch related images for each product
         foreach ($products as &$product) {
             $product['images'] = getProductImages($product['id'], $conn);
         }
@@ -154,12 +172,16 @@ if (isset($conn)) {
         $productsByCategory[$category] = $products;
     }
 
+    // Close the database connection
     $conn->close();
 } else {
     echo "Database connection is not established.";
 }
 
-function renderProductSection($category, $products) {
+    // Function to render product section
+    // Function to render product section
+function renderProductSection($category, $products)
+{
     ?>
     <section>
         <div class="container">
@@ -171,13 +193,14 @@ function renderProductSection($category, $products) {
                     <?php foreach ($products as $product): ?>
                         <div class="me-3">
                             <div class="box-img mb-3">
+                                <!-- Display the first image if available -->
                                 <?php if (!empty($product['images'])): ?>
                                     <img src="<?php echo htmlspecialchars($product['images'][0]); ?>"
                                         alt="<?php echo htmlspecialchars($product['title'] ?? ''); ?>"
                                         class="img-fluid"
                                         style="border-radius: 10px;">
                                 <?php else: ?>
-                                    <img src="./admin/default-image.png"
+                                    <img src="../admin/default-image.png"
                                         alt="Default Image"
                                         class="img-fluid"
                                         style="border-radius: 10px;">
@@ -185,18 +208,13 @@ function renderProductSection($category, $products) {
                             </div>
                             <div class="box-heading">
                                 <h2><?php echo htmlspecialchars($product['title']); ?></h2>
-                                <p class="description">
-                                    <?php echo htmlspecialchars(substr($product['description'], 0, 100)) . '...'; ?>
-                                </p>
+                                <p class="description"><?php echo htmlspecialchars(substr($product['description'], 0, 100)) . '...'; ?></p>
                                 <h5 class="mb-3">
-                                    <s class="text-danger">₹<?php echo htmlspecialchars($product['final_price']); ?></s>
-                                    <span>₹<?php echo htmlspecialchars($product['discounted_price']); ?></span>
+                                    <s class="text-danger">Rs.<?php echo htmlspecialchars($product['final_price']); ?></s>
+                                    <span>Rs.<?php echo htmlspecialchars($product['discounted_price']); ?></span>
                                 </h5>
-                                <button 
-                                    onclick='showProductModal(<?php echo json_encode($product, JSON_HEX_APOS | JSON_HEX_QUOT); ?>)' 
-                                    class="btn bg-danger text-white w-100">
-                                    Buy
-                                </button>
+                                <button onclick="showProductModal(<?php echo htmlspecialchars(json_encode($product)); ?>)" class="btn bg-danger text-white w-100">Buy</button>
+
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -209,10 +227,13 @@ function renderProductSection($category, $products) {
     <?php
 }
 
+// Render product sections
+$categories = array_keys($productsByCategory);
 foreach ($categories as $category) {
     renderProductSection($category, $productsByCategory[$category]);
 }
-?>
+    ?>
+
 
 
     <!-- Product Modal Structure -->
