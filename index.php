@@ -90,7 +90,7 @@
  <!----product display--->
  <?php
     // Include database configuration
-    include '../admin/dbconfig.php';
+    include './admin/dbconfig.php';
 
     if (!$conn) {
         die("Database connection failed: " . mysqli_connect_error());
