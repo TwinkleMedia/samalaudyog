@@ -113,12 +113,12 @@ $conn->close();
 
 
     <?php
-    // Include database configuration
-    include './admin/dbconfig.php';
+// Include database configuration
+include './admin/dbconfig.php';
 
-    if (!$conn) {
-        die("Database connection failed: " . mysqli_connect_error());
-    }
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
 
 // Initialize arrays for categories
 $categories = ['Home Care', 'Personal Care', 'Hospital Care', 'Speciality Chemicals'];
@@ -132,34 +132,55 @@ function getProductImages($productId, $conn)
     $images = [];
     $query = "SELECT image_path FROM product_images WHERE product_id = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bind_param('i', $productId);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    while ($row = $result->fetch_assoc()) {
-        $images[] = "./admin/" . $row['image_path']; // Add the base path
+    
+    if (!$stmt) {
+        return $images; // Return empty if the statement fails
     }
 
+    $stmt->bind_param('i', $productId);
+    $stmt->execute();
+    $stmt->store_result();
+    $stmt->bind_result($image_path);
+
+    while ($stmt->fetch()) {
+        $images[] = "./admin/" . $image_path; // Add the base path
+    }
+
+    $stmt->close();
     return $images;
 }
 
 // Check if the connection was established
 if (isset($conn)) {
     foreach ($categories as $category) {
-        $query = "SELECT * FROM allproducts WHERE subject = ?";
+        $query = "SELECT id, title, description, final_price, discounted_price FROM allproducts WHERE subject = ?";
         $stmt = $conn->prepare($query);
+        
+        if (!$stmt) {
+            continue; // Skip this category if statement fails
+        }
+
         $stmt->bind_param('s', $category);
         $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt->store_result();
 
-        $products = $result->fetch_all(MYSQLI_ASSOC);
+        $products = [];
+        $stmt->bind_result($id, $title, $description, $final_price, $discounted_price);
 
-        // Fetch related images for each product
-        foreach ($products as &$product) {
-            $product['images'] = getProductImages($product['id'], $conn);
+        // Fetch data
+        while ($stmt->fetch()) {
+            $products[] = [
+                'id' => $id,
+                'title' => $title,
+                'description' => $description,
+                'final_price' => $final_price,
+                'discounted_price' => $discounted_price,
+                'images' => getProductImages($id, $conn), // Fetch product images
+            ];
         }
 
         $productsByCategory[$category] = $products;
+        $stmt->close();
     }
 
     // Close the database connection
@@ -168,8 +189,7 @@ if (isset($conn)) {
     echo "Database connection is not established.";
 }
 
-    // Function to render product section
-    // Function to render product section
+// Function to render product section
 function renderProductSection($category, $products)
 {
     ?>
@@ -204,7 +224,6 @@ function renderProductSection($category, $products)
                                     <span>Rs.<?php echo htmlspecialchars($product['discounted_price']); ?></span>
                                 </h5>
                                 <button onclick="showProductModal(<?php echo htmlspecialchars(json_encode($product)); ?>)" class="btn bg-danger text-white w-100">Buy</button>
-
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -218,11 +237,11 @@ function renderProductSection($category, $products)
 }
 
 // Render product sections
-$categories = array_keys($productsByCategory);
-foreach ($categories as $category) {
-    renderProductSection($category, $productsByCategory[$category]);
+foreach ($productsByCategory as $category => $products) {
+    renderProductSection($category, $products);
 }
-    ?>
+?>
+
 
 
 
