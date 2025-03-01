@@ -22,30 +22,66 @@
     
 <!-- ---------------Carosusal -->
   <!-- Carousel slider -->
+  <?php
+  
+  include('./admin/dbconfig.php');
+
+  // Initialize the $sliderImages array
+  $sliderImages = [];
+
+  // Check if the connection was established
+  if (isset($conn)) {
+      // Fetch images from the database
+      $query = "SELECT image_path FROM slider_images"; // Adjust the query based on your table structure
+      $result = $conn->query($query);
+
+      if ($result) {
+          // Fetch all rows as associative array
+          $sliderImages = $result->fetch_all(MYSQLI_ASSOC);
+      } else {
+          echo "Error fetching slider images: " . $conn->error;
+      }
+
+      // Close the database connection
+      $conn->close();
+  } else {
+      echo "Database connection is not established.";
+  }
+  ?>
+
+
+  <!----product display--->
+
+
+
+
+
+
+  <!-- Carousel slider -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner mt-5">
-        <?php if (!empty($sliderImages)): ?>
-            <?php foreach ($sliderImages as $index => $image): ?>
-                <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                    <?php
-                    // Adjust the path to reflect the correct relative directory
-                    $fullPath = '../admin/' . trim($image['image_path']);
-                    ?>
-                    <img src="<?php echo $fullPath; ?>" 
-                         class="d-block w-100 img-fluid" 
-                         alt="Slider Image" 
-                         style="object-fit: cover; max-height: 400px;">
-                </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <div class="carousel-item active">
-                <img src="path/to/default/image.jpg" 
-                     class="d-block w-100 img-fluid" 
-                     alt="Default Image" 
-                     style="object-fit: cover; max-height: 400px;">
-            </div>
-        <?php endif; ?>
-    </div>
+  <div class="carousel-inner mt-5">
+      <?php if (!empty($sliderImages)): ?>
+          <?php foreach ($sliderImages as $index => $image): ?>
+              <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                  <?php
+                  // Adjust the path to reflect the correct relative directory
+                  $fullPath = '../admin/' . trim($image['image_path']);
+                  ?>
+                  <img src="<?php echo $fullPath; ?>" 
+                       class="d-block w-100 img-fluid" 
+                       alt="Slider Image" 
+                       style="object-fit: cover; max-height: 400px;">
+              </div>
+          <?php endforeach; ?>
+      <?php else: ?>
+          <div class="carousel-item active">
+              <img src="path/to/default/image.jpg" 
+                   class="d-block w-100 img-fluid" 
+                   alt="Default Image" 
+                   style="object-fit: cover; max-height: 400px;">
+          </div>
+      <?php endif; ?>
+  </div>
 </div>
 
    

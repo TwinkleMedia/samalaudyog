@@ -70,7 +70,7 @@ $conn->close();
             <div class="product-cards">
                 <?php foreach ($products as $product): ?>
                     <div class="product-card" data-aos="flip-left">
-                        <img src="../admin/<?php echo htmlspecialchars($product['first_image']); ?>" 
+                        <img src="./admin/<?php echo htmlspecialchars($product['first_image']); ?>" 
                              alt="<?php echo htmlspecialchars($product['title']); ?>">
                         <h3><?php echo htmlspecialchars($product['title']); ?></h3>
                         <p><?php echo htmlspecialchars($product['description']); ?></p>
