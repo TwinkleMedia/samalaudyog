@@ -45,7 +45,11 @@ $conn->close();
       <?php if (!empty($sliderImages)): ?>
           <?php foreach ($sliderImages as $index => $image): ?>
               <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                  <img src="<?php echo htmlspecialchars(trim($image['image_path'])); ?>" 
+              <?php
+                  // Adjust the path to reflect the correct relative directory
+                  $fullPath = '../admin/' . trim($image['image_path']);
+                  ?>
+                  <img src="<?php echo $fullPath; ?>" 
                        class="d-block w-100 img-fluid" 
                        alt="Slider Image" 
                        loading="lazy"
