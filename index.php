@@ -50,7 +50,7 @@ $conn->close();
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner mt-5">
       <?php if (!empty($sliderImages)): ?>
-          <?php foreach ($sliderImages as $index => $image): ?>
+          <?php foreach ($sliderImages as $index => $image_path): ?>
               <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
                   <?php
                   // Adjust the path to reflect the correct relative directory
