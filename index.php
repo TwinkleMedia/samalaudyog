@@ -54,7 +54,7 @@ $conn->close();
               <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
                   <?php
                   // Adjust the path to reflect the correct relative directory
-                  $fullPath = './admin/' . trim($image['image_path']);
+                  $fullPath = './admin/' . trim($image_path['image_path']);
                   ?>
                   <img src="<?php echo $fullPath; ?>" 
                        class="d-block w-100 img-fluid" 
