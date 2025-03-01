@@ -11,7 +11,6 @@
 </head>
 <body>
 
-
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -30,7 +29,7 @@ if (!$result) {
     die("SQL Error: " . $conn->error);
 }
 
-// Store images in an array
+// Fix: Use fetch_assoc() instead of fetch_all()
 $sliderImages = [];
 while ($row = $result->fetch_assoc()) {
     $sliderImages[] = $row;
@@ -39,19 +38,27 @@ while ($row = $result->fetch_assoc()) {
 $conn->close();
 ?>
 
-<!-- Carousel -->
+
+  <!----product display--->
+
+
+
+
+
+
+  <!-- Carousel slider -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner mt-5">
       <?php if (!empty($sliderImages)): ?>
           <?php foreach ($sliderImages as $index => $image): ?>
-              <?php 
-              $imagePath = "./admin" . htmlspecialchars(trim($image['image_path'])); 
-              ?>
               <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                  <img src="<?php echo $imagePath; ?>" 
+                  <?php
+                  // Adjust the path to reflect the correct relative directory
+                  $fullPath = '../admin/' . trim($image['image_path']);
+                  ?>
+                  <img src="<?php echo $fullPath; ?>" 
                        class="d-block w-100 img-fluid" 
                        alt="Slider Image" 
-                       loading="lazy"
                        style="object-fit: cover; max-height: 400px;">
               </div>
           <?php endforeach; ?>
@@ -60,7 +67,6 @@ $conn->close();
               <img src="path/to/default/image.jpg" 
                    class="d-block w-100 img-fluid" 
                    alt="Default Image" 
-                   loading="lazy"
                    style="object-fit: cover; max-height: 400px;">
           </div>
       <?php endif; ?>
