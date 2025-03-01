@@ -10,7 +10,7 @@
      <?php include './mainlink.php'  ?>
 </head>
 <body>
-<?php include './header.php';?>
+
 
 <!-- Slider -->
 <?php
