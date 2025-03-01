@@ -12,7 +12,6 @@
 <body>
 
 
-<!-- Slider -->
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -31,8 +30,12 @@ if (!$result) {
     die("SQL Error: " . $conn->error);
 }
 
-// Store images
-$sliderImages = $result->fetch_all(MYSQLI_ASSOC);
+// Fix: Use fetch_assoc() instead of fetch_all()
+$sliderImages = [];
+while ($row = $result->fetch_assoc()) {
+    $sliderImages[] = $row;
+}
+
 $conn->close();
 ?>
 
@@ -41,14 +44,8 @@ $conn->close();
   <div class="carousel-inner mt-5">
       <?php if (!empty($sliderImages)): ?>
           <?php foreach ($sliderImages as $index => $image): ?>
-              <?php 
-              $imagePath = trim($image['image_path']);
-              if (!file_exists($imagePath)) {
-                  die("Image not found: " . $imagePath);
-              }
-              ?>
               <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                  <img src="<?php echo htmlspecialchars($imagePath); ?>" 
+                  <img src="<?php echo htmlspecialchars(trim($image['image_path'])); ?>" 
                        class="d-block w-100 img-fluid" 
                        alt="Slider Image" 
                        loading="lazy"
@@ -66,6 +63,7 @@ $conn->close();
       <?php endif; ?>
   </div>
 </div>
+
 
 
 
