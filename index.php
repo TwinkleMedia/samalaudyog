@@ -49,12 +49,12 @@ $conn->close();
   <!-- Carousel slider -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner mt-5">
-      <?php if (!empty($sliderImages)): ?>
-          <?php foreach ($sliderImages as $index => $image_path): ?>
+  <?php if (!empty($sliderImages)): ?>
+          <?php foreach ($sliderImages as $index => $image): ?>
               <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
                   <?php
-                  // Adjust the path to reflect the correct relative directory
-                  $fullPath = './admin/' . trim($image_path);
+                  // Ensure correct path to the image
+                  $fullPath = './admin/' . trim($image['image_path']);
                   ?>
                   <img src="<?php echo $fullPath; ?>" 
                        class="d-block w-100 img-fluid" 
