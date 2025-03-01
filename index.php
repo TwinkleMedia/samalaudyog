@@ -30,7 +30,7 @@ if (!$result) {
     die("SQL Error: " . $conn->error);
 }
 
-// Fix: Use fetch_assoc() instead of fetch_all()
+// Store images in an array
 $sliderImages = [];
 while ($row = $result->fetch_assoc()) {
     $sliderImages[] = $row;
@@ -44,12 +44,11 @@ $conn->close();
   <div class="carousel-inner mt-5">
       <?php if (!empty($sliderImages)): ?>
           <?php foreach ($sliderImages as $index => $image): ?>
+              <?php 
+              $imagePath = "./admin" . htmlspecialchars(trim($image['image_path'])); 
+              ?>
               <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-              <?php
-                  // Adjust the path to reflect the correct relative directory
-                  $fullPath = './admin/' . trim($image['image_path']);
-                  ?>
-                  <img src="<?php echo $fullPath; ?>" 
+                  <img src="<?php echo $imagePath; ?>" 
                        class="d-block w-100 img-fluid" 
                        alt="Slider Image" 
                        loading="lazy"
