@@ -14,41 +14,38 @@
 
 <!-- Slider -->
 <?php
-include('./dbconfig.php'); // Include database configuration
-
-// Enable error reporting (for debugging only, remove in production)
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
-// Initialize slider images array
-$sliderImages = [];
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+include('./admin/dbconfig.php');
 
 // Check database connection
-if (!isset($conn)) {
-    die("Database connection failed.");
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
 }
 
-// Fetch images from the database
-$query = "SELECT image_path FROM slider_images"; 
+// Fetch images
+$query = "SELECT image_path FROM slider_images";
 $result = $conn->query($query);
 
-if ($result) {
-    $sliderImages = $result->fetch_all(MYSQLI_ASSOC);
-} else {
-    echo "Error fetching images: " . $conn->error;
+if (!$result) {
+    die("SQL Error: " . $conn->error);
 }
 
-// Close the database connection
+// Store images
+$sliderImages = $result->fetch_all(MYSQLI_ASSOC);
 $conn->close();
 ?>
 
-<!-- Bootstrap Carousel -->
+<!-- Carousel -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner mt-5">
       <?php if (!empty($sliderImages)): ?>
           <?php foreach ($sliderImages as $index => $image): ?>
               <?php 
-              // Ensure correct image path
-              $imagePath = trim($image['image_path']); 
+              $imagePath = trim($image['image_path']);
+              if (!file_exists($imagePath)) {
+                  die("Image not found: " . $imagePath);
+              }
               ?>
               <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
                   <img src="<?php echo htmlspecialchars($imagePath); ?>" 
@@ -68,14 +65,6 @@ $conn->close();
           </div>
       <?php endif; ?>
   </div>
-
-  <!-- Optional Controls -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  </button>
 </div>
 
 
