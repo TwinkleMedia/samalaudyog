@@ -14,7 +14,7 @@
 
 <!-- Slider -->
 <?php
-include('./admin/dbconfig.php'); // Include database configuration
+include('./dbconfig.php'); // Include database configuration
 
 // Enable error reporting (for debugging only, remove in production)
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
