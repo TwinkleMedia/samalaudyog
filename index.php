@@ -13,33 +13,70 @@
 <?php include './header.php';?>
 
 <!-- Slider -->
-<?php    
-include('./dbconfig.php'); // Include your database configuration
-
-$query = "SELECT image_path FROM images"; // Fetch images from database
-$result = mysqli_query($conn, $query);
-
-if (mysqli_num_rows($result) > 0) {
-?>
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <?php
-    $first = true; // To mark the first item as active
-    while ($row = mysqli_fetch_assoc($result)) {
-        $activeClass = $first ? 'active' : '';
-        echo '<div class="carousel-item ' . $activeClass . '">';
-        echo '<img src="' . $row['image_path'] . '" class="d-block w-100" alt="...">';
-        echo '</div>';
-        $first = false; // Mark first item processed
-    }
-    ?>
-  </div>
-</div>
 <?php
-} else {
-    echo "<p>No images found</p>";
+include('./admin/dbconfig.php'); // Include database configuration
+
+// Enable error reporting (for debugging only, remove in production)
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+// Initialize slider images array
+$sliderImages = [];
+
+// Check database connection
+if (!isset($conn)) {
+    die("Database connection failed.");
 }
+
+// Fetch images from the database
+$query = "SELECT image_path FROM slider_images"; 
+$result = $conn->query($query);
+
+if ($result) {
+    $sliderImages = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+    echo "Error fetching images: " . $conn->error;
+}
+
+// Close the database connection
+$conn->close();
 ?>
+
+<!-- Bootstrap Carousel -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner mt-5">
+      <?php if (!empty($sliderImages)): ?>
+          <?php foreach ($sliderImages as $index => $image): ?>
+              <?php 
+              // Ensure correct image path
+              $imagePath = trim($image['image_path']); 
+              ?>
+              <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                  <img src="<?php echo htmlspecialchars($imagePath); ?>" 
+                       class="d-block w-100 img-fluid" 
+                       alt="Slider Image" 
+                       loading="lazy"
+                       style="object-fit: cover; max-height: 400px;">
+              </div>
+          <?php endforeach; ?>
+      <?php else: ?>
+          <div class="carousel-item active">
+              <img src="path/to/default/image.jpg" 
+                   class="d-block w-100 img-fluid" 
+                   alt="Default Image" 
+                   loading="lazy"
+                   style="object-fit: cover; max-height: 400px;">
+          </div>
+      <?php endif; ?>
+  </div>
+
+  <!-- Optional Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
 
 
 
