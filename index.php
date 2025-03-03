@@ -59,7 +59,7 @@ $conn->close();
                   <img src="<?php echo $fullPath; ?>" 
                        class="d-block w-100 img-fluid" 
                        alt="Slider Image" 
-                       style="object-fit: cover; max-height: 400px;">
+                       style="object-fit: cover; max-height: 400px;" loading="lazy">
               </div>
           <?php endforeach; ?>
       <?php else: ?>
@@ -67,7 +67,7 @@ $conn->close();
               <img src="path/to/default/image.jpg" 
                    class="d-block w-100 img-fluid" 
                    alt="Default Image" 
-                   style="object-fit: cover; max-height: 400px;">
+                   style="object-fit: cover; max-height: 400px;" loading="lazy">
           </div>
       <?php endif; ?>
   </div>
@@ -101,7 +101,7 @@ $conn->close();
                             <h2></h2>
                             <span>Founder</span>
                         </div>
-                        <figure class="image-1"><a href="#" class="lightbox-image" data-fancybox="images"><img title="Rahul Kumar Yadav" src="./assest/Founder.png" alt=""></a></figure>
+                        <figure class="image-1"><a href="#" class="lightbox-image" data-fancybox="images"><img title="Rahul Kumar Yadav" src="./assest/Founder.png" alt="" loading="lazy"></a></figure>
 
                     </div>
                 </div>
@@ -208,7 +208,7 @@ function renderProductSection($category, $products)
                                     <img src="<?php echo htmlspecialchars($product['images'][0]); ?>"
                                         alt="<?php echo htmlspecialchars($product['title'] ?? ''); ?>"
                                         class="img-fluid"
-                                        style="border-radius: 10px;">
+                                        style="border-radius: 10px;" loading="lazy">
                                 <?php else: ?>
                                     <img src="./admin/default-image.png"
                                         alt="Default Image"
