@@ -101,7 +101,7 @@ $conn->close();
                             <h2></h2>
                             <span>Founder</span>
                         </div>
-                        <figure class="image-1"><a href="#" class="lightbox-image" data-fancybox="images"><img title="Rahul Kumar Yadav" src="./assest/Founder.png" alt="" loading="lazy"></a></figure>
+                        <figure class="image-1"><a href="#" class="lightbox-image" data-fancybox="images"><img title="Murli Samala" src="./assest/Founder.png" alt="" loading="lazy"></a></figure>
 
                     </div>
                 </div>
