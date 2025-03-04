@@ -273,7 +273,7 @@ foreach ($productsByCategory as $category => $products) {
         <div class="swiper-slide">
           <div class="video-container">
             <video class="video-embed" controls playsinline muted>
-              <source src="./assest/SAMALA_03.mp4" type="video/mp4">
+              <source src="./assest/video3.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
