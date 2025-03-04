@@ -73,6 +73,13 @@ $conn->close();
   </div>
 </div>
 
+
+<section class="about-banner">
+    <div class="banner-content">
+      <!-- <h1>Products</h1> -->
+    </div>
+  </section>
+
  <!-- -----------------About -section     -->
    
  <section class="about-section mt-3">
