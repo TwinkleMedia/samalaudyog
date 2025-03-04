@@ -71,7 +71,7 @@ $conn->close();
                 <?php foreach ($products as $product): ?>
                     <div class="product-card" data-aos="flip-left">
                         <img src="./admin/<?php echo htmlspecialchars($product['first_image']); ?>" 
-                             alt="<?php echo htmlspecialchars($product['title']); ?>">
+                             alt="<?php echo htmlspecialchars($product['title']); ?>" loading="lazy">
                         <h3><?php echo htmlspecialchars($product['title']); ?></h3>
                         <p><?php echo htmlspecialchars($product['description']); ?></p>
                         <div class="price">&#8377; <?php echo htmlspecialchars($product['final_price']); ?></div>
