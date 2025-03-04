@@ -220,7 +220,7 @@ function renderProductSection($category, $products)
                                 <h2><?php echo htmlspecialchars($product['title']); ?></h2>
                                 <p class="description"><?php echo htmlspecialchars(substr($product['description'], 0, 100)) . '...'; ?></p>
                                 <h5 class="mb-3">
-                                    <s class="text-danger">Rs.<?php echo htmlspecialchars($product['final_price']); ?></s>
+                                     <s class="text-danger">Rs.<?php echo htmlspecialchars($product['final_price']); ?></s>
                                     <span>Rs.<?php echo htmlspecialchars($product['discounted_price']); ?></span>
                                 </h5>
                                 <button onclick="showProductModal(<?php echo htmlspecialchars(json_encode($product)); ?>)" class="btn bg-danger text-white w-100">Buy</button>
@@ -246,79 +246,67 @@ foreach ($productsByCategory as $category => $products) {
 
 <!-- --------video------------------ -->
 <section id="video-section" class="my-5">
-      <div class="container">
-        <div class="row">
-          <!-- Video 1 -->
-          <div class="col-12 col-md-6 col-lg-4 py-3">
-            <div class="video-container">
-              <video class="video-embed" controls playsinline muted>
-                <source
-                  src="./assest/SAMALA_01.mp4"
-                  type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
+  <div class="container">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <!-- Video 1 -->
+        <div class="swiper-slide">
+          <div class="video-container">
+            <video class="video-embed" controls playsinline muted>
+              <source src="./assest/SAMALA_01.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
-
-          <!-- Video 2 -->
-          <div class="col-12 col-md-6 col-lg-4 py-3">
-            <div class="video-container">
-              <video class="video-embed" controls playsinline muted>
-                <source
-                  src="./assest/SAMALA_02.mp4"
-                  type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
+        </div>
+        
+        <!-- Video 2 -->
+        <div class="swiper-slide">
+          <div class="video-container">
+            <video class="video-embed" controls playsinline muted>
+              <source src="./assest/SAMALA_02.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
-
-          <!-- Video 3 -->
-          <div class="col-12 col-md-6 col-lg-4 py-3">
-            <div class="video-container">
-              <video class="video-embed" controls playsinline muted>
-                <source
-                  src="./assest/SAMALA_03.mp4"
-                  type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
+        </div>
+        
+        <!-- Video 3 -->
+        <div class="swiper-slide">
+          <div class="video-container">
+            <video class="video-embed" controls playsinline muted>
+              <source src="./assest/SAMALA_03.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
-          
-          <div class="col-12 col-md-6 col-lg-4 py-3">
-            <div class="video-container">
-              <video class="video-embed" controls playsinline muted>
-                <source
-                  src="./assest/SAMALA_04.mp4"
-                  type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
+        </div>
+        
+        <!-- Video 4 -->
+        <div class="swiper-slide">
+          <div class="video-container">
+            <video class="video-embed" controls playsinline muted>
+              <source src="./assest/SAMALA_04.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
-          
-          <div class="col-12 col-md-6 col-lg-4 py-3">
-            <div class="video-container">
-              <video class="video-embed" controls playsinline muted>
-                <source
-                  src="./assest/SAMALA_05.mp4"
-                  type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-          
-          <div class="col-12 col-md-6 col-lg-4 py-3">
-            <div class="video-container">
-              <video class="video-embed" controls playsinline muted>
-                <source
-                  src="./assest/SAMALA_06.mp4"
-                  type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
+        </div>
+        
+        <!-- Video 5 -->
+        <div class="swiper-slide">
+          <div class="video-container">
+            <video class="video-embed" controls playsinline muted>
+              <source src="./assest/SAMALA_05.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
-    </section>
+      
+      <!-- Swiper Controls -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
 
 
 
