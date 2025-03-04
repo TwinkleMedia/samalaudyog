@@ -767,7 +767,7 @@ transition: all 300ms ease;
 
 .video-container {
     position: relative;
-    padding-top: 30.25%; /* 16:9 Aspect Ratio */
+    padding-top: 15.25%; /* 16:9 Aspect Ratio */
     overflow: hidden;
   }
   .video-container video {
