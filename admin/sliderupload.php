@@ -3,16 +3,14 @@
 
 <head>
    <meta charset="UTF-8">
-   <title>uploadfile</title>
-   <?php
-   include './link_file.php';
-   ?>
+   <title>Upload File</title>
+   <?php include './link_file.php'; ?>
 </head>
 
 <body>
    <?php
    include './headerfix.php';
-   include './dbconfig.php'; // Include your database connection file
+   include './dbconfig.php'; // Ensure the database connection is included
 
    // Handle file upload logic
    if (isset($_POST['submit'])) {
@@ -61,11 +59,9 @@
       }
    }
 
-
-
    // Handle deletion logic
    if (isset($_GET['delete'])) {
-      $delete_id = $_GET['delete'];
+      $delete_id = intval($_GET['delete']); // Sanitize input
 
       // Fetch image path to delete the file from the directory
       $stmt = $conn->prepare("SELECT image_path FROM slider_images WHERE id = ?");
@@ -75,9 +71,11 @@
       $row = $result->fetch_assoc();
 
       if ($row) {
-         // Delete the file from the server
-         if (file_exists($row['image_path'])) {
-            unlink($row['image_path']);
+         $file_path = $row['image_path'];
+
+         // Check if the file exists and delete it
+         if (!empty($file_path) && file_exists($file_path)) {
+            unlink($file_path);
          }
 
          // Delete the record from the database
@@ -91,11 +89,13 @@
          } else {
             echo "<script>alert('Error: Could not delete the file from the database.');</script>";
          }
+      } else {
+         echo "<script>alert('Error: File record not found.');</script>";
       }
    }
    ?>
- 
- <div class="container mt-5">
+
+   <div class="container mt-5">
       <header class="d-flex justify-content-between align-items-center mb-4">
          <h1>Slider Upload File</h1>
          <div class="user-info">
@@ -110,7 +110,7 @@
                <div class="col-12 col-md-6">
                   <div class="mb-3">
                      <label class="form-label">Add Product Image</label>
-                     <input type="file" name="Pimage" class="form-control">
+                     <input type="file" name="Pimage" class="form-control" required>
                   </div>
                </div>
                <div class="col-12 col-md-6">
@@ -173,10 +173,12 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
    <script>
-      // Check if there is a query parameter "upload=success" and display an alert
+      // Check if there is a query parameter "upload=success" or "delete=success" and display an alert
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get('upload') === 'success') {
          alert('File has been uploaded successfully!');
+      } else if (urlParams.get('delete') === 'success') {
+         alert('File has been deleted successfully!');
       }
    </script>
 </body>
