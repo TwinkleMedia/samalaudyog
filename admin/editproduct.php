@@ -121,7 +121,11 @@ $images_stmt = $conn->prepare($images_query);
 $images_stmt->bind_param("i", $product_id);
 $images_stmt->execute();
 $images_result = $images_stmt->get_result();
-$current_images = $images_result->fetch_all(MYSQLI_ASSOC);
+$current_images = [];
+while ($row = $images_result->fetch_assoc()) {
+    $current_images[] = $row;
+}
+
 $images_stmt->close();
 ?>
 
