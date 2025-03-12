@@ -5,7 +5,10 @@ if (!$conn) {
 }
 
 // Get product ID
-$product_id = intval($_GET['id']);
+$product_id = intval($_GET['id'] ?? 0);
+if ($product_id <= 0) {
+    die("Invalid product ID");
+}
 
 // Fetch product details
 $query = "SELECT * FROM allproducts WHERE id = ?";
@@ -14,23 +17,23 @@ $stmt->bind_param("i", $product_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $product = $result->fetch_assoc();
+$stmt->close();
 
 if (!$product) {
-    echo "Product not found!";
-    exit;
+    die("Product not found!");
 }
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title = $_POST['title'] ?? '';
-    $subject = $_POST['subject'] ?? '';
-    $discounted_price = $_POST['discounted_price'] ?? 0;
-    $final_price = $_POST['final_price'] ?? 0;
-    $description = $_POST['description'] ?? '';
-    $flipkart_url = $_POST['flipkart_url'] ?? '';
-    $amazon_url = $_POST['amazon_url'] ?? '';
-    $indiamart_url = $_POST['indiamart_url'] ?? '';
-    $jiomart_url = $_POST['jiomart_url'] ?? '';
+    $title = trim($_POST['title'] ?? '');
+    $subject = trim($_POST['subject'] ?? '');
+    $discounted_price = floatval($_POST['discounted_price'] ?? 0);
+    $final_price = floatval($_POST['final_price'] ?? 0);
+    $description = trim($_POST['description'] ?? '');
+    $flipkart_url = trim($_POST['flipkart_url'] ?? '');
+    $amazon_url = trim($_POST['amazon_url'] ?? '');
+    $indiamart_url = trim($_POST['indiamart_url'] ?? '');
+    $jiomart_url = trim($_POST['jiomart_url'] ?? '');
 
     // Define the update query
     $update_query = "UPDATE allproducts 
@@ -39,35 +42,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                          indiamart_url = ?, jioMart_url = ?
                      WHERE id = ?";
     $update_stmt = $conn->prepare($update_query);
-
-    // Bind parameters to the query
+    
     $update_stmt->bind_param(
         "ssddsssssi", 
-        $title,
-        $subject,
-        $discounted_price,
-        $final_price,
-        $description,
-        $flipkart_url,
-        $amazon_url,
-        $indiamart_url,
-        $jiomart_url,
-        $product_id
+        $title, $subject, $discounted_price, $final_price, 
+        $description, $flipkart_url, $amazon_url, $indiamart_url, 
+        $jiomart_url, $product_id
     );
-
-    // Execute the query
+    
     if ($update_stmt->execute()) {
-        echo "<script>alert('Product updated successfully!');</script>";
-        echo "<script>window.location.href = 'uploadfile.php';</script>";
+        echo "<script>alert('Product updated successfully!'); window.location.href = 'uploadfile.php';</script>";
     } else {
         echo "<script>alert('Error updating product: {$update_stmt->error}');</script>";
     }
     $update_stmt->close();
 }
+
+// Handle image updates
 if (isset($_POST['update_images'])) {
-    $upload_path = './allproductsimages/'; // Make sure this directory exists and is writable
-    
-    // Get all current images for the product
+    $upload_path = './allproductsimages/'; // Ensure this directory exists and is writable
+    $image_fields = ['front_image', 'back_image', 'details_image', 'extra_image'];
+
+    // Fetch current images
     $query = "SELECT id, image_path FROM product_images WHERE product_id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $product_id);
@@ -76,56 +72,37 @@ if (isset($_POST['update_images'])) {
     $current_images = $result->fetch_all(MYSQLI_ASSOC);
     $stmt->close();
     
-    // Process each uploaded image
-    $image_fields = ['front_image', 'back_image', 'details_image', 'extra_image'];
-    
     foreach ($image_fields as $index => $field) {
         if (!empty($_FILES[$field]['name'])) {
-            // Delete old image if it exists
-            if (isset($current_images[$index]) && file_exists($current_images[$index]['image_path'])) {
-                unlink($current_images[$index]['image_path']);
-            }
-            
-            // Process new image upload
             $file_extension = pathinfo($_FILES[$field]['name'], PATHINFO_EXTENSION);
             $new_filename = uniqid() . '_' . $field . '.' . $file_extension;
             $upload_destination = $upload_path . $new_filename;
-            
+
             if (move_uploaded_file($_FILES[$field]['tmp_name'], $upload_destination)) {
                 if (isset($current_images[$index])) {
-                    // Update existing record
+                    unlink($current_images[$index]['image_path']); // Delete old image
                     $update_query = "UPDATE product_images SET image_path = ? WHERE id = ?";
                     $update_stmt = $conn->prepare($update_query);
                     $update_stmt->bind_param("si", $upload_destination, $current_images[$index]['id']);
-                    $update_stmt->execute();
-                    $update_stmt->close();
                 } else {
-                    // Insert new record
                     $insert_query = "INSERT INTO product_images (product_id, image_path) VALUES (?, ?)";
-                    $insert_stmt = $conn->prepare($insert_query);
-                    $insert_stmt->bind_param("is", $product_id, $upload_destination);
-                    $insert_stmt->execute();
-                    $insert_stmt->close();
+                    $update_stmt = $conn->prepare($insert_query);
+                    $update_stmt->bind_param("is", $product_id, $upload_destination);
                 }
+                $update_stmt->execute();
+                $update_stmt->close();
             }
         }
     }
-    
-    echo "<script>alert('Images updated successfully!');</script>";
-    echo "<script>window.location.href = 'uploadfile.php';</script>";
+    echo "<script>alert('Images updated successfully!'); window.location.href = 'uploadfile.php';</script>";
 }
 
-// Fetch current images for the product
+// Fetch updated images
 $images_query = "SELECT id, image_path FROM product_images WHERE product_id = ? ORDER BY id ASC";
 $images_stmt = $conn->prepare($images_query);
 $images_stmt->bind_param("i", $product_id);
 $images_stmt->execute();
-$images_result = $images_stmt->get_result();
-$current_images = [];
-while ($row = $images_result->fetch_assoc()) {
-    $current_images[] = $row;
-}
-
+$current_images = $images_stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 $images_stmt->close();
 ?>
 
