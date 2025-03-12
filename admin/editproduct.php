@@ -1,5 +1,8 @@
 <?php
 include './dbconfig.php';
+if (!$conn) {
+    die("Database connection failed: " . mysqli_connect_error());
+}
 
 // Get product ID
 $product_id = intval($_GET['id']);
