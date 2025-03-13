@@ -170,10 +170,10 @@ nav .icon-burger .line {
 }
 
 .carousel-item img {
-    width: 100%;
-    height: auto;
-    max-height: 80vh; /* Prevents overflow on small screens */
-    object-fit: cover;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 80vh !important; /* Prevents overflow on small screens */
+    object-fit: cover !important;
 }
 
 /* testimonial  */
