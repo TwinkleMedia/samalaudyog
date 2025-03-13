@@ -39,13 +39,6 @@ $conn->close();
 ?>
 
 
-  <!----product display--->
-
-
-
-
-
-
   <!-- Carousel slider -->
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <!-- Carousel Indicators -->
