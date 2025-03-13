@@ -131,7 +131,7 @@ if (!$conn) {
 }
 
 // Initialize arrays for categories
-$categories = ['Home Care', 'Personal Care', 'Hospital Care', 'Speciality Chemicals'];
+$categories = ['Home Care', 'Personal Care', 'Hospital Care',];
 
 // Array to hold products by category
 $productsByCategory = [];
