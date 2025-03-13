@@ -47,31 +47,45 @@ $conn->close();
 
 
   <!-- Carousel slider -->
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-  <?php if (!empty($sliderImages)): ?>
-          <?php foreach ($sliderImages as $index => $image): ?>
-              <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
-                  <?php
-                  // Ensure correct path to the image
-                  $fullPath = './admin/' . trim($image['image_path']);
-                  ?>
-                  <img src="<?php echo $fullPath; ?>" 
-                       class="d-block img-fluid" 
-                       alt="Slider Image" 
-                        loading="lazy">
-              </div>
-          <?php endforeach; ?>
-      <?php else: ?>
-          <div class="carousel-item active">
-              <img src="path/to/default/image.jpg" 
-                   class="d-block w-100 img-fluid" 
-                   alt="Default Image" 
-                    loading="lazy">
-          </div>
-      <?php endif; ?>
-  </div>
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <!-- Carousel Indicators -->
+    <div class="carousel-indicators">
+        <?php foreach ($sliderImages as $index => $image): ?>
+            <button type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide-to="<?php echo $index; ?>"
+                class="<?php echo $index === 0 ? 'active' : ''; ?>" aria-current="<?php echo $index === 0 ? 'true' : 'false'; ?>"
+                aria-label="Slide <?php echo $index + 1; ?>"></button>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="carousel-inner">
+        <?php if (!empty($sliderImages)): ?>
+            <?php foreach ($sliderImages as $index => $image): ?>
+                <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+                    <?php
+                    // Ensure correct path to the image
+                    $fullPath = './admin/' . trim($image['image_path']);
+                    ?>
+                    <img src="<?php echo $fullPath; ?>" class="d-block w-100 img-fluid" alt="Slider Image" loading="lazy">
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="carousel-item active">
+                <img src="path/to/default/image.jpg" class="d-block w-100 img-fluid" alt="Default Image" loading="lazy">
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 </div>
+
 
 
 
