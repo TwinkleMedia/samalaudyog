@@ -57,7 +57,7 @@ $conn->close();
                   $fullPath = './admin/' . trim($image['image_path']);
                   ?>
                   <img src="<?php echo $fullPath; ?>" 
-                       class="d-block  img-fluid" 
+                       class="d-block img-fluid" 
                        alt="Slider Image" 
                         loading="lazy">
               </div>
@@ -67,22 +67,18 @@ $conn->close();
               <img src="path/to/default/image.jpg" 
                    class="d-block w-100 img-fluid" 
                    alt="Default Image" 
-                   style="object-fit: cover; max-height: 400px;" loading="lazy">
+                    loading="lazy">
           </div>
       <?php endif; ?>
   </div>
 </div>
 
 
-<section class="about-banner">
-    <div class="banner-content">
-      <!-- <h1>Products</h1> -->
-    </div>
-  </section>
+
 
  <!-- -----------------About -section     -->
    
- <section class="about-section mt-3">
+ <section class="about-section">
         <div class="container">
             <div class="row">
                 <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2" data-aos="fade-left">
