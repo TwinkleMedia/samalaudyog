@@ -1,5 +1,7 @@
   /* --------Carosusel Slider */
-  
+  .carousel-inner{
+    margin-top: 5rem !important;
+  }
 
 .carousel-inner img {
     object-fit: cover !important;

@@ -48,7 +48,7 @@ $conn->close();
 
   <!-- Carousel slider -->
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner mt-5">
+  <div class="carousel-inner">
   <?php if (!empty($sliderImages)): ?>
           <?php foreach ($sliderImages as $index => $image): ?>
               <div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
@@ -78,7 +78,7 @@ $conn->close();
 
  <!-- -----------------About -section     -->
    
- <section class="about-section">
+ <section class="about-section mt-3">
         <div class="container">
             <div class="row">
                 <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2" data-aos="fade-left">
