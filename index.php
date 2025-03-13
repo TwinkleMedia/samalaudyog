@@ -57,9 +57,9 @@ $conn->close();
                   $fullPath = './admin/' . trim($image['image_path']);
                   ?>
                   <img src="<?php echo $fullPath; ?>" 
-                       class="d-block w-100 img-fluid" 
+                       class="d-block  img-fluid" 
                        alt="Slider Image" 
-                       style="object-fit: cover; max-height: 400px;" loading="lazy">
+                        loading="lazy">
               </div>
           <?php endforeach; ?>
       <?php else: ?>
