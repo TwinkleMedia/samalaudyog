@@ -55,33 +55,36 @@ if (isset($_POST['submit'])) {
 
 // Handle delete request
 if (isset($_GET['delete'])) {
-    $delete_id = intval($_GET['delete']); // Sanitize input
+   $delete_id = intval($_GET['delete']); // Sanitize input
 
-    // Fetch image path
-    $stmt = $conn->prepare("SELECT image_path FROM slider_images WHERE id = ?");
-    $stmt->bind_param("i", $delete_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
+   // Fetch image path
+   $stmt = $conn->prepare("SELECT image_path FROM slider_images WHERE id = ?");
+   $stmt->bind_param("i", $delete_id);
+   $stmt->execute();
+   
+   // Use bind_result() instead of get_result()
+   $stmt->bind_result($imagePath);
+   $stmt->fetch();
+   $stmt->close();
 
-    if ($row) {
-        $imagePath = $row['image_path'];
+   if ($imagePath) {
+       // Delete file from server
+       if (!empty($imagePath) && file_exists($imagePath)) {
+           unlink($imagePath);
+       }
 
-        // Delete file from server
-        if (!empty($imagePath) && file_exists($imagePath)) {
-            unlink($imagePath);
-        }
-
-        // Delete from database
-        $stmt = $conn->prepare("DELETE FROM slider_images WHERE id = ?");
-        $stmt->bind_param("i", $delete_id);
-        if ($stmt->execute()) {
-            header("Location: sliderupload.php?delete=success");
-            exit();
-        } else {
-            echo "<script>alert('Error: Could not delete file from database.');</script>";
-        }
-    }
+       // Delete from database
+       $stmt = $conn->prepare("DELETE FROM slider_images WHERE id = ?");
+       $stmt->bind_param("i", $delete_id);
+       if ($stmt->execute()) {
+           header("Location: sliderupload.php?delete=success");
+           exit();
+       } else {
+           echo "<script>alert('Error: Could not delete file from database.');</script>";
+       }
+   } else {
+       echo "<script>alert('Error: Image not found.');</script>";
+   }
 }
 ?>
 
