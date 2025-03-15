@@ -1,6 +1,31 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
+<!-- ------------Header  -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const navToggle = document.getElementById("nav-toggle");
+    const navLinks = document.querySelector(".links");
+    
+    navToggle.addEventListener("change", function () {
+        if (this.checked) {
+            navLinks.style.display = "block";
+        } else {
+            navLinks.style.display = "none";
+        }
+    });
 
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!navLinks.contains(event.target) && !navToggle.contains(event.target)) {
+            navToggle.checked = false;
+            navLinks.style.display = "none";
+        }
+    });
+});
+
+
+
+</script>
 
 <!-- Slick Slider  -->
 
