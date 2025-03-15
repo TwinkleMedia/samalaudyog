@@ -258,7 +258,7 @@ foreach ($productsByCategory as $category => $products) {
     <div class="container">
         <h2>Specialty Ingredients, Chemicals & Minerals</h2>
         <p>Product Portfolio for Home & Personal Care, Pharma & Industrial Care</p>
-        <a href="assets/sample.pdf" class="btn-download" download>
+        <a href="./assest/SUPL portfolio Feb-2021 (2).pdf" class="btn-download" download>
             <i class="fas fa-download"></i> Download PDF
         </a>
     </div>

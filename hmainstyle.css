@@ -995,47 +995,48 @@ transition: all 300ms ease;
 
 /* Hero Section Styling */
 .hero {
-    background: linear-gradient(135deg, #004d7a, #008793, #00bf72);
-    color: white;
-    text-align: center;
-    padding: 80px 20px;
-    border-radius: 10px;
+    text-align: center !important;
+    background: linear-gradient(135deg, #004d7a, #008793, #00bf72) !important;
+    color: white !important;
+  
+    padding: 80px 20px !important;
+    border-radius: 10px !important;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    font-weight: bold;
+    font-size: 2.5rem !important;
+    margin-bottom: 10px !important;
+    font-weight: bold !important;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    opacity: 0.9;
+    font-size: 1.2rem !important;
+    margin-bottom: 20px !important;
+    opacity: 0.9 !important;
 }
 
 /* Download Button Styling */
 .btn-download {
-    display: inline-flex;
-    align-items: center;
-    background-color: #ffcc00;
-    color: #333;
-    padding: 12px 20px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-flex !important;
+    align-items: center !important;
+    background-color: #ffcc00 !important;
+    color: #333 !important;
+    padding: 12px 20px !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    transition: 0.3s !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
 .btn-download i {
-    margin-right: 8px;
-    font-size: 1.3rem;
+    margin-right: 8px !important;
+    font-size: 1.3rem !important;
 }
 
 /* Hover Effect */
 .btn-download:hover {
-    background-color: #ffdb4d;
-    transform: translateY(-3px);
+    background-color: #ffdb4d !important;
+    transform: translateY(-3px) !important;
 }
