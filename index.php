@@ -254,13 +254,15 @@ foreach ($productsByCategory as $category => $products) {
 
 <!-- -----------------------------------Specialty chemical -->
 
-<header class="hero">
-        <div class="container">
-            <h1>Specialty Ingredients, Chemicals & Minerals</h1>
-            <p>Product Portfolio for Home & Personal Care, Pharma & Industrial Care</p>
-            <a href="assets/sample.pdf" class="btn-download" download>Download PDF</a>
-        </div>
-    </header>
+<section class="hero">
+    <div class="container">
+        <h2>Specialty Ingredients, Chemicals & Minerals</h2>
+        <p>Product Portfolio for Home & Personal Care, Pharma & Industrial Care</p>
+        <a href="assets/sample.pdf" class="btn-download" download>
+            <i class="fas fa-download"></i> Download PDF
+        </a>
+    </div>
+</section>
 
     <div class="container my-5">
         <h2 class="text-center mb-4">Our Product Categories</h2>
