@@ -68,7 +68,7 @@ p{
     padding: 15px 5%;
 }
 .navbar-brand img {
-    width: 110px;
+    width: 110px !important;
 }
 .navbar-nav .nav-link {
     font-weight: bold;
