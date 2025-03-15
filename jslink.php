@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <script>
         $(document).ready(function(){
             $('.slick-slider').slick({
-                slidesToShow: 3,
+                slidesToShow: 4,
                 slidesToScroll: 1,
                 autoplay: true,
                 autoplaySpeed: 2000,
