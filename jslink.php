@@ -3,26 +3,20 @@
 <!-- ------------Header  -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    const navToggle = document.getElementById("nav-toggle");
+    const burgerMenu = document.getElementById("burger-menu");
     const navLinks = document.querySelector(".links");
-    
-    navToggle.addEventListener("change", function () {
-        if (this.checked) {
-            navLinks.style.display = "block";
-        } else {
-            navLinks.style.display = "none";
-        }
+
+    burgerMenu.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
     });
 
     // Close menu when clicking outside
     document.addEventListener("click", function (event) {
-        if (!navLinks.contains(event.target) && !navToggle.contains(event.target)) {
-            navToggle.checked = false;
-            navLinks.style.display = "none";
+        if (!burgerMenu.contains(event.target) && !navLinks.contains(event.target)) {
+            navLinks.classList.remove("active");
         }
     });
 });
-
 
 
 </script>
