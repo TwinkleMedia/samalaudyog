@@ -252,6 +252,39 @@ foreach ($productsByCategory as $category => $products) {
 }
 ?>
 
+<!-- -----------------------------------Specialty chemical -->
+
+<header class="hero">
+        <div class="container">
+            <h1>Specialty Ingredients, Chemicals & Minerals</h1>
+            <p>Product Portfolio for Home & Personal Care, Pharma & Industrial Care</p>
+            <a href="assets/sample.pdf" class="btn-download" download>Download PDF</a>
+        </div>
+    </header>
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Our Product Categories</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow">
+                    <h4>Home & Personal Care</h4>
+                    <p>Discover high-quality ingredients for beauty, skincare, and cleaning products.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow">
+                    <h4>Pharmaceuticals</h4>
+                    <p>Reliable ingredients ensuring top-quality pharma solutions.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card p-3 shadow">
+                    <h4>Industrial Care</h4>
+                    <p>Essential chemicals and minerals for industrial applications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 <!-- --------video------------------ -->

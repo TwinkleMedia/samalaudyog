@@ -63,110 +63,12 @@ p{
 
 /* -------------header------------------ */
 
-nav {
-    position: fixed;
-    z-index: 10;
-    left: 0;
-    right: 0;
-    top: 0;
-    font-family: 'Montserrat', sans-serif;
-    height: 100px;
-    background-color: var(--primary-color);
-    padding: 0 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav .logo { 
-    width: auto;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    color: #fff;
-}
-
-nav .logo img {
+.navbar-brand img {
     width: 110px;
 }
-
-nav .links {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-}
-
-nav .links li {
-    list-style: none;
-}
-
-nav .links a {
-    display: block;
-    padding: 1em;
-    font-size: 16px;
+.navbar-nav .nav-link {
     font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    position: relative;
-}
-
-nav .links a:hover {
-    color: white;
-}
-
-nav .icon-burger {
-    display: none;
-    cursor: pointer;
-}
-
-nav .icon-burger .line {
-    width: 30px;
-    height: 5px;
-    background-color: #fff;
-    margin: 5px;
-    border-radius: 3px;
-    transition: all .5s ease-in-out;
-}
-
-/* Responsive Navbar */
-@media screen and (max-width: 768px) {
-    nav .links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        width: 100%;
-        top: 100px;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        text-align: center;
-        padding: 20px 0;
-    }
-
-    nav .links.active {
-        display: flex;
-    }
-
-    nav .icon-burger {
-        display: block;
-        position: absolute;
-        right: 5%;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    nav .icon-burger.active .line:nth-child(1) {
-        transform: translateY(10px) rotate(225deg);
-    }
-
-    nav .icon-burger.active .line:nth-child(2) {
-        opacity: 0;
-    }
-
-    nav .icon-burger.active .line:nth-child(3) {
-        transform: translateY(-10px) rotate(-225deg);
-    }
+    color: white !important;
 }
 
 .carousel-item img {
