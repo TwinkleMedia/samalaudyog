@@ -528,9 +528,9 @@ foreach ($productsByCategory as $category => $products) {
     </div>
     
     <!---------------------------------------------------Testimonail page------------------------------------->
-    <div class="container">
-    
     <div class="testimonial-container">
+    
+    <div class="container">
     <h2 style="text-align: center; margin-bottom: 30px;">What Our Clients Say</h2>
 
     <!-- Slider Container -->
