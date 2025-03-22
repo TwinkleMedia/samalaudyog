@@ -121,22 +121,22 @@ $result = $conn->query($sql);
          </div>
          <div class="mb-3">
             <label class="form-label">Front Side Image</label>
-            <input type="file" name="front_image" class="form-control" required>
+            <input type="file" name="front_image" class="form-control" >
          </div>
 
          <div class="mb-3">
             <label class="form-label">Back Side Image</label>
-            <input type="file" name="back_image" class="form-control" required>
+            <input type="file" name="back_image" class="form-control" >
          </div>
 
          <div class="mb-3">
             <label class="form-label">Details Image</label>
-            <input type="file" name="details_image" class="form-control" required>
+            <input type="file" name="details_image" class="form-control" >
          </div>
 
          <div class="mb-3">
             <label class="form-label">Extra Image</label>
-            <input type="file" name="extra_image" class="form-control" required>
+            <input type="file" name="extra_image" class="form-control" >
          </div>
       </div>
 
@@ -147,7 +147,7 @@ $result = $conn->query($sql);
             <option value="HOME CARE">HOME CARE</option>
             <option value="PERSONAL CARE">PERSONAL CARE</option>
             <option value="HOSPITAL CARE">HOSPITAL CARE</option>
-            <option value="SPECIALITY CHEMICALS">SPECIALITY CHEMICALS</option>
+            <option value="SPECIALITY CHEMICALS">Combo Pack</option>
          </select>
       </div>
 
@@ -168,7 +168,7 @@ $result = $conn->query($sql);
 
       <div class="mb-3">
          <label class="form-label">Description</label>
-         <textarea class="form-control" name="description" rows="3" placeholder="Description" required></textarea>
+         <textarea class="form-control" name="description" rows="3" placeholder="Description" ></textarea>
       </div>
 
       <div class="mb-3">
