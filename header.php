@@ -1,4 +1,6 @@
+
 <nav>
+    <div class="container">
     <div class="logo">
         <img src="./assest/logo/Asset 3300.png" alt="Samala-Logo">
     </div>
@@ -13,5 +15,6 @@
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
+    </div>
     </div>
 </nav>
