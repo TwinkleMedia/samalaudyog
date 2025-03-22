@@ -598,6 +598,7 @@ function showProductModal(product) {
     }
 
    // Handle e-commerce links
+// Handle e-commerce links
 const ecommerceLinks = document.getElementById('ecommerceLinks');
 ecommerceLinks.innerHTML = ''; // Clear existing links
 
@@ -606,7 +607,7 @@ const platforms = [
     {
         name: 'Flipkart',
         icon: 'bi-cart-fill',
-        url: 'product.flipkart_url', // Corrected
+        url: product.flipkart_url, // Corrected dynamic reference
         color: '#2874f0'
     },
     {
@@ -631,19 +632,19 @@ const platforms = [
 
 // Create and append platform links
 platforms.forEach(platform => {
-    if (platform.url) { // Check if URL exists
+    if (platform.url && platform.url.trim() !== '') { // Ensure URL exists and is not empty
         const link = document.createElement('a');
-        link.href = 'platform.url'; // Corrected
+        link.href = platform.url; // Dynamic reference to the correct URL
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
-        link.style.color = platform.color; // Corrected
-        
+        link.style.color = platform.color;
+
         link.innerHTML = `
-             <i class="bi ${platform.icon}"></i>
+            <i class="bi ${platform.icon}"></i>
             <span>${platform.name}</span>
         `;
-        
+
         ecommerceLinks.appendChild(link);
     }
 });
@@ -651,6 +652,7 @@ platforms.forEach(platform => {
 // Show the modal
 const productModal = new bootstrap.Modal(document.getElementById('productModal'));
 productModal.show();
+
 }
 </script>
 
