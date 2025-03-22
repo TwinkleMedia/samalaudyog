@@ -604,7 +604,7 @@ function showProductModal(product) {
         {
             name: 'Flipkart',
             icon: 'bi-cart-fill',
-            url: product.flipkart_url,
+            url: 'product.flipkart_url',
             color: '#2874f0'
         },
         {
