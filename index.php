@@ -563,7 +563,7 @@ foreach ($productsByCategory as $category => $products) {
 <?php include './footer.php'; ?>
 <?php include './jslink.php' ?>  
 
-<scrip>
+<script>
 function showProductModal(product) {
     // Set modal content
     document.getElementById('modalProductTitle').innerText = product.title || 'Product Title';
@@ -651,10 +651,10 @@ platforms.forEach(platform => {
 // Show the modal
 const productModal = new bootstrap.Modal(document.getElementById('productModal'));
 productModal.show();
-
+}
 </script>
 
-
+</script>
 
 
 
