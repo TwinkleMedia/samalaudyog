@@ -606,7 +606,7 @@ const platforms = [
     {
         name: 'Flipkart',
         icon: 'bi-cart-fill',
-        url: product.flipkart_url, // Corrected
+        url: 'product.flipkart_url', // Corrected
         color: '#2874f0'
     },
     {
@@ -633,14 +633,14 @@ const platforms = [
 platforms.forEach(platform => {
     if (platform.url) { // Check if URL exists
         const link = document.createElement('a');
-        link.href = platform.url; // Corrected
+        link.href = 'platform.url'; // Corrected
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
         link.style.color = platform.color; // Corrected
         
         link.innerHTML = `
-            <i class="bi ${platform.icon}"></i>
+             <i class="bi ${platform.icon}"></i>
             <span>${platform.name}</span>
         `;
         
