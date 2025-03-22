@@ -563,7 +563,7 @@ foreach ($productsByCategory as $category => $products) {
 <?php include './footer.php'; ?>
 <?php include './jslink.php' ?>  
 
-<script>
+<scrip>
 function showProductModal(product) {
     // Set modal content
     document.getElementById('modalProductTitle').innerText = product.title || 'Product Title';
@@ -597,64 +597,64 @@ function showProductModal(product) {
         mainImage.alt = 'Default Product Image';
     }
 
-    // Handle e-commerce links
-    const ecommerceLinks = document.getElementById('ecommerceLinks');
-    ecommerceLinks.innerHTML = ''; // Clear existing links
+   // Handle e-commerce links
+const ecommerceLinks = document.getElementById('ecommerceLinks');
+ecommerceLinks.innerHTML = ''; // Clear existing links
 
-    // Define e-commerce platforms with their icons and URLs from the product
-    const platforms = [
-        {
-            name: 'Flipkart',
-            icon: 'bi-cart-fill',
-            url: 'product.flipkart_url',
-            color: '#2874f0'
-        },
-        {
-            name: 'Amazon',
-            icon: 'bi-amazon',
-            url: product.amazon_url,
-            color: '#ff9900'
-        },
-        {
-            name: 'IndiaMART',
-            icon: 'bi-shop',
-            url: product.indiamart_url,
-            color: '#2e3192'
-        },
-        {
-            name: 'JioMart',
-            icon: 'bi-bag-fill',
-            url: product.jiomart_url,
-            color: '#0f4a8a'
-        }
-    ];
+// Define e-commerce platforms with their icons and URLs from the product
+const platforms = [
+    {
+        name: 'Flipkart',
+        icon: 'bi-cart-fill',
+        url: product.flipkart_url, // Corrected
+        color: '#2874f0'
+    },
+    {
+        name: 'Amazon',
+        icon: 'bi-amazon',
+        url: product.amazon_url,
+        color: '#ff9900'
+    },
+    {
+        name: 'IndiaMART',
+        icon: 'bi-shop',
+        url: product.indiamart_url,
+        color: '#2e3192'
+    },
+    {
+        name: 'JioMart',
+        icon: 'bi-bag-fill',
+        url: product.jiomart_url,
+        color: '#0f4a8a'
+    }
+];
 
-    // Create and append platform links
-    platforms.forEach(platform => {
-        if (platform.url) {
-            const link = document.createElement('a');
-            link.href = 'platform.url';
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
-            link.style.color = 'platform.color';
-            
-            link.innerHTML = `
-                <i class="bi ${platform.icon}"></i>
-                <span>${platform.name}</span>
-            `;
-            
-            ecommerceLinks.appendChild(link);
-        }
-    });
+// Create and append platform links
+platforms.forEach(platform => {
+    if (platform.url) { // Check if URL exists
+        const link = document.createElement('a');
+        link.href = platform.url; // Corrected
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
+        link.style.color = platform.color; // Corrected
+        
+        link.innerHTML = `
+            <i class="bi ${platform.icon}"></i>
+            <span>${platform.name}</span>
+        `;
+        
+        ecommerceLinks.appendChild(link);
+    }
+});
 
-    // Show the modal
-    const productModal = new bootstrap.Modal(document.getElementById('productModal'));
-    productModal.show();
-}
-</script>
+// Show the modal
+const productModal = new bootstrap.Modal(document.getElementById('productModal'));
+productModal.show();
 
 </script>
+
+
 
 
 
