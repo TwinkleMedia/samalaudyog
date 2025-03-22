@@ -399,6 +399,8 @@ foreach ($productsByCategory as $category => $products) {
                                 <h6 class="fw-bold mb-3">Buy from other platforms:</h6>
                                 <div class="d-flex flex-wrap gap-3" id="ecommerceLinks"></div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -631,7 +633,7 @@ function showProductModal(product) {
     platforms.forEach(platform => {
         if (platform.url) {
             const link = document.createElement('a');
-            link.href = platform.url;
+            link.href = 'platform.url';
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
             link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
