@@ -637,7 +637,7 @@ function showProductModal(product) {
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
             link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
-            link.style.color = platform.color;
+            link.style.color = 'platform.color';
             
             link.innerHTML = `
                 <i class="bi ${platform.icon}"></i>
