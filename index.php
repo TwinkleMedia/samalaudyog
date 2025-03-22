@@ -597,8 +597,7 @@ function showProductModal(product) {
         mainImage.alt = 'Default Product Image';
     }
 
-   // Handle e-commerce links
-// Handle e-commerce links
+ // Handle e-commerce links
 const ecommerceLinks = document.getElementById('ecommerceLinks');
 ecommerceLinks.innerHTML = ''; // Clear existing links
 
@@ -607,7 +606,7 @@ const platforms = [
     {
         name: 'Flipkart',
         icon: 'bi-cart-fill',
-        url: product.flipkart_url, // Corrected dynamic reference
+        url: product.flipkart_url, // Corrected
         color: '#2874f0'
     },
     {
@@ -632,19 +631,19 @@ const platforms = [
 
 // Create and append platform links
 platforms.forEach(platform => {
-    if (platform.url && platform.url.trim() !== '') { // Ensure URL exists and is not empty
+    if (platform.url && platform.url.trim() !== '') { // Check if URL exists
         const link = document.createElement('a');
-        link.href = platform.url; // Dynamic reference to the correct URL
+        link.href = platform.url; // Corrected
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.classList.add('btn', 'btn-light', 'border', 'd-inline-flex', 'align-items-center', 'gap-2');
-        link.style.color = platform.color;
-
+        link.style.color = platform.color; 
+        
         link.innerHTML = `
-            <i class="bi ${platform.icon}"></i>
+             <i class="bi ${platform.icon}"></i>
             <span>${platform.name}</span>
         `;
-
+        
         ecommerceLinks.appendChild(link);
     }
 });
@@ -652,6 +651,7 @@ platforms.forEach(platform => {
 // Show the modal
 const productModal = new bootstrap.Modal(document.getElementById('productModal'));
 productModal.show();
+
 
 }
 </script>
