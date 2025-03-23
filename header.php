@@ -26,7 +26,7 @@
                 </ul>
             </div>
             <div>
-                <a href="#" class="btn btn-primary">Distributor</a>
+                <a href="https://wa.me/+919833535161" target="_blank" class="btn btn-primary">Distributor</a>
             </div>
         </div>
     </nav>
