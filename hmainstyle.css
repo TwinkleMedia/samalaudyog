@@ -782,9 +782,40 @@ transition: all 300ms ease;
     }
 }
 
+/* ------------------new section */
+.section-heading {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.icon-circle {
+    background-color: #fff;
+    border: 2px solid #FF8C00;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.feature-card {
+    border: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+
 
 
 /* --------------------F */
+
+
+
+
 
 
 .faq-container {

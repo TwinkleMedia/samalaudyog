@@ -288,6 +288,68 @@ foreach ($productsByCategory as $category => $products) {
         </div>
     </div>
 
+<!-- -----------------------New section------------- -->
+<div class="container py-5">
+    <h2 class="text-center mb-5">Bring Unique Products and Formulations to the Market</h2>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="icon-circle">
+                    <i class="bi bi-gear-fill"></i>
+                </div>
+                <h5 class="section-heading">Precision Manufacturing</h5>
+                <p>Our cutting-edge manufacturing systems guarantee the utmost product quality.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="icon-circle">
+                    <i class="bi bi-globe2"></i>
+                </div>
+                <h5 class="section-heading">Premium Global Sourcing</h5>
+                <p>Curated selection of over 3000 premium natural ingredients sourced globally.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="icon-circle">
+                    <i class="bi bi-clock-history"></i>
+                </div>
+                <h5 class="section-heading">Prompt Fulfillment</h5>
+                <p>Timely delivery to meet your launch deadlines and prevent stock shortages.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="icon-circle">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <h5 class="section-heading">Stability Assured</h5>
+                <p>Formulations rigorously tested for stability, ensuring optimal performance in any environment.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="icon-circle">
+                    <i class="bi bi-lightbulb-fill"></i>
+                </div>
+                <h5 class="section-heading">Infuse To Innovate</h5>
+                <p>Utilize innovative raw materials to set your products apart in the market.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="icon-circle">
+                    <i class="bi bi-file-earmark-check-fill"></i>
+                </div>
+                <h5 class="section-heading">Regulatory Compliance</h5>
+                <p>Facilities compliant with GMP, ISO, and FDA standards for top-tier end-products.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- --------video------------------ -->
 <section id="video-section" class="my-5">
