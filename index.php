@@ -131,7 +131,7 @@ if (!$conn) {
 }
 
 // Initialize arrays for categories
-$categories = ['Home Care', 'Personal Care', 'Hospital Care', 'Combo Pack'];
+$categories = ['Home Care', 'Personal Care', 'Hospital Care',];
 
 // Array to hold products by category
 $productsByCategory = [];
@@ -360,7 +360,7 @@ foreach ($productsByCategory as $category => $products) {
                     <div class="col-lg-6">
                         <div class="product-gallery">
                             <!-- Main Product Image Container -->
-                            <div class="position-relative mb-3 main-image-container">
+                             <div class="position-relative mb-3 main-image-container">
                                 <img id="mainImage" src="" alt="Main Product Image" 
                                      class="img-fluid rounded shadow-sm w-100 object-fit-cover" 
                                      style="max-height: 400px;">
@@ -392,15 +392,15 @@ foreach ($productsByCategory as $category => $products) {
                                 <h6 class="fw-bold mb-2">Product Description:</h6>
                                 <p id="productDescription" class="text-muted"></p>
                             </div>
-                            
-                            
+
+                            <div class="mb-4">
+                                <a href="https://wa.me/+919833535161" target="_blank" class="btn btn-success w-100">Bulk Order? Contact Us on WhatsApp</a>
+                            </div>
                             
                             <div class="ecommerce-links">
                                 <h6 class="fw-bold mb-3">Buy from other platforms:</h6>
                                 <div class="d-flex flex-wrap gap-3" id="ecommerceLinks"></div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -608,7 +608,7 @@ const platforms = [
         icon: 'bi-cart-fill',
         url: product.flipkart_url, // Corrected
         color: '#2874f0'
-    },
+    }, 
     {
         name: 'Amazon',
         icon: 'bi-amazon',

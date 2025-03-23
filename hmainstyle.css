@@ -63,7 +63,7 @@ p{
 
 /* -------------header------------------ */
 
-nav {
+/* nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,6 +120,39 @@ nav {
     .icon-burger {
         display: flex;
     }
+} */
+
+.navbar {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+}
+
+.nav-link {
+    color: var(--white-color) !important;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+.navbar-brand img {
+    height: 80px;
+    width: auto;
+}
+
+.btn-primary {
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color) !important;
+    border: none;
+    color: var(--white-color) !important;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color) !important;
 }
 
 
