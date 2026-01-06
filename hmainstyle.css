@@ -718,13 +718,13 @@ p {
 /* Shop Section */
 .shop-section {
     display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 60px;
+    grid-template-columns: 350px 1fr;
+    gap: 80px;
     align-items: center;
-    background: linear-gradient(135deg, #a8c5e8 0%, #7a9ecf 100%);
-    padding: 60px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #b8d4f1 0%, #8db4e3 100%);
+    padding: 80px 100px;
+    border-radius: 0;
+    margin: 0;
 }
 
 .phone-mockup {
@@ -733,54 +733,69 @@ p {
     margin: 0;
 }
 
-.phone-content {
+.phone-image {
     width: 100%;
     height: auto;
-    border-radius: 15px;
+    display: block;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
 }
 
 .shop-content {
-    color: white;
-    padding-left: 20px;
+    color: #1a3a6b;
+    padding-left: 0;
+    max-width: 600px;
 }
 
 .shop-title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 30px;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
     color: #1a3a6b;
-    line-height: 1.2;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
 }
 
 .shop-description {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 40px;
-    color: #1a3a6b;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    color: #2d4a73;
+    font-weight: 400;
 }
 
 .shop-btn {
     background-color: white;
     color: #2c5aa0;
-    padding: 18px 50px;
+    padding: 16px 40px;
     border: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: bold;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     display: inline-block;
 }
 
 .shop-btn:hover {
-    background-color: #2c5aa0;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .shop-section {
+        grid-template-columns: 300px 1fr;
+        gap: 50px;
+        padding: 60px 50px;
+    }
+
+    .shop-title {
+        font-size: 2.8rem;
+    }
+}
+
 @media (max-width: 992px) {
 
     .faq-section,
@@ -816,8 +831,7 @@ p {
         padding: 30px 20px;
     }
 
-    .faq-title,
-    .shop-title {
+    .faq-title {
         font-size: 1.8rem;
     }
 
@@ -825,12 +839,28 @@ p {
         font-size: 1rem;
     }
 
-    .shop-description {
-        font-size: 1.1rem;
+    .shop-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 50px 30px;
+        text-align: center;
     }
 
-    .shop-section {
-        padding: 30px 20px;
+    .phone-mockup {
+        margin: 0 auto;
+        max-width: 280px;
+    }
+
+    .shop-content {
+        max-width: 100%;
+    }
+
+    .shop-title {
+        font-size: 2.5rem;
+    }
+
+    .shop-description {
+        font-size: 1rem;
     }
 }
 
