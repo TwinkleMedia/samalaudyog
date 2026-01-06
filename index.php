@@ -69,7 +69,9 @@
                     natural ingredients for Home care, Personal care, and Industrial care applications. Join us in our
                     mission to create a healthier and more sustainable world, one natural product at a time.
                 </p>
-                <a href="#contact" class="contact-btn">Contact</a>
+                <div class="about-actions">
+                    <a href="#contact" class="contact-btn">Contact</a>
+                </div>
             </div>
         </div>
     </section>
@@ -79,52 +81,65 @@
 
 
 
-    <!-- -----------------About -section     -->
+    <!-- -----------------Explore Product ----------------- -->
 
-    <section class="about-section mt-3">
-        <div class="container">
-            <div class="row">
-                <div class="content-column col-lg-6 col-md-12 col-sm-12 order-2" data-aos="fade-left">
-                    <div class="inner-column">
-                        <div class="sec-title">
-                            <span class="title">About </span>
-                            <h2>Nature-Driven Innovation for a Better, Safer World</h2>
-                        </div>
-                        <div class="text">Samala Udyog is an innovation-driven start-up that is dedicated to providing
-                            innovative products made with natural chemicals and special clay minerals to customers who
-                            prioritize the environment and health. The company was founded by a duo with a combined 40
-                            years of experience in the chemical industry and a passion for creating sustainable and
-                            effective products.</div>
-                        <div class="text">
-                            With a focus on natures’ bounty, we are committed to providing our customers with the best
-                            of natural ingredients for Home care, Personal care, and Industrial care applications. Join
-                            us in our mission to create a healthier and more sustainable world, one natural product at a
-                            time.
-                        </div>
-                        <div class="btn-box">
-                            <a href="./contact.php" class="theme-btn btn-style-one">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
+    <section class="container">
+        <!-- Explore Product Categories Section -->
+        <h2 class="section-title">Explore Product Categories</h2>
 
-                <!-- Image Column -->
-                <div class="image-column col-lg-6 col-md-12 col-sm-12" data-aos="fade-right">
-                    <div class="inner-column wow fadeInLeft">
-                        <div class="author-desc">
-                            <h2></h2>
-                            <span>Founder</span>
-                        </div>
-                        <figure class="image-1"><a href="#" class="lightbox-image" data-fancybox="images"><img
-                                    title="Murli Samala" src="./assest/Founder.png" alt="" loading="lazy"></a></figure>
-
-                    </div>
-                </div>
-
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=400&h=300&fit=crop"
+                    alt="Personal Care Products" class="product-image">
+                <button class="checkout-btn">Checkout</button>
             </div>
 
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop"
+                    alt="Hospital Care Products" class="product-image">
+                <button class="checkout-btn">Checkout</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop"
+                    alt="Home Care Products" class="product-image">
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <h2 class="why-title">Why Choose Us</h2>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🏭</div>
+                <h3 class="feature-title">Industry experience</h3>
+                <p class="feature-text">Lorem ipsum dolor sit amet consectetur. Cras eget nunc hendrerit sed sed augue
+                    tellus massa.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚗️</div>
+                <h3 class="feature-title">Industry experience</h3>
+                <p class="feature-text">Lorem ipsum dolor sit amet consectetur. Cras eget nunc hendrerit sed sed augue
+                    tellus massa.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3 class="feature-title">Industry experience</h3>
+                <p class="feature-text">Lorem ipsum dolor sit amet consectetur. Cras eget nunc hendrerit sed sed augue
+                    tellus massa.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🏪</div>
+                <h3 class="feature-title">Industry experience</h3>
+                <p class="feature-text">Lorem ipsum dolor sit amet consectetur. Cras eget nunc hendrerit sed sed augue
+                    tellus massa.</p>
+            </div>
         </div>
     </section>
-
 
     <?php
     // Include database configuration
