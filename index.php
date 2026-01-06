@@ -531,6 +531,37 @@
                         for you and the environment.
                     </div>
                 </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does Samala Udyog ensure sustainability?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sustainability is at the heart of our operations. We source natural ingredients responsibly and
+                        use innovative techniques to minimize environmental impact while maintaining high-quality
+                        standards.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you use biodegradable packaging?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, we are committed to using biodegradable and recyclable packaging materials whenever
+                        possible.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Where can I purchase your products?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Our products are available through our website, authorized distributors, and select retail
+                        outlets.
+                    </div>
+                </div>
             </div>
         </section>
 
