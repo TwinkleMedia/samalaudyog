@@ -534,33 +534,22 @@
             </div>
         </section>
 
-        <div class="shop-container">
-            <div class="container content-wrapper">
-                <div class="row align-items-center">
-
-                    <div class="col-lg-5 text-center">
-                        <div class="phone-mockup">
-                            <div class="phone-screen">
-                                <img src="./assest/shop.png" style="width:100%;"
-                                    alt="Mobile View">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-7">
-                        <div class="text-side">
-                            <h1>Shop With Samala</h1>
-                            <p>
-                                Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative
-                                products made with natural chemicals and special clay minerals
-                            </p>
-                            <a href="#" class="btn-white">Buy Products Here!</a>
-                        </div>
-                    </div>
-
-                </div>
+        <!-- Shop Section -->
+        <section class="shop-section">
+            <div class="phone-mockup">
+                <img src="./assest/shop.png" alt="Mobile shopping interface" class="phone-frame">
             </div>
-        </div>
+
+            <div class="shop-content">
+                <h2 class="shop-title">Shop With Samala</h2>
+                <p class="shop-description">
+                    Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative products
+                    made with natural chemicals and special clay minerals
+                </p>
+                <button class="shop-btn">Buy Products Here!</button>
+            </div>
+        </section>
+
     </div>
 
     <!---------------------------------------------------Testimonail page------------------------------------->
