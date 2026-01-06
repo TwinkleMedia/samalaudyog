@@ -195,11 +195,11 @@ p {
 }
 
 .btn-distributor {
-    background-color: #4A5E8C;
+    background-color: #294C9D;
     color: white;
     padding: 0.5rem 1.8rem;
     border-radius: 4px;
-    border: 2px solid #4A5E8C;
+    /* border: 2px solid #4A5E8C; */
     font-size: 18px;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -615,6 +615,257 @@ p {
 
     .feature-icon {
         font-size: 2.5rem;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* FAQ Section */
+.faq-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.faq-image-container {
+    position: relative;
+}
+
+.faq-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.faq-content {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-title {
+    color: #2c5aa0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #2c5aa0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    color: #2c5aa0;
+    transition: transform 0.3s ease;
+}
+
+.faq-item:hover {
+    background-color: #f8f9fa;
+    padding-left: 10px;
+}
+
+.faq-item:hover .faq-icon {
+    transform: rotate(90deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: #666;
+    padding-top: 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    padding-top: 15px;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* Shop Section */
+.shop-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    background: linear-gradient(135deg, #a8c5e8 0%, #7a9ecf 100%);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.phone-mockup {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.phone-frame {
+    width: 100%;
+    height: auto;
+    border: 8px solid #1a1a1a;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    background: white;
+    padding: 15px;
+}
+
+.phone-content {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.shop-content {
+    color: white;
+}
+
+.shop-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #1a3a6b;
+}
+
+.shop-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #1a3a6b;
+}
+
+.shop-btn {
+    background-color: white;
+    color: #2c5aa0;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shop-btn:hover {
+    background-color: #2c5aa0;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+
+    .faq-section,
+    .shop-section {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-title,
+    .shop-title {
+        font-size: 2rem;
+    }
+
+    .shop-section {
+        padding: 40px 30px;
+    }
+
+    .phone-mockup {
+        order: 2;
+        margin-top: 30px;
+    }
+
+    .shop-content {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    .faq-content {
+        padding: 30px 20px;
+    }
+
+    .faq-title,
+    .shop-title {
+        font-size: 1.8rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+    }
+
+    .shop-description {
+        font-size: 1.1rem;
+    }
+
+    .shop-section {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .faq-title,
+    .shop-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .faq-content {
+        padding: 25px 15px;
+    }
+
+    .faq-question {
+        font-size: 0.95rem;
+    }
+
+    .faq-icon {
+        font-size: 1.3rem;
+    }
+
+    .shop-description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .shop-btn {
+        width: 100%;
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .phone-mockup {
+        max-width: 250px;
     }
 }
 

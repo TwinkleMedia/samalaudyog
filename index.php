@@ -19,7 +19,7 @@
 
 
     <?php include './header.php' ?>
-    
+
 
     <!-- Carousel slider -->
     <section class="hero-section">
@@ -367,22 +367,22 @@
 
                     <div class="swiper-slide">
                         <div class="video-container"> -->
-                            <!-- <video class="video-embed" controls playsinline muted>
+    <!-- <video class="video-embed" controls playsinline muted>
                                 <source src="./assest/video3.mp4" type="video/mp4" loading="lazy">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
                     </div> -->
 
-                    <!-- Video 4 -->
+    <!-- Video 4 -->
 
 
-                    <!-- Video 5 -->
+    <!-- Video 5 -->
 
-                <!-- </div> -->
+    <!-- </div> -->
 
-                <!-- Swiper Controls -->
-                <!-- <div class="swiper-button-next"></div>
+    <!-- Swiper Controls -->
+    <!-- <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -407,25 +407,25 @@
                 </div>
                 <div class="modal-body px-4 py-3">
                     <div class="row g-4"> -->
-                        <!-- Product Images Gallery -->
-                        <!-- <div class="col-lg-6">
+    <!-- Product Images Gallery -->
+    <!-- <div class="col-lg-6">
                             <div class="product-gallery"> -->
-                                <!-- Main Product Image Container -->
-                                <!-- <div class="position-relative mb-3 main-image-container">
+    <!-- Main Product Image Container -->
+    <!-- <div class="position-relative mb-3 main-image-container">
                                     <img id="mainImage" src="" alt="Main Product Image"
                                         class="img-fluid rounded shadow-sm w-100 object-fit-cover"
                                         style="max-height: 400px;">
                                 </div> -->
-                                <!-- Thumbnails Gallery -->
-                                <!-- <div class="thumbnails-container">
+    <!-- Thumbnails Gallery -->
+    <!-- <div class="thumbnails-container">
                                     <div id="thumbnailGallery"
                                         class="d-flex gap-2 overflow-x-auto py-2 thumbnail-wrapper">
                                     </div>
                                 </div>
                             </div>
                         </div> -->
-                        <!-- Product Information -->
-                        <!-- <div class="col-lg-6">
+    <!-- Product Information -->
+    <!-- <div class="col-lg-6">
                             <div class="product-details">
                                 <h3 class="product-title h4 mb-3 fw-bold" id="modalProductTitle"></h3>
 
@@ -467,130 +467,88 @@
 
     <!-- F -->
 
-    <div class="faq-container">
-        <h1>Frequently Asked Questions</h1>
-
-        <div class="faq">
-            <div class="faq-question">What is Samala Udyog?</div>
-            <div class="faq-answer">
-                <p>Samala Udyog is an innovation-driven start-up that specializes in creating natural and sustainable
-                    products for home care, personal care, and industrial care applications.</p>
+    <div class="container">
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="faq-image-container">
+                <img src="./assest/faq.png" alt="Product with water splash" class="faq-image">
             </div>
-        </div>
 
-        <div class="faq">
-            <div class="faq-question"> Who founded Samala Udyog?</div>
-            <div class="faq-answer">
-                <p>Samala Udyog was founded by two passionate experts with a combined 40 years of experience in the
-                    chemical industry.</p>
+            <div class="faq-content">
+                <h2 class="faq-title">FAQ</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is Samala Udyog?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Samala Udyog is an innovation-driven start-up dedicated to providing innovative products made
+                        with natural chemicals and special clay minerals.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Who founded Samala Udyog?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Founded by a duo with a combined 40 years of experience in the chemical industry and a passion
+                        for creating sustainable products.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What types of products does Samala Udyog offer?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        We offer products for Home care, Personal care, and Industrial care applications, all made with
+                        natural ingredients.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are your products eco-friendly?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, all our products are made with natural chemicals and sustainable ingredients prioritizing
+                        environmental health.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do your products contain harmful chemicals?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No, we focus on nature's bounty and create products free from harmful chemicals, ensuring safety
+                        for you and the environment.
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="faq">
-            <div class="faq-question">What types of products does Samala Udyog offer?</div>
-            <div class="faq-answer">
-                <p>We offer a wide range of products for:</p>
-                <li><b>Home Care:</b> Cleaners, detergents, and other household solutions.</li>
-                <li><b>Personal Care:</b> Products designed for skincare and hygiene.</li>
-                <li><b>Industrial Care: </b>Specialty products for industrial applications.</li>
+        <!-- Shop Section -->
+        <section class="shop-section">
+            <div class="phone-mockup">
+                <img src="./assest/shop.png" alt="Mobile shopping interface" class="phone-frame">
             </div>
-        </div>
 
-        <div class="faq">
-            <div class="faq-question"> Are your products eco-friendly?</div>
-            <div class="faq-answer">
-                <p>Yes, all our products are formulated using natural ingredients and are designed to prioritize
-                    environmental sustainability and health.</p>
-            </div>
-        </div>
-
-
-        <div class="faq">
-            <div class="faq-question"> Do your products contain harmful chemicals?</div>
-            <div class="faq-answer">
-                <p>No, we ensure our products are free from harmful synthetic chemicals and rely on natural chemicals
-                    and clay minerals to deliver safe and effective solutions.</p>
-            </div>
-        </div>
-
-
-        <div class="faq">
-            <div class="faq-question"> How does Samala Udyog ensure sustainability?</div>
-            <div class="faq-answer">
-                <p>Sustainability is at the heart of our operations. We source natural ingredients responsibly and use
-                    innovative techniques to minimize environmental impact while maintaining high-quality standards.</p>
-            </div>
-        </div>
-
-
-        <div class="faq">
-            <div class="faq-question"> Do you use biodegradable packaging?</div>
-            <div class="faq-answer">
-                <p>Yes, we are committed to using biodegradable and recyclable packaging materials whenever possible.
+            <div class="shop-content">
+                <h2 class="shop-title">Shop With Samala</h2>
+                <p class="shop-description">
+                    Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative products
+                    made with natural chemicals and special clay minerals
                 </p>
+                <button class="shop-btn">Buy Products Here!</button>
             </div>
-        </div>
-
-        <div class="faq">
-            <div class="faq-question"> Where can I purchase your products?</div>
-            <div class="faq-answer">
-                <p>Our products are available through our website, authorized distributors, and select retail outlets.
-                </p>
-            </div>
-        </div>
-
-        <div class="faq">
-            <div class="faq-question"> Do you offer bulk orders or wholesale options?</div>
-            <div class="faq-answer">
-                <p>Yes, we cater to bulk and wholesale orders. Please contact us for more details on pricing and supply.
-
-                </p>
-            </div>
-        </div>
-
-        <div class="faq">
-            <div class="faq-question"> How can I contact Samala Udyog for inquiries?</div>
-            <div class="faq-answer">
-                <p>You can reach us via our email or customer service number listed on our website.</p>
-            </div>
-        </div>
-
-        <div class="faq">
-            <div class="faq-question"> Do you offer refunds or replacements for your products?</div>
-            <div class="faq-answer">
-                <p>Yes, we have a customer-friendly return and replacement policy. Please review the terms and
-                    conditions on our website or contact customer support for assistance.</p>
-            </div>
-        </div>
-
-        <div class="faq">
-            <div class="faq-question"> Are you open to collaborations or partnerships?</div>
-            <div class="faq-answer">
-                <p>Absolutely! We welcome collaborations with like-minded organizations or individuals who share our
-                    vision for sustainability and innovation.</p>
-            </div>
-        </div>
-
-        <div class="faq">
-            <div class="faq-question"> Do you work with B2B clients?</div>
-            <div class="faq-answer">
-                <p>Yes, we work closely with B2B clients and provide customized solutions to meet their specific needs.
-                </p>
-            </div>
-        </div>
-
-        <div class="faq">
-            <div class="faq-question"> What makes Samala Udyog different from other brands?
-            </div>
-            <div class="faq-answer">
-                <p>Our commitment to sustainability, natural ingredients, and innovative solutions sets us apart. We
-                    focus on creating effective products while caring for the environment and customer health..</p>
-            </div>
-        </div>
-
-
-        <!-- Add more FAQs as needed -->
-
+        </section>
     </div>
 
     <!---------------------------------------------------Testimonail page------------------------------------->
@@ -632,6 +590,21 @@
     <?php include './jslink.php' ?>
 
     <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+
+                // Close all FAQ items
+                faqItems.forEach(faq => faq.classList.remove('active'));
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
         function showProductModal(product) {
             // Set modal content
             document.getElementById('modalProductTitle').innerText = product.title || 'Product Title';
