@@ -30,8 +30,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="btn-distributor" href="#distributor">Distributor</a>
+                </li>
             </ul>
-            <a class="btn-distributor" href="#distributor">Distributor</a>
         </div>
     </div>
 </nav>

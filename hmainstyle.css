@@ -204,7 +204,6 @@ p {
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
-    margin-left: 2rem;
 }
 
 .btn-distributor:hover {
