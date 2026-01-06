@@ -1,32 +1,45 @@
-<nav class="navbar navbar-expand-lg px-3">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="./assest/logo/Asset 3300.png" alt="Samala-Logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./aboutus.php">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./products.php">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./career.php">Industries</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./contact.php">Contact</a>
-                    </li>
-                </ul>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#">
+            <div class="logo-container">
+                <div class="logo-box">
+                    <a class="navbar-brand" href="#">
+                        <img src="./assest/logo/Asset 3300.png" alt="Samala-Logo">
+                    </a>
+
+                </div>
+                <div>
+                    <p class="brand-name">Welcome To Saboo</p>
+                </div>
             </div>
-            <div>
-                <a href="https://wa.me/+919833535161" target="_blank" class="btn btn-primary">Distributor</a>
-            </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#industries">Industries</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item ms-lg-3">
+                    <a class="btn-distributor" href="#distributor">Distributor</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
