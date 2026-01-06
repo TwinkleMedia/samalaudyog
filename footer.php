@@ -6,11 +6,11 @@
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="quick-links-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#industries">Industries</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="products.php">Products</a></li>
+                    <li><a href="industries.php">Industries</a></li>
+                    <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>
 
