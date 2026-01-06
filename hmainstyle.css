@@ -739,52 +739,169 @@ p {
     border-radius: 15px;
 }
 
-.shop-section {
-    background: linear-gradient(180deg, #e8eeff 0%, #7f93d6 100%);
-    padding: 80px 0;
+.shop-content {
+    color: white;
+    padding-left: 20px;
 }
 
-.mobile-mockup {
-    max-width: 320px;
-    margin: auto;
+.shop-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #1a3a6b;
+    line-height: 1.2;
 }
 
-.mobile-mockup img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.shop-content h2 {
-    color: #294C9D;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.shop-content p {
-    color: #294C9D;
-    font-size: 1.05rem;
+.shop-description {
+    font-size: 1.2rem;
     line-height: 1.8;
-    max-width: 500px;
+    margin-bottom: 40px;
+    color: #1a3a6b;
 }
 
 .shop-btn {
-    background-color: #294C9D;
-    color: #fff;
-    padding: 12px 35px;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
+    background-color: white;
+    color: #2c5aa0;
+    padding: 18px 50px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
 }
 
 .shop-btn:hover {
-    background-color: #1f3f85;
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(41, 76, 157, 0.4);
+    background-color: #2c5aa0;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.shop-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    padding: 50px 0;
+}
+
+/* The Blue Horizontal Strip behind the phone */
+.shop-container::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    /* Adjust height of the blue band */
+    background: linear-gradient(to right, #ffffff 0%, #a5c7f7 30%, #3b5998 100%);
+    z-index: 1;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    /* Sits above the blue band */
+    width: 100%;
+}
+
+/* Phone Mockup Styling */
+.phone-mockup {
+    width: 320px;
+    height: 650px;
+    background: #000;
+    border-radius: 45px;
+    border: 10px solid #000;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 35px;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar for the phone */
+.phone-screen::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* Text Styling */
+.text-side {
+    color: #3b5998;
+    /* The specific blue from the image text */
+    padding-left: 2rem;
+}
+
+.text-side h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.text-side p {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    text-decoration: underline;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+}
+
+/* Button Styling */
+.btn-white {
+    background: white;
+    color: #3b5998;
+    padding: 18px 45px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.btn-white:hover {
+    transform: scale(1.05);
+    color: #1a1a1a;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+    .main-container::before {
+        height: 80%;
+    }
+
+    .text-side {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .text-side h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-side p {
+        font-size: 1.2rem;
+    }
+
+    .phone-mockup {
+        width: 280px;
+        height: 580px;
+    }
 }
 
 /* Responsive Design */
@@ -806,11 +923,8 @@ p {
     }
 
     .shop-content {
+        padding-left: 0;
         text-align: center;
-    }
-
-    .shop-content p {
-        margin: auto;
     }
 
     .faq-title,

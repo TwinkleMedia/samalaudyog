@@ -534,34 +534,33 @@
             </div>
         </section>
 
-        <!-- Shop Section -->
-        <section class="shop-section">
-            <div class="container">
-                <div class="row align-items-center g-5">
+        <div class="shop-container">
+            <div class="container content-wrapper">
+                <div class="row align-items-center">
 
-                    <!-- Mobile Image -->
                     <div class="col-lg-5 text-center">
-                        <div class="mobile-mockup">
-                            <img src="./assest/shop.png" alt="Mobile App Preview">
+                        <div class="phone-mockup">
+                            <div class="phone-screen">
+                                <img src="./assest/shop.png" style="width:100%;"
+                                    alt="Mobile View">
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Content -->
                     <div class="col-lg-7">
-                        <div class="shop-content">
-                            <h2>Shop With Samala</h2>
+                        <div class="text-side">
+                            <h1>Shop With Samala</h1>
                             <p>
-                                Samala Udyog is an innovation-driven start-up that is dedicated to providing
-                                innovative products made with natural chemicals and special clay minerals.
+                                Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative
+                                products made with natural chemicals and special clay minerals
                             </p>
-                            <a href="#" class="shop-btn">Buy Products Here!</a>
+                            <a href="#" class="btn-white">Buy Products Here!</a>
                         </div>
                     </div>
 
                 </div>
             </div>
-        </section>
-
+        </div>
     </div>
 
     <!---------------------------------------------------Testimonail page------------------------------------->
