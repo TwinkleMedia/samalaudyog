@@ -49,9 +49,6 @@
 
     <!-- Carousel slider -->
     <section class="hero-section">
-        <div class="container">
-            <img src="./assest/slider/banner.png" alt="Samala Home care Products" class="img-fluid" loading="lazy">
-        </div>
     </section>
 
     <!-- About Section -->

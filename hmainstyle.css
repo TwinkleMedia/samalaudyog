@@ -242,7 +242,7 @@ p {
 
 .hero-section {
     background: linear-gradient(rgba(100, 150, 200, 0.3), rgba(100, 150, 200, 0.3)),
-        url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920') center/cover no-repeat;
+        url('./assest/slider/banner.png') center/cover no-repeat;
     min-height: 90vh;
     position: relative;
     padding: 60px 0 120px;
