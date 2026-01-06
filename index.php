@@ -549,22 +549,6 @@
                 <button class="shop-btn">Buy Products Here!</button>
             </div>
         </section>
-
-        <!-- Shop Section -->
-        <section class="shop-section">
-            <div class="phone-mockup">
-                <img src="./assest/shop.png" alt="Mobile shopping interface" class="phone-frame">
-            </div>
-
-            <div class="shop-content">
-                <h2 class="shop-title">Shop With Samala</h2>
-                <p class="shop-description">
-                    Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative products
-                    made with natural chemicals and special clay minerals
-                </p>
-                <button class="shop-btn">Buy Products Here!</button>
-            </div>
-        </section>
     </div>
 
     <!---------------------------------------------------Testimonail page------------------------------------->
