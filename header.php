@@ -2,15 +2,9 @@
     <div class="container-fluid px-4">
         <a class="navbar-brand" href="#">
             <div class="logo-container">
-                <div class="logo-box">
                     <a class="navbar-brand" href="#">
                         <img src="./assest/logo/Asset 3300.png" alt="Samala-Logo">
                     </a>
-
-                </div>
-                <div>
-                    <p class="brand-name">Welcome To Saboo</p>
-                </div>
             </div>
         </a>
 
@@ -19,7 +13,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
                     <a class="nav-link" href="#home">Home</a>
