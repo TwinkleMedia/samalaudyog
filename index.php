@@ -542,7 +542,7 @@
                         standards.
                     </div>
                 </div>
-                <div class="faq-item">
+                <!-- <div class="faq-item">
                     <div class="faq-question">
                         <span>Do you use biodegradable packaging?</span>
                         <span class="faq-icon">+</span>
@@ -551,7 +551,7 @@
                         Yes, we are committed to using biodegradable and recyclable packaging materials whenever
                         possible.
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 
