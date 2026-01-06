@@ -552,16 +552,6 @@
                         possible.
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Where can I purchase your products?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Our products are available through our website, authorized distributors, and select retail
-                        outlets.
-                    </div>
-                </div>
             </div>
         </section>
 
