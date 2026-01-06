@@ -623,12 +623,17 @@ p {
     margin: 0 auto;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* FAQ Section */
 .faq-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    margin: 60px auto;
+    margin-bottom: 60px;
     align-items: center;
 }
 
@@ -809,7 +814,9 @@ p {
 }
 
 @media (max-width: 768px) {
-
+    body {
+        padding: 30px 15px;
+    }
 
     .faq-content {
         padding: 30px 20px;

@@ -471,7 +471,8 @@
         <!-- FAQ Section -->
         <section class="faq-section">
             <div class="faq-image-container">
-                <img src="./assest/faq.png" alt="Product with water splash" class="faq-image">
+                <img src="./assest/faq.png"
+                    alt="Product with water splash" class="faq-image">
             </div>
 
             <div class="faq-content">
@@ -531,27 +532,23 @@
                         for you and the environment.
                     </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How does Samala Udyog ensure sustainability?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Sustainability is at the heart of our operations. We source natural ingredients responsibly and
-                        use innovative techniques to minimize environmental impact while maintaining high-quality
-                        standards.
-                    </div>
-                </div>
-                <!-- <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you use biodegradable packaging?</span>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Yes, we are committed to using biodegradable and recyclable packaging materials whenever
-                        possible.
-                    </div>
-                </div> -->
+            </div>
+        </section>
+
+        <!-- Shop Section -->
+        <section class="shop-section">
+            <div class="phone-mockup">
+                <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=300&h=600&fit=crop"
+                    alt="Mobile shopping interface" class="phone-frame">
+            </div>
+
+            <div class="shop-content">
+                <h2 class="shop-title">Shop With Samala</h2>
+                <p class="shop-description">
+                    Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative products
+                    made with natural chemicals and special clay minerals
+                </p>
+                <button class="shop-btn">Buy Products Here!</button>
             </div>
         </section>
 
