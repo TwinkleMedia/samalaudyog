@@ -2,9 +2,9 @@
     <div class="container-fluid px-4">
         <a class="navbar-brand" href="#">
             <div class="logo-container">
-                    <a class="navbar-brand" href="#">
-                        <img src="./assest/logo/Asset 3300.png" alt="Samala-Logo">
-                    </a>
+                <a class="navbar-brand" href="#">
+                    <img src="./assest/logo/Asset 3300.png" alt="Samala-Logo">
+                </a>
             </div>
         </a>
 
@@ -30,10 +30,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
-                <li class="nav-item ms-lg-3">
-                    <a class="btn-distributor" href="#distributor">Distributor</a>
-                </li>
             </ul>
+            <a class="btn-distributor" href="#distributor">Distributor</a>
         </div>
     </div>
 </nav>
