@@ -724,7 +724,7 @@ p {
 .shop-container {
     max-width: 1300px;
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 400px 1fr;
     gap: 80px;
     align-items: center;
     padding: 80px 100px;
@@ -790,13 +790,26 @@ p {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
-
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .shop-container {
+        margin: auto 5%;
+        padding: 80px 60px;
+        gap: 60px;
+    }
+}
+
 @media (max-width: 1024px) {
-    .shop-section {
+    .shop-container {
         grid-template-columns: 300px 1fr;
         gap: 50px;
-        padding: 60px 50px;
+        padding: 60px 40px;
+        margin: auto 3%;
+    }
+
+    .phone-image {
+        max-width: 400px;
+        top: -80px;
     }
 
     .shop-title {
@@ -805,29 +818,104 @@ p {
 }
 
 @media (max-width: 992px) {
-
-    .faq-section,
     .shop-section {
+        margin-top: 100px;
+    }
+
+    .shop-container {
         grid-template-columns: 1fr;
-    }
-
-    .faq-title,
-    .shop-title {
-        font-size: 2rem;
-    }
-
-    .shop-section {
         padding: 40px 30px;
+        margin: auto 2%;
     }
 
     .phone-mockup {
         order: 2;
-        margin-top: 30px;
+        margin: 30px auto 0;
+        max-width: 350px;
+    }
+
+    .phone-image {
+        position: relative;
+        top: 0;
+        left: 0;
+        max-width: 100%;
     }
 
     .shop-content {
         order: 1;
+        max-width: 100%;
     }
+
+    .shop-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-section {
+        margin-top: 80px;
+    }
+
+    .shop-container {
+        gap: 40px;
+        padding: 50px 30px;
+        text-align: center;
+        margin: auto;
+    }
+
+    .phone-mockup {
+        max-width: 280px;
+    }
+
+    .shop-title {
+        font-size: 2.2rem;
+    }
+
+    .shop-description {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .shop-section {
+        margin-top: 60px;
+    }
+
+    .shop-container {
+        padding: 40px 20px;
+    }
+
+    .shop-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .shop-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    .shop-btn {
+        width: 100%;
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+
+    .phone-mockup {
+        max-width: 250px;
+    }
+}
+@media (max-width: 992px) {
+
+    .faq-section {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-title {
+        font-size: 2rem;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -847,29 +935,6 @@ p {
         font-size: 1rem;
     }
 
-    .shop-section {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding: 50px 30px;
-        text-align: center;
-    }
-
-    .phone-mockup {
-        margin: 0 auto;
-        max-width: 280px;
-    }
-
-    .shop-content {
-        max-width: 100%;
-    }
-
-    .shop-title {
-        font-size: 2.5rem;
-    }
-
-    .shop-description {
-        font-size: 1rem;
-    }
 }
 
 @media (max-width: 576px) {
@@ -890,21 +955,6 @@ p {
 
     .faq-icon {
         font-size: 1.3rem;
-    }
-
-    .shop-description {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-
-    .shop-btn {
-        width: 100%;
-        padding: 12px 30px;
-        font-size: 1rem;
-    }
-
-    .phone-mockup {
-        max-width: 250px;
     }
 }
 
