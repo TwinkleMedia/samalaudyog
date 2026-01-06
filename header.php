@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg  px-3">
+<nav class="navbar navbar-expand-lg px-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="./assest/logo/Asset 3300.png" alt="Samala-Logo">
@@ -18,7 +18,7 @@
                         <a class="nav-link" href="./products.php">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./career.php">Career</a>
+                        <a class="nav-link" href="./career.php">Industries</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./contact.php">Contact</a>
