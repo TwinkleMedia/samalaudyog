@@ -70,7 +70,7 @@
                     mission to create a healthier and more sustainable world, one natural product at a time.
                 </p>
                 <div class="about-actions">
-                    <a href="#contact" class="contact-btn">Contact</a>
+                    <a href="#contact" class="contact-btnn">Contact</a>
                 </div>
             </div>
         </div>

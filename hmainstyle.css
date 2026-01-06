@@ -293,7 +293,7 @@ p {
     margin-bottom: 20px;
 }
 
-.contact-btn {
+.contact-btnn {
     background-color: #294C9D;
     color: white;
     padding: 15px 50px;
@@ -308,7 +308,7 @@ p {
     margin-top: 20px;
 }
 
-.contact-btn:hover {
+.contact-btnn:hover {
     background-color: #3A4E7C;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(74, 94, 140, 0.4);
@@ -373,7 +373,7 @@ p {
         font-size: 1rem;
     }
 
-    .contact-btn {
+    .contact-btnn {
         padding: 12px 40px;
         font-size: 1.1rem;
     }
@@ -401,7 +401,7 @@ p {
         font-size: 0.95rem;
     }
 
-    .contact-btn {
+    .contact-btnn {
         padding: 10px 30px;
         font-size: 1rem;
         width: 100%;
