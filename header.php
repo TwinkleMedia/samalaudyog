@@ -22,16 +22,16 @@
                     <a class="nav-link" href="aboutus.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#products">Products</a>
+                    <a class="nav-link" href="products.php">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#industries">Industries</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
+                    <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn-distributor" href="#distributor">Distributor</a>
+                    <a class="btn-distributor" href="https://wa.me/8097872259">Distributor</a>
                 </li>
             </ul>
         </div>
