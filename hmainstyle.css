@@ -242,16 +242,17 @@ p {
 
 .hero-section {
     width: 100%;
+    overflow: hidden;
     position: relative;
 }
 
 .hero-img {
     width: 100%;
-    height: 100vh;
+    height: auto;
+    /* Adjust this ratio to match your actual image (e.g., 16/9 or 3/1) */
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    display: block;
 }
-
 
 .about-container {
     position: relative;
@@ -314,9 +315,6 @@ p {
 }
 
 @media (max-width: 1200px) {
-    .hero-title {
-        font-size: 3rem;
-    }
 
     .about-title {
         font-size: 2.2rem;
@@ -344,10 +342,10 @@ p {
 }
 
 @media (max-width: 768px) {
-    .hero-section {
-        min-height: 70vh;
-        background-position: center top;
-        /* Adjust focal point */
+    .hero-img {
+        /* On mobile, 100vh is often too tall. 60-70vh feels more natural */
+        height: 60vh;
+        min-height: 300px;
     }
 
     .about-container {
@@ -374,8 +372,7 @@ p {
 
 @media (max-width: 576px) {
     .hero-img {
-        height: 55vh;
-        object-position: center top;
+        height: 50vh;
     }
 
     .about-header {
