@@ -18,11 +18,20 @@
      margin-bottom: 25px;
      letter-spacing: 0.5px;
  }
-.footerA
-{
-    color: white;
-    text-decoration: none;
-}
+
+ .footerA {
+     color: white;
+     text-decoration: none;
+ }
+
+ .footerA:hover {
+     text-decoration: underline;
+ }
+
+ .footerA:visited, .footerA:active {
+     color: white;
+ }
+
  /* Quick Links */
  .quick-links-list {
      list-style: none;
