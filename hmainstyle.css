@@ -241,8 +241,7 @@ p {
 }
 
 .hero-section {
-    background: linear-gradient(rgba(100, 150, 200, 0.3), rgba(100, 150, 200, 0.3)),
-        url('./assest/slider/banner.png') center/cover no-repeat;
+    background: url('./assest/slider/banner.png') center/cover no-repeat;
     min-height: 90vh;
     position: relative;
     padding: 60px 0 120px;
