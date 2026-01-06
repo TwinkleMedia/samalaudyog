@@ -717,10 +717,8 @@ p {
 
 /* Shop Section */
 .shop-section {
-
-    background: linear-gradient(135deg, #b8d4f1 0%, #8db4e3 100%);
+    background: linear-gradient(172deg, #dde5ed 0%, #0c67d1 100%);
     margin-top: 155px;
-
 }
 
 .shop-container {
