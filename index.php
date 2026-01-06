@@ -471,8 +471,7 @@
         <!-- FAQ Section -->
         <section class="faq-section">
             <div class="faq-image-container">
-                <img src="./assest/faq.png"
-                    alt="Product with water splash" class="faq-image">
+                <img src="./assest/faq.png" alt="Product with water splash" class="faq-image">
             </div>
 
             <div class="faq-content">
@@ -538,8 +537,7 @@
         <!-- Shop Section -->
         <section class="shop-section">
             <div class="phone-mockup">
-                <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=300&h=600&fit=crop"
-                    alt="Mobile shopping interface" class="phone-frame">
+                <img src="./assest/shop.png" alt="Mobile shopping interface" class="phone-frame">
             </div>
 
             <div class="shop-content">
