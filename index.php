@@ -105,31 +105,35 @@
 
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon"><img src="./assest/why1.png" alt="Industry experience" loading="lazy"></div>
+                <div class="feature-icon">
+                    <img src="./assest/why1.png" alt="Industry experience" loading="lazy">
+                </div>
                 <h3 class="feature-title">Industry experience</h3>
                 <p class="feature-text">Our industry experience ensures high-quality formulations, compliant production,
                     and products you can trust.</p>
             </div>
 
             <div class="feature-card">
-                <div class="feature-icon">⚗️</div>
-                <h3 class="feature-title">Industry experience</h3>
-                <p class="feature-text">Lorem ipsum dolor sit amet consectetur. Cras eget nunc hendrerit sed sed augue
-                    tellus massa.</p>
+                <div class="feature-icon"><img src="./assest/why2.png" alt="Industry experience" loading="lazy"></div>
+                <h3 class="feature-title">High Production Standards</h3>
+                <p class="feature-text">Built on strict quality control and high production standards.</p>
             </div>
 
             <div class="feature-card">
-                <div class="feature-icon">🚚</div>
-                <h3 class="feature-title">Industry experience</h3>
-                <p class="feature-text">Lorem ipsum dolor sit amet consectetur. Cras eget nunc hendrerit sed sed augue
-                    tellus massa.</p>
+                <div class="feature-icon">
+                    <img src="./assest/why3.png" alt="Customization & Private Label" loading="lazy">
+                </div>
+                <h3 class="feature-title">Customization & Private Label</h3>
+                <p class="feature-text">Customized formulations and private labeling to match your business needs.</p>
             </div>
 
             <div class="feature-card">
-                <div class="feature-icon">🏪</div>
-                <h3 class="feature-title">Industry experience</h3>
-                <p class="feature-text">Lorem ipsum dolor sit amet consectetur. Cras eget nunc hendrerit sed sed augue
-                    tellus massa.</p>
+                <div class="feature-icon">
+                    <img src="./assest/why4.png" alt="Reliable Logistics Network" loading="lazy">
+                </div>
+                <h3 class="feature-title">Reliable Logistics Network</h3>
+                <p class="feature-text">Our reliable logistics network ensures timely delivery and consistent supply
+                    across regions.</p>
             </div>
         </div>
     </section>
