@@ -715,45 +715,35 @@ p {
     transform: rotate(45deg);
 }
 
-/* Shop Section Wrapper */
-.shop-wrapper {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    padding: 0 20px;
-}
-
+/* Shop Section */
 .shop-section {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 350px 1fr;
+    gap: 80px;
     align-items: center;
-    background: linear-gradient(135deg, #b8d4f1 0%, #6b9dd8 100%);
+    background: linear-gradient(135deg, #b8d4f1 0%, #8db4e3 100%);
+    padding: 80px 100px;
     border-radius: 0;
-    padding: 60px 80px 60px 320px;
-    position: relative;
-    min-height: 500px;
+    margin: 0;
 }
 
 .phone-mockup {
-    position: absolute;
-    left: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 320px;
-    z-index: 10;
+    position: relative;
+    max-width: 350px;
+    margin: 0;
 }
 
 .phone-image {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
 }
 
 .shop-content {
     color: #1a3a6b;
-    padding-left: 60px;
-    max-width: 650px;
+    padding-left: 0;
+    max-width: 600px;
 }
 
 .shop-title {
@@ -766,7 +756,7 @@ p {
 }
 
 .shop-description {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     line-height: 1.7;
     margin-bottom: 35px;
     color: #2d4a73;
@@ -784,60 +774,13 @@ p {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: inline-block;
 }
 
 .shop-btn:hover {
     background-color: #f5f5f5;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .shop-section {
-        padding: 60px 60px 60px 280px;
-    }
-
-    .phone-mockup {
-        max-width: 280px;
-        left: -40px;
-    }
-
-    .shop-title {
-        font-size: 2.8rem;
-    }
-
-    .shop-content {
-        padding-left: 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    .shop-section {
-        grid-template-columns: 1fr;
-        padding: 280px 40px 60px 40px;
-        text-align: center;
-    }
-
-    .phone-mockup {
-        left: 50%;
-        top: -30px;
-        transform: translateX(-50%);
-        max-width: 250px;
-    }
-
-    .shop-content {
-        padding-left: 0;
-        max-width: 100%;
-    }
-
-    .shop-title {
-        font-size: 2.5rem;
-    }
-
-    .shop-description {
-        font-size: 1rem;
-    }
 }
 
 /* Responsive Design */
@@ -855,12 +798,27 @@ p {
 
 @media (max-width: 992px) {
 
-    .faq-section {
+    .faq-section,
+    .shop-section {
         grid-template-columns: 1fr;
     }
 
-    .faq-title {
+    .faq-title,
+    .shop-title {
         font-size: 2rem;
+    }
+
+    .shop-section {
+        padding: 40px 30px;
+    }
+
+    .phone-mockup {
+        order: 2;
+        margin-top: 30px;
+    }
+
+    .shop-content {
+        order: 1;
     }
 }
 
@@ -880,11 +838,36 @@ p {
     .faq-question {
         font-size: 1rem;
     }
+
+    .shop-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 50px 30px;
+        text-align: center;
+    }
+
+    .phone-mockup {
+        margin: 0 auto;
+        max-width: 280px;
+    }
+
+    .shop-content {
+        max-width: 100%;
+    }
+
+    .shop-title {
+        font-size: 2.5rem;
+    }
+
+    .shop-description {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 576px) {
 
-    .faq-title {
+    .faq-title,
+    .shop-title {
         font-size: 1.5rem;
         margin-bottom: 20px;
     }
@@ -901,6 +884,20 @@ p {
         font-size: 1.3rem;
     }
 
+    .shop-description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .shop-btn {
+        width: 100%;
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .phone-mockup {
+        max-width: 250px;
+    }
 }
 
 .carousel-item img {
