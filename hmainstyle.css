@@ -240,20 +240,18 @@ p {
     background-color: var(--primary-color) !important;
 }
 
-.hero-section {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.hero-img {
-    width: 100%;
-    height: auto;
-    /* Adjust this ratio to match your actual image (e.g., 16/9 or 3/1) */
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-}
-
+.hero-section { 
+    width: 100%; 
+    overflow: hidden; 
+    position: relative; 
+} 
+ 
+.hero-img { 
+    width: 100%; 
+    height: auto; 
+    display: block; /* Remove any inline spacing */
+    object-fit: cover; 
+} 
 .about-container {
     position: relative;
     margin-top: -110px;
