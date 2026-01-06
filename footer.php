@@ -48,6 +48,6 @@
 
         <!-- Copyright Bar -->
         <div class="footer-copyright">
-            <p>© 2025 Samala Udyog Pvt Ltd. All rights reserved. Designed by Twinkle Media Hub</p>
+            <p>© 2025 Samala Udyog Pvt Ltd. All rights reserved. Designed by <a href="https://www.twinklemediahub.com/">Twinkle Media Hub</a></p>
         </div>
     </footer>
