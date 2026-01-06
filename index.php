@@ -592,8 +592,7 @@
             <div class="follow-logo">
                 <div class="logo-box">
                     <div>
-                        <span class="logo-text">S</span>
-                        <span class="logo-subtext">Samala</span>
+                        <img src="./assest/logo/Asset 3300.png" alt="Samala-Logo">
                     </div>
                 </div>
             </div>
