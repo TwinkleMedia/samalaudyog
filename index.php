@@ -49,6 +49,7 @@
 
     <!-- Carousel slider -->
     <section class="hero-section">
+        <img src="./assest/slider/banner.png" alt="Hero Banner" class="hero-img">
     </section>
 
     <!-- About Section -->
