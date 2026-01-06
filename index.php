@@ -536,20 +536,32 @@
 
         <!-- Shop Section -->
         <section class="shop-section">
-            <div class="phone-mockup">
-                <img src="./assest/shop.png"
-                    alt="Mobile shopping interface" class="phone-frame">
-            </div>
+            <div class="container">
+                <div class="row align-items-center g-5">
 
-            <div class="shop-content">
-                <h2 class="shop-title">Shop With Samala</h2>
-                <p class="shop-description">
-                    Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative products
-                    made with natural chemicals and special clay minerals
-                </p>
-                <button class="shop-btn">Buy Products Here!</button>
+                    <!-- Mobile Image -->
+                    <div class="col-lg-5 text-center">
+                        <div class="mobile-mockup">
+                            <img src="./assest/shop.png" alt="Mobile App Preview">
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="col-lg-7">
+                        <div class="shop-content">
+                            <h2>Shop With Samala</h2>
+                            <p>
+                                Samala Udyog is an innovation-driven start-up that is dedicated to providing
+                                innovative products made with natural chemicals and special clay minerals.
+                            </p>
+                            <a href="#" class="shop-btn">Buy Products Here!</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
+
     </div>
 
     <!---------------------------------------------------Testimonail page------------------------------------->
