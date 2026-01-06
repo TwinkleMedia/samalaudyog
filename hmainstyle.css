@@ -195,14 +195,16 @@ p {
 }
 
 .btn-distributor {
-    background-color: #294C9D;
+    background-color: #4A5E8C;
     color: white;
     padding: 0.5rem 1.8rem;
     border-radius: 4px;
+    border: 2px solid #4A5E8C;
     font-size: 18px;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    margin-left: 2rem;
 }
 
 .btn-distributor:hover {
@@ -212,6 +214,7 @@ p {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 .navbar-toggler {
     border: 2px solid white;
