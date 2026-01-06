@@ -19,33 +19,7 @@
 
 
     <?php include './header.php' ?>
-    <?php
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-    include('./admin/dbconfig.php');
-
-    // Check database connection
-    if (!$conn) {
-        die("Database connection failed: " . mysqli_connect_error());
-    }
-
-    // Fetch images
-    $query = "SELECT image_path FROM slider_images";
-    $result = $conn->query($query);
-
-    if (!$result) {
-        die("SQL Error: " . $conn->error);
-    }
-
-    // Fix: Use fetch_assoc() instead of fetch_all()
-    $sliderImages = [];
-    while ($row = $result->fetch_assoc()) {
-        $sliderImages[] = $row;
-    }
-
-    $conn->close();
-    ?>
-
+    
 
     <!-- Carousel slider -->
     <section class="hero-section">
