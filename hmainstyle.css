@@ -718,29 +718,19 @@ p {
 /* Shop Section */
 .shop-section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 400px 1fr;
+    gap: 60px;
     align-items: center;
     background: linear-gradient(135deg, #a8c5e8 0%, #7a9ecf 100%);
-    padding: 50px;
+    padding: 60px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .phone-mockup {
     position: relative;
-    max-width: 300px;
-    margin: 0 auto;
-}
-
-.phone-frame {
-    width: 100%;
-    height: auto;
-    border: 8px solid #1a1a1a;
-    border-radius: 30px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    background: white;
-    padding: 15px;
+    max-width: 350px;
+    margin: 0;
 }
 
 .phone-content {
@@ -751,33 +741,36 @@ p {
 
 .shop-content {
     color: white;
+    padding-left: 20px;
 }
 
 .shop-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #1a3a6b;
+    line-height: 1.2;
 }
 
 .shop-description {
     font-size: 1.2rem;
     line-height: 1.8;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     color: #1a3a6b;
 }
 
 .shop-btn {
     background-color: white;
     color: #2c5aa0;
-    padding: 15px 40px;
+    padding: 18px 50px;
     border: none;
     border-radius: 8px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
 }
 
 .shop-btn:hover {
@@ -795,22 +788,24 @@ p {
         grid-template-columns: 1fr;
     }
 
-    .faq-title,
-    .shop-title {
-        font-size: 2rem;
-    }
-
     .shop-section {
+        grid-template-columns: 1fr;
         padding: 40px 30px;
     }
 
     .phone-mockup {
-        order: 2;
-        margin-top: 30px;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     .shop-content {
-        order: 1;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .faq-title,
+    .shop-title {
+        font-size: 2rem;
     }
 }
 
@@ -868,12 +863,16 @@ p {
 
     .shop-btn {
         width: 100%;
-        padding: 12px 30px;
+        padding: 14px 30px;
         font-size: 1rem;
     }
 
     .phone-mockup {
         max-width: 250px;
+    }
+
+    .shop-section {
+        padding: 30px 20px;
     }
 }
 
