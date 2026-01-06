@@ -49,7 +49,7 @@
 
     <!-- Carousel slider -->
     <section class="hero-section">
-        <img src="./assest/slider/banner.png" alt="Hero Banner" class="hero-img">
+        <img src="./assest/slider/banner.png" alt="Hero Banner" class="hero-img" loading="lazy">
     </section>
 
     <!-- About Section -->
@@ -84,17 +84,17 @@
 
         <div class="products-grid">
             <div class="product-card">
-                <img src="./assest/home.png" alt="Home Care Products" class="product-image">
+                <img src="./assest/home.png" alt="Home Care Products" class="product-image" loading="lazy">
                 <button class="checkout-btn">Checkout</button>
             </div>
 
             <div class="product-card">
-                <img src="./assest/personal.png" alt="Personal Care Products" class="product-image">
+                <img src="./assest/personal.png" alt="Personal Care Products" class="product-image" loading="lazy">
                 <button class="checkout-btn">Checkout</button>
             </div>
 
             <div class="product-card">
-                <img src="./assest/hospital.png" alt="Hospital Care Products" class="product-image">
+                <img src="./assest/hospital.png" alt="Hospital Care Products" class="product-image" loading="lazy">
                 <button class="checkout-btn">Checkout</button>
             </div>
         </div>
@@ -105,10 +105,10 @@
 
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">🏭</div>
+                <div class="feature-icon"><img src="./assest/why1.png" alt="Industry experience" loading="lazy"></div>
                 <h3 class="feature-title">Industry experience</h3>
-                <p class="feature-text">Lorem ipsum dolor sit amet consectetur. Cras eget nunc hendrerit sed sed augue
-                    tellus massa.</p>
+                <p class="feature-text">Our industry experience ensures high-quality formulations, compliant production,
+                    and products you can trust.</p>
             </div>
 
             <div class="feature-card">
