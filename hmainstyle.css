@@ -414,7 +414,7 @@ p {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -619,12 +619,12 @@ p {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -722,7 +722,7 @@ p {
 }
 
 .shop-container {
-    max-width: 1300px;
+    max-width: 1400px;
     display: grid;
     grid-template-columns: 400px 1fr;
     gap: 80px;
@@ -967,7 +967,7 @@ p {
 }
 
 .follow-container {
-    max-width: 1300px;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
