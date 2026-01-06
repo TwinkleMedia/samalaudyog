@@ -555,13 +555,13 @@
     </section>
 
     <!---------------------------------------------------Testimonail page------------------------------------->
-    <div class="testimonial-container">
+    <!-- <div class="testimonial-container">
 
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 30px;">What Our Clients Say</h2>
+            <h2 style="text-align: center; margin-bottom: 30px;">What Our Clients Say</h2> -->
 
-            <!-- Slider Container -->
-            <div class="swiper testimonial-slider">
+    <!-- Slider Container -->
+    <!-- <div class="swiper testimonial-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <p class="testimonial-content">"Best place to get so many products at very cost effective range.
@@ -576,18 +576,54 @@
                         <p class="testimonial-author">- Pravin Mhaske</p>
                     </div>
 
-                </div>
+                </div> -->
 
-                <!-- Pagination and Navigation -->
-                <div class="swiper-pagination"></div>
-                <!--<div class="swiper-button-next"></div>-->
-                <!--<div class="swiper-button-prev"></div>-->
-            </div>
+    <!-- Pagination and Navigation -->
+    <!-- <div class="swiper-pagination"></div> -->
+    <!--<div class="swiper-button-next"></div>-->
+    <!--<div class="swiper-button-prev"></div>-->
+    <!-- </div>
         </div>
 
-    </div>
+    </div> -->
 
+    <section class="follow-section">
+        <div class="follow-container">
+            <div class="follow-logo">
+                <div class="logo-box">
+                    <div>
+                        <span class="logo-text">S</span>
+                        <span class="logo-subtext">Samala</span>
+                    </div>
+                </div>
+            </div>
 
+            <div class="follow-social">
+                <h3 class="social-title">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="follow-cta">
+                <a href="#" class="portfolio-btn">
+                    <i class="fas fa-download"></i>
+                    See Our Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
 
     <?php include './footer.php'; ?>
     <?php include './jslink.php' ?>
