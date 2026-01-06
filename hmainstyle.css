@@ -486,7 +486,7 @@ p {
 }
 
 .feature-card {
-    background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+    background: #E6EBFF;
     border-radius: 12px;
     padding: 30px 20px;
     text-align: center;
