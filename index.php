@@ -123,7 +123,7 @@
                 <div class="feature-icon">
                     <img src="./assest/why3.png" alt="Customization & Private Label" loading="lazy">
                 </div>
-                <h3 class="feature-title">Customization & Private Label</h3>
+                <h3 class="feature-title">Customization and Private Label</h3>
                 <p class="feature-text">Customized formulations and private labeling to match your business needs.</p>
             </div>
 
@@ -138,83 +138,83 @@
         </div>
     </section>
 
+    <!-- // Include database configuration  -->
     <?php
-    // Include database configuration
-    include './admin/dbconfig.php';
-
-    if (!$conn) {
-        die("Database connection failed: " . mysqli_connect_error());
-    }
-
+    // include './admin/dbconfig.php';
+    
+    // if (!$conn) {
+    //     die("Database connection failed: " . mysqli_connect_error());
+    // }
+    
     // Initialize arrays for categories
-    $categories = ['Home Care', 'Personal Care', 'Hospital Care',];
-
+    // $categories = ['Home Care', 'Personal Care', 'Hospital Care',];
+    
     // Array to hold products by category
-    $productsByCategory = [];
-
+    // $productsByCategory = [];
+    
     // Function to fetch images related to a product
-    function getProductImages($productId, $conn)
-    {
-        $images = [];
-        $query = "SELECT image_path FROM product_images WHERE product_id = ?";
-        $stmt = $conn->prepare($query);
-
-        if (!$stmt) {
-            return $images; // Return empty if the statement fails
-        }
-
-        $stmt->bind_param('i', $productId);
-        $stmt->execute();
-        $stmt->store_result();
-        $stmt->bind_result($image_path);
-
-        while ($stmt->fetch()) {
-            $images[] = "./admin/" . $image_path; // Add the base path
-        }
-
-        $stmt->close();
-        return $images;
-    }
-
+    // function getProductImages($productId, $conn)
+    // {
+    //     $images = [];
+    //     $query = "SELECT image_path FROM product_images WHERE product_id = ?";
+    //     $stmt = $conn->prepare($query);
+    
+    //     if (!$stmt) {
+    //         return $images; // Return empty if the statement fails
+    //     }
+    
+    //     $stmt->bind_param('i', $productId);
+    //     $stmt->execute();
+    //     $stmt->store_result();
+    //     $stmt->bind_result($image_path);
+    
+    //     while ($stmt->fetch()) {
+    //         $images[] = "./admin/" . $image_path; // Add the base path
+    //     }
+    
+    //     $stmt->close();
+    //     return $images;
+    // }
+    
     // Check if the connection was established
-    if (isset($conn)) {
-        foreach ($categories as $category) {
-            $query = "SELECT id, title, description, final_price, discounted_price FROM allproducts WHERE subject = ?";
-            $stmt = $conn->prepare($query);
-
-            if (!$stmt) {
-                continue; // Skip this category if statement fails
-            }
-
-            $stmt->bind_param('s', $category);
-            $stmt->execute();
-            $stmt->store_result();
-
-            $products = [];
-            $stmt->bind_result($id, $title, $description, $final_price, $discounted_price);
-
-            // Fetch data
-            while ($stmt->fetch()) {
-                $products[] = [
-                    'id' => $id,
-                    'title' => $title,
-                    'description' => $description,
-                    'final_price' => $final_price,
-                    'discounted_price' => $discounted_price,
-                    'images' => getProductImages($id, $conn), // Fetch product images
-                ];
-            }
-
-            $productsByCategory[$category] = $products;
-            $stmt->close();
-        }
-
-        // Close the database connection
-        $conn->close();
-    } else {
-        echo "Database connection is not established.";
-    }
-
+    // if (isset($conn)) {
+    //     foreach ($categories as $category) {
+    //         $query = "SELECT id, title, description, final_price, discounted_price FROM allproducts WHERE subject = ?";
+    //         $stmt = $conn->prepare($query);
+    
+    //         if (!$stmt) {
+    //             continue; // Skip this category if statement fails
+    //         }
+    
+    //         $stmt->bind_param('s', $category);
+    //         $stmt->execute();
+    //         $stmt->store_result();
+    
+    //         $products = [];
+    //         $stmt->bind_result($id, $title, $description, $final_price, $discounted_price);
+    
+    //         // Fetch data
+    //         while ($stmt->fetch()) {
+    //             $products[] = [
+    //                 'id' => $id,
+    //                 'title' => $title,
+    //                 'description' => $description,
+    //                 'final_price' => $final_price,
+    //                 'discounted_price' => $discounted_price,
+    //                 'images' => getProductImages($id, $conn), // Fetch product images
+    //             ];
+    //         }
+    
+    //         $productsByCategory[$category] = $products;
+    //         $stmt->close();
+    //     }
+    
+    // Close the database connection
+    //     $conn->close();
+    // } else {
+    //     echo "Database connection is not established.";
+    // }
+    
     // Function to render product section
     function renderProductSection($category, $products)
     {
@@ -270,7 +270,7 @@
 
     <!-- -----------------------------------Specialty chemical -->
 
-    <section class="hero">
+    <!-- <section class="hero">
         <div class="container">
             <h2>Specialty Ingredients, Chemicals & Minerals</h2>
             <p>Product Portfolio for Home & Personal Care, Pharma & Industrial Care</p>
@@ -302,10 +302,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- -----------------------New section------------- -->
-    <div class="container py-5">
+    <!-- <div class="container py-5">
         <h2 class="text-center mb-5">Bring Unique Products and Formulations to the Market</h2>
         <div class="row g-4">
             <div class="col-md-4">
@@ -364,16 +364,15 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
     <!-- --------video------------------ -->
-    <section id="video-section" class="my-5">
+    <!-- <section id="video-section" class="my-5">
         <div class="container">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <!-- Video 1 -->
                     <div class="swiper-slide">
                         <div class="video-container">
                             <video class="video-embed" controls playsinline muted>
@@ -383,7 +382,6 @@
                         </div>
                     </div>
 
-                    <!-- Video 2 -->
                     <div class="swiper-slide">
                         <div class="video-container">
                             <video class="video-embed" controls playsinline muted>
@@ -393,30 +391,29 @@
                         </div>
                     </div>
 
-                    <!-- Video 3 -->
                     <div class="swiper-slide">
-                        <div class="video-container">
-                            <video class="video-embed" controls playsinline muted>
+                        <div class="video-container"> -->
+                            <!-- <video class="video-embed" controls playsinline muted>
                                 <source src="./assest/video3.mp4" type="video/mp4" loading="lazy">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Video 4 -->
 
 
                     <!-- Video 5 -->
 
-                </div>
+                <!-- </div> -->
 
                 <!-- Swiper Controls -->
-                <div class="swiper-button-next"></div>
+                <!-- <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 
@@ -426,7 +423,7 @@
 
 
     <!-- Product Modal Structure -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header border-bottom-0">
@@ -435,26 +432,26 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body px-4 py-3">
-                    <div class="row g-4">
+                    <div class="row g-4"> -->
                         <!-- Product Images Gallery -->
-                        <div class="col-lg-6">
-                            <div class="product-gallery">
+                        <!-- <div class="col-lg-6">
+                            <div class="product-gallery"> -->
                                 <!-- Main Product Image Container -->
-                                <div class="position-relative mb-3 main-image-container">
+                                <!-- <div class="position-relative mb-3 main-image-container">
                                     <img id="mainImage" src="" alt="Main Product Image"
                                         class="img-fluid rounded shadow-sm w-100 object-fit-cover"
                                         style="max-height: 400px;">
-                                </div>
+                                </div> -->
                                 <!-- Thumbnails Gallery -->
-                                <div class="thumbnails-container">
+                                <!-- <div class="thumbnails-container">
                                     <div id="thumbnailGallery"
                                         class="d-flex gap-2 overflow-x-auto py-2 thumbnail-wrapper">
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- Product Information -->
-                        <div class="col-lg-6">
+                        <!-- <div class="col-lg-6">
                             <div class="product-details">
                                 <h3 class="product-title h4 mb-3 fw-bold" id="modalProductTitle"></h3>
 
@@ -489,7 +486,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
