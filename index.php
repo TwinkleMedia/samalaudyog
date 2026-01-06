@@ -89,19 +89,15 @@
             </div>
 
             <div class="product-card">
-                <img src="./assest/personal.png"
-                    alt="Personal Care Products" class="product-image">
+                <img src="./assest/personal.png" alt="Personal Care Products" class="product-image">
                 <button class="checkout-btn">Checkout</button>
             </div>
 
             <div class="product-card">
-                <img src="./assest/hospital.png"
-                    alt="Hospital Care Products" class="product-image">
+                <img src="./assest/hospital.png" alt="Hospital Care Products" class="product-image">
                 <button class="checkout-btn">Checkout</button>
             </div>
-                    alt="Home Care Products" class="product-image">
-                <button class="checkout-btn">Checkout</button>
-            </div>
+        </div>
         </div>
 
         <!-- Why Choose Us Section -->
