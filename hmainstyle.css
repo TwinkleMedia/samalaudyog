@@ -717,19 +717,22 @@ p {
 
 /* Shop Section */
 .shop-section {
+
+    background: linear-gradient(135deg, #b8d4f1 0%, #8db4e3 100%);
+
+}
+
+.shop-container {
+    max-width: 1200px;
     display: grid;
     grid-template-columns: 350px 1fr;
     gap: 80px;
     align-items: center;
-    background: linear-gradient(135deg, #b8d4f1 0%, #8db4e3 100%);
     padding: 80px 100px;
     border-radius: 0;
     margin: 0;
 }
-.shop-container
-{
-    max-width: 1200px;
-}
+
 .phone-mockup {
     position: relative;
     max-width: 350px;
