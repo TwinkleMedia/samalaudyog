@@ -76,11 +76,6 @@
         </div>
     </section>
 
-
-
-
-
-
     <!-- -----------------Explore Product ----------------- -->
 
     <section class="container">
@@ -89,19 +84,21 @@
 
         <div class="products-grid">
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=400&h=300&fit=crop"
+                <img src="./assest/home.png" alt="Home Care Products" class="product-image">
+                <button class="checkout-btn">Checkout</button>
+            </div>
+
+            <div class="product-card">
+                <img src="./assest/personal.png"
                     alt="Personal Care Products" class="product-image">
                 <button class="checkout-btn">Checkout</button>
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop"
+                <img src="./assest/hospital.png"
                     alt="Hospital Care Products" class="product-image">
                 <button class="checkout-btn">Checkout</button>
             </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop"
                     alt="Home Care Products" class="product-image">
                 <button class="checkout-btn">Checkout</button>
             </div>
