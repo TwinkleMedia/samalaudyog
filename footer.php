@@ -7,7 +7,7 @@
                 <h3>Quick Links</h3>
                 <ul class="quick-links-list">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="about.php">About</a></li>
+                    <li><a href="aboutus.php">About</a></li>
                     <li><a href="products.php">Products</a></li>
                     <li><a href="career.php">Career</a></li>
                     <li><a href="contact.php">Contact</a></li>
