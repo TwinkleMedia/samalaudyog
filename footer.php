@@ -9,7 +9,7 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="about.php">About</a></li>
                     <li><a href="products.php">Products</a></li>
-                    <li><a href="industries.php">Industries</a></li>
+                    <li><a href="career.php">Career</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
             </div>
@@ -30,18 +30,18 @@
             <div class="footer-column">
                 <h3>Available on</h3>
                 <div class="app-icons">
-                    <a href="#" class="app-icon website" aria-label="Website">
+                    <div class="app-icon website" aria-label="Website">
                         <img src="./assest/social1.png" alt="amazon logo">
-                    </a>
-                    <a href="#" class="app-icon youtube" aria-label="YouTube">
+                    </div>
+                    <div class="app-icon youtube" aria-label="YouTube">
                         <img src="./assest/social2.png" alt="India Mart logo">
-                    </a>
-                    <a href="#" class="app-icon playstore" aria-label="Google Play Store">
+                    </div>
+                    <div class="app-icon playstore" aria-label="Google Play Store">
                         <img src="./assest/social3.png" alt="Jio logo">
-                    </a>
-                    <a href="#" class="app-icon appstore" aria-label="Apple App Store">
+                    </div>
+                    <div class="app-icon appstore" aria-label="Apple App Store">
                         <img src="./assest/social4.png" alt="Flipkart logo">
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
