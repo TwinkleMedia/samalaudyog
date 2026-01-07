@@ -1093,6 +1093,12 @@ p {
     font-size: 14px;
 }
 
+.portfolio-btn:active,
+.portfolio-btn:focus,
+.portfolio-btn:active {
+    color: white;
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .follow-container {
