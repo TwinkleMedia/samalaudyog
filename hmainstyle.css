@@ -716,7 +716,7 @@ p {
 }
 
 /* Shop Section */
-.shop-section {
+.shop-sections {
     background: linear-gradient(172deg, #dde5ed 0%, #0c67d1 100%);
     margin-top: 155px;
 }
@@ -819,7 +819,7 @@ p {
 }
 
 @media (max-width: 992px) {
-    .shop-section {
+    .shop-sections {
         margin-top: 100px;
     }
 
@@ -853,7 +853,7 @@ p {
 }
 
 @media (max-width: 768px) {
-    .shop-section {
+    .shop-sections {
         margin-top: 80px;
     }
 
@@ -878,7 +878,7 @@ p {
 }
 
 @media (max-width: 576px) {
-    .shop-section {
+    .shop-sections {
         margin-top: 60px;
     }
 
