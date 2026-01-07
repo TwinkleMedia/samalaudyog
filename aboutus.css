@@ -13,10 +13,9 @@
   }
 
   .about-headerr h1 {
-      color: #2c5f8d;
+      color: #2C5AA0;
       font-size: 2.5rem;
       font-weight: 600;
-      margin-bottom: 10px;
   }
 
   .content-wrapperr {
@@ -49,7 +48,7 @@
   }
 
   .text-containerr p {
-      color: #2c5f8d;
+      color: #2C5AA0;
       font-size: 1.1rem;
       line-height: 1.8;
       margin-bottom: 20px;
