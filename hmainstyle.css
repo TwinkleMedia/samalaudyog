@@ -1064,6 +1064,13 @@ p {
     color: white;
 }
 
+.homeAnchor:focus,
+.homeAnchor:active,
+.homeAnchor:visited {
+    color: #2c4a9d;
+
+}
+
 .social-icons a:focus,
 .social-icons a:active,
 .social-icons a:visited {

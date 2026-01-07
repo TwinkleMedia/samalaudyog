@@ -44,7 +44,7 @@
                     mission to create a healthier and more sustainable world, one natural product at a time.
                 </p>
                 <div class="about-actions">
-                    <a href="https://wa.me/8097872259" class="contact-btnn">Contact</a>
+                    <a href="https://wa.me/8097872259" target="_blank" class="contact-btnn">Contact</a>
                 </div>
             </div>
         </div>
@@ -59,7 +59,8 @@
         <div class="products-grid">
             <div class="product-card">
                 <img src="./assest/home.png" alt="Home Care Products" class="product-image" loading="lazy">
-                <a href="https://samalaudyog.in/homecare"><button class="checkout-btn">Checkout</button></a>
+                <a href="https://samalaudyog.in/homecare" target="_blank"><button
+                        class="checkout-btn">Checkout</button></a>
             </div>
 
             <div class="product-card">
@@ -70,7 +71,8 @@
 
             <div class="product-card">
                 <img src="./assest/hospital.png" alt="Hospital Care Products" class="product-image" loading="lazy">
-                <a href="https://samalaudyog.in/hospitalcare"><button class="checkout-btn">Checkout</button></a>
+                <a href="https://samalaudyog.in/hospitalcare" target="_blank"><button
+                        class="checkout-btn">Checkout</button></a>
             </div>
         </div>
         </div>
@@ -550,7 +552,8 @@
                     Samala Udyog is an innovation-driven start-up that is dedicated to providing innovative products
                     made with natural chemicals and special clay minerals
                 </p>
-                <button class="shop-btn">Buy Products Here!</button>
+                <a href="https://samalaudyog.in/" target="_blank" class="homeAnchor"><button class="shop-btn">Buy Products
+                        Here!</button></a>
             </div>
         </div>
     </section>
@@ -601,17 +604,20 @@
             <div class="follow-social">
                 <h3 class="social-title">Follow Us</h3>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/samala.udyog/" target="_blank" class="social-icon" aria-label="Facebook">
+                    <a href="https://www.facebook.com/samala.udyog/" target="_blank" class="social-icon"
+                        aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://www.instagram.com/samala_udyog/" target="_blank" class="social-icon" aria-label="Instagram">
+                    <a href="https://www.instagram.com/samala_udyog/" target="_blank" class="social-icon"
+                        aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
                     <a href="https://in.linkedin.com/in/murali-samala-3852322" target="_blank" class="social-icon"
                         aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://www.youtube.com/@samalaudyog/featured" target="_blank" class="social-icon" aria-label="YouTube">
+                    <a href="https://www.youtube.com/@samalaudyog/featured" target="_blank" class="social-icon"
+                        aria-label="YouTube">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
