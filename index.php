@@ -616,7 +616,8 @@
             </div>
 
             <div class="follow-cta">
-                <a href="#" class="portfolio-btn">
+                <a href="./assest/SUPL-portfolio.pdf" target="_blank" class="portfolio-btn"
+                    download="Samala-Product-Portfolio.pdf">
                     <i class="fas fa-download"></i>
                     See Our Portfolio
                 </a>
