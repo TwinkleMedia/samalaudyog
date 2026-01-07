@@ -129,7 +129,18 @@
             </div>
         </div>
     </div>
+    <!-- certficate section -->
+    <div class="compliance-section">
+        <div class="compliance-header">
+            <h1>Compliance & Certifications</h1>
+        </div>
 
+        <div class="certifications-container">
+            <div class="logos-wrapper">
+                <img src="./assest/samalaabout.png" alt="Compliance & Certifications Logos" loading="lazy">
+            </div>
+        </div>
+    </div>
     <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
