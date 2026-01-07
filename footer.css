@@ -26,6 +26,7 @@
 
  .footerA:hover {
      text-decoration: underline;
+     color: #fff;
  }
 
  .footerA:visited, .footerA:active {
