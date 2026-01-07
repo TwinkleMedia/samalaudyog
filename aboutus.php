@@ -121,16 +121,23 @@
     </script>
     <script>
         function showTab(tabId) {
-            document.getElementById(tabId).classList.add("active");
-            event.target.classList.add("active");
-            const allTabs = document.querySelectorAll(".tab-content");
-            allTabs.forEach(tabs => {
-                tabs.classList.remove("active");
+            // Hide all tab contents
+            const allTabs = document.querySelectorAll('.tab-content');
+            allTabs.forEach(tab => {
+                tab.classList.remove('active');
             });
-            const allbtns = document.querySelectorAll(".tab-button");
-            allbtns.forEach(btnTab => {
-                btnTab.classList.remove("active");
+
+            // Remove active class from all buttons
+            const allButtons = document.querySelectorAll('.tab-button');
+            allButtons.forEach(button => {
+                button.classList.remove('active');
             });
+
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
         }
 
     </script>
