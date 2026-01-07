@@ -537,10 +537,6 @@ p {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 30px 15px;
-    }
-
     .section-title,
     .why-title {
         font-size: 1.8rem;
@@ -585,9 +581,7 @@ p {
 }
 
 @media (max-width: 576px) {
-    body {
-        padding: 20px 10px;
-    }
+
 
     .section-title,
     .why-title {
@@ -939,9 +933,6 @@ p {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding: 30px 15px;
-    }
 
     .faq-content {
         padding: 30px 20px;

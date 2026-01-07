@@ -156,7 +156,7 @@
     <?php include './header.php' ?>
 
     <section class="hero-section">
-        <img src="./assest/slider/banner.png" alt="Hero Banner" class="hero-img" loading="lazy">
+        <img src="./assest/slider/aboutBanner.png" alt="Hero Banner" class="hero-img" loading="lazy">
     </section>
     <div class="container">
         <div class="about-us">
