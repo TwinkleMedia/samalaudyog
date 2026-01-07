@@ -109,12 +109,8 @@
   }
 
   /* vision & mission */
-  .container {
-      max-width: 1400px;
-      margin: 0 auto;
+  .vissionMission {
       background-color: #2A4A7C;
-      border-radius: 15px;
-      overflow: hidden;
   }
 
   .header {
