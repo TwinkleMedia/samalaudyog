@@ -792,12 +792,20 @@ p {
 }
 
 /* Responsive Design */
+@media(max-width: 1400px) {
+    .phone-image {
+        max-width: 500px;
+        position: static;
+    }
+}
+
 @media (max-width: 1200px) {
     .shop-container {
         margin: auto 5%;
         padding: 80px 60px;
         gap: 60px;
     }
+
     .phone-image {
         max-width: 500px;
         position: static;
