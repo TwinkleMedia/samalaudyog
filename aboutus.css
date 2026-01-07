@@ -298,7 +298,7 @@
 
   .founder-content {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       padding: 40px 60px 60px;
       gap: 50px;
       background-color: #fafafa;
