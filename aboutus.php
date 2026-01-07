@@ -141,6 +141,24 @@
             </div>
         </div>
     </div>
+    <div class="products-section">
+        <div class="products-header">
+            <h1>Check Out Our Poroducts</h1>
+        </div>
+
+        <div class="products-content">
+            <div class="image-container">
+                <img src="./assest/about3.png" alt="Samala Products" loading="lazy">
+            </div>
+
+            <div class="text-container">
+                <h2 class="brand-name">Samala</h2>
+                <p class="tagline">We Care , so we serve</p>
+                <button class="cta-button" onclick=`window.location.href="https://samalaudyog.in/'">View All
+                    Products</button>
+            </div>
+        </div>
+    </div>
     <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
