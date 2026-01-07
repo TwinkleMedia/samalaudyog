@@ -308,7 +308,7 @@
 
   .image-container {
       flex-shrink: 0;
-      width: 280px;
+      width: 600px;
   }
 
   .image-container img {
