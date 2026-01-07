@@ -113,8 +113,7 @@
 
         <div class="founder-content">
             <div class="image-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 280 350'%3E%3Crect fill='%23e8e8e8' width='280' height='350'/%3E%3Cellipse cx='140' cy='100' rx='50' ry='60' fill='%23c0c0c0'/%3E%3Crect x='90' y='150' width='100' height='150' fill='%23404040'/%3E%3Crect x='130' y='160' width='20' height='80' fill='%233a5f9e'/%3E%3Ctext x='50%25' y='90%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='14' fill='%23666'%3EFounder Image%3C/text%3E%3C/svg%3E"
-                    alt="Founder">
+                <img src="./assest/samalaFounder.png" alt="Founder" loading="lazy">
             </div>
 
             <div class="text-container">
