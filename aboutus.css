@@ -276,3 +276,134 @@
           min-width: 100%;
       }
   }
+
+  /* our founder */
+  .founder-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .founder-header {
+      text-align: center;
+      padding: 40px 20px 30px;
+      background-color: #fff;
+  }
+
+  .founder-header h1 {
+      color: #2c5a8d;
+      font-size: 2.5rem;
+      font-weight: 600;
+  }
+
+  .founder-content {
+      display: flex;
+      align-items: flex-start;
+      padding: 40px 60px 60px;
+      gap: 50px;
+      background-color: #fafafa;
+  }
+
+  .image-container {
+      flex-shrink: 0;
+      width: 280px;
+  }
+
+  .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      display: block;
+  }
+
+  .text-container {
+      flex: 1;
+      padding-top: 10px;
+  }
+
+  .quote {
+      color: #2c5a8d;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      font-style: italic;
+  }
+
+  .quote:before {
+      content: '"';
+  }
+
+  .quote:after {
+      content: '"';
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+      .founder-content {
+          padding: 40px 40px 50px;
+          gap: 40px;
+      }
+
+      .image-container {
+          width: 240px;
+      }
+  }
+
+  @media (max-width: 768px) {
+      .founder-header h1 {
+          font-size: 2rem;
+      }
+
+      .founder-content {
+          flex-direction: column;
+          align-items: center;
+          padding: 30px 30px 40px;
+          gap: 30px;
+      }
+
+      .image-container {
+          width: 280px;
+      }
+
+      .text-container {
+          padding-top: 0;
+      }
+
+      .quote {
+          font-size: 1.1rem;
+          text-align: left;
+      }
+  }
+
+  @media (max-width: 480px) {
+      body {
+          padding: 10px;
+      }
+
+      .founder-header {
+          padding: 30px 15px 20px;
+      }
+
+      .founder-header h1 {
+          font-size: 1.75rem;
+      }
+
+      .founder-content {
+          padding: 25px 20px 35px;
+          gap: 25px;
+      }
+
+      .image-container {
+          width: 100%;
+          max-width: 280px;
+      }
+
+      .quote {
+          font-size: 1rem;
+          line-height: 1.7;
+          margin-bottom: 20px;
+      }
+  }
