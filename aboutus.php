@@ -119,7 +119,21 @@
             once: true // Animation happens only once
         });
     </script>
+    <script>
+        function showTab(tabId) {
+            document.getElementById(tabId).classList.add("active");
+            event.target.classList.add("active");
+            const allTabs = document.querySelectorAll(".tab-content");
+            allTabs.forEach(tabs => {
+                tabs.classList.remove("active");
+            });
+            const allbtns = document.querySelectorAll(".tab-button");
+            allbtns.forEach(btnTab => {
+                btnTab.classList.remove("active");
+            });
+        }
 
+    </script>
     <?php include './footer.php' ?>
     <?php include './jslink.php' ?>
 </body>
