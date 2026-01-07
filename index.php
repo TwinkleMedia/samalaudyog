@@ -44,7 +44,7 @@
                     mission to create a healthier and more sustainable world, one natural product at a time.
                 </p>
                 <div class="about-actions">
-                    <a href="#contact" class="contact-btnn">Contact</a>
+                    <a href="https://wa.me/8097872259" class="contact-btnn">Contact</a>
                 </div>
             </div>
         </div>
@@ -59,17 +59,18 @@
         <div class="products-grid">
             <div class="product-card">
                 <img src="./assest/home.png" alt="Home Care Products" class="product-image" loading="lazy">
-                <button class="checkout-btn">Checkout</button>
+                <a href="https://samalaudyog.in/homecare"><button class="checkout-btn">Checkout</button></a>
             </div>
 
             <div class="product-card">
                 <img src="./assest/personal.png" alt="Personal Care Products" class="product-image" loading="lazy">
-                <button class="checkout-btn">Checkout</button>
+                <a href="https://samalaudyog.in/personalcare" target="_blank"><button
+                        class="checkout-btn">Checkout</button></a>
             </div>
 
             <div class="product-card">
                 <img src="./assest/hospital.png" alt="Hospital Care Products" class="product-image" loading="lazy">
-                <button class="checkout-btn">Checkout</button>
+                <a href="https://samalaudyog.in/hospitalcare"><button class="checkout-btn">Checkout</button></a>
             </div>
         </div>
         </div>
@@ -600,16 +601,17 @@
             <div class="follow-social">
                 <h3 class="social-title">Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#" class="social-icon" aria-label="Facebook">
+                    <a href="https://www.facebook.com/samala.udyog/" class="social-icon" aria-label="Facebook">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="social-icon" aria-label="Instagram">
+                    <a href="https://www.instagram.com/samala_udyog/" class="social-icon" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                    <a href="https://in.linkedin.com/in/murali-samala-3852322" class="social-icon"
+                        aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="social-icon" aria-label="YouTube">
+                    <a href="https://www.youtube.com/@samalaudyog/featured" class="social-icon" aria-label="YouTube">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>

@@ -315,6 +315,9 @@ p {
     color: white;
 }
 
+.contact-btnn:active ,.contact-btnn:focus ,.contact-btnn:visited {
+    color: white;
+}
 .about-actions {
     display: flex;
     justify-content: flex-end;
