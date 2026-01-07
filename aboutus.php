@@ -348,6 +348,8 @@
 
 <body>
     <!-- Hero Section -->
+        <?php include './header.php' ?>
+
     <section class="hero-section">
         <div class="hero-content">
             <div class="hero-text" data-aos="fade-right">
@@ -465,14 +467,18 @@
     </section>
 
     <!-- AOS JS -->
+
+    <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
+            duration: 1500, // Animation duration in milliseconds
+            once: true // Animation happens only once
         });
     </script>
+
+    <?php include './footer.php' ?>
+    <?php include './jslink.php' ?>
 </body>
 
 </html>
