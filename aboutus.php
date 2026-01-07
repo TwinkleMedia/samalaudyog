@@ -46,28 +46,62 @@
         </div>
     </div>
 
-    <div class="why-choose-us">
-        <h2>Why Choose Us</h2>
-        <div class="features">
-            <div class="feature" data-aos="flip-left">
-                <h3>Our Expertise</h3>
-                <p>With our vast experience in the chemical industry, we are able to develop very good sources of
-                    products and ingredients which are manufactured locally at the same time are economical and
-                    effective. We have collaborated with like minded manufacturers and entered into agreement for
-                    sourcing eco-friendly products in all our customer segments. We are strong in Product
-                    development, manufacturing, supply chain, sales and marketing and can provide support to our
-                    customers on technical and commerical aspects.</p>
+    <div class="container">
+        <div class="header">
+            <h1>India's Trusted Choice for Household Hygiene & Safety</h1>
+            <div class="tabs">
+                <button class="tab-button active" onclick="showTab('tab1')">What We Do</button>
+                <button class="tab-button" onclick="showTab('tab2')">Where We're Headed</button>
+                <button class="tab-button" onclick="showTab('tab3')">What We Stand For</button>
             </div>
-            <div class="feature" data-aos="flip-left">
-                <h3>Product Development</h3>
-                <p>Our product development expertise can guide customers market and product development activities
-                    with innovative solutions keeping in view product life cycle aspects.</p>
+        </div>
+
+        <div class="content-section">
+            <!-- Tab 1: What We Do -->
+            <div id="tab1" class="tab-content active">
+                <div class="image-side">
+                    <img src="./assest/m1.png" alt="What We Do">
+                </div>
+                <div class="text-side">
+                    <h2>What We Do</h2>
+                    <p>We specialize in developing and manufacturing innovative cleaning and care products using natural
+                        chemicals and special clay minerals. Our research-driven approach ensures that every product
+                        meets the highest standards of effectiveness and environmental responsibility.</p>
+                    <p>From home care essentials to personal care products, we are committed to bringing safe,
+                        effective, and eco-friendly solutions to every household across India.</p>
+                </div>
             </div>
-            <div class="feature" data-aos="flip-left">
-                <h3>Supply Chain</h3>
-                <p>Our supply chain team is capable of not only delivering products as per customer needs with
-                    desired quantity within agreed timelines but can also take care of sustainability practices in
-                    packaging of our products.</p>
+
+            <!-- Tab 2: Where We're Headed -->
+            <div id="tab2" class="tab-content">
+                <div class="image-side">
+                    <img src="./assest/m2.png" alt="Where We're Headed">
+                </div>
+                <div class="text-side">
+                    <h2>Where We're Headed</h2>
+                    <p>Our vision is to become India's leading household hygiene brand, expanding our reach to every
+                        corner of the country. We are continuously investing in research and development to innovate new
+                        products that meet evolving consumer needs.</p>
+                    <p>We aim to establish ourselves as a trusted name in sustainable household care, with plans to
+                        expand internationally and bring our eco-friendly solutions to global markets while maintaining
+                        our commitment to quality and safety.</p>
+                </div>
+            </div>
+
+            <!-- Tab 3: What We Stand For -->
+            <div id="tab3" class="tab-content">
+                <div class="image-side">
+                    <img src="./assest/m3.png" alt="What We Stand For">
+                </div>
+                <div class="text-side">
+                    <h2>What We Stand For</h2>
+                    <p>We stand for integrity, quality, and environmental responsibility. Our core values drive every
+                        decision we make, from sourcing natural ingredients to ensuring safe manufacturing processes
+                        that protect both people and the planet.</p>
+                    <p>We believe in transparency with our customers, honesty in our business practices, and a
+                        commitment to making products that are not only effective but also safe for families and the
+                        environment. Customer trust is our greatest asset, and we work every day to maintain it.</p>
+                </div>
             </div>
         </div>
     </div>
