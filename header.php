@@ -31,7 +31,7 @@
                     <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="btn-distributor" href="https://wa.me/8097872259">Distributor</a>
+                    <a class="btn-distributor" href="https://wa.me/8097872259" target="_blank">Distributor</a>
                 </li>
             </ul>
         </div>

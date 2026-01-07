@@ -19,7 +19,7 @@
         }
 
         .about-banner {
-            background-image: url('./assest/slider/SAMALA\ 7th\ JULY-05.png');
+            background-image: url('./assest/slider/aboutBanner.png');
             /* Replace with your image */
             background-size: cover;
             background-position: center;
