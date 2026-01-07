@@ -537,7 +537,7 @@
 
     </div>
     <!-- Shop Section -->
-    <section class="shop-sections">
+    <section class="shop-section">
         <div class="shop-container">
             <div class="phone-mockup">
                 <img src="./assest/shop.png" alt="Mobile shopping interface" class="phone-image">
