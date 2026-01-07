@@ -31,16 +31,16 @@
                 <h3>Available on</h3>
                 <div class="app-icons">
                     <a href="#" class="app-icon website" aria-label="Website">
-                        <i class="fas fa-globe"></i>
+                        <img src="./assest/social1.png" alt="amazon logo">
                     </a>
                     <a href="#" class="app-icon youtube" aria-label="YouTube">
-                        <i class="fab fa-youtube"></i>
+                        <img src="./assest/social2.png" alt="India Mart logo">
                     </a>
                     <a href="#" class="app-icon playstore" aria-label="Google Play Store">
-                        <i class="fab fa-google-play"></i>
+                        <img src="./assest/social3.png" alt="Jio logo">
                     </a>
                     <a href="#" class="app-icon appstore" aria-label="Apple App Store">
-                        <i class="fab fa-app-store-ios"></i>
+                        <img src="./assest/social4.png" alt="Flipkart logo">
                     </a>
                 </div>
             </div>
