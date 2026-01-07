@@ -154,8 +154,8 @@
             <div class="text-container">
                 <h2 class="brand-name">Samala</h2>
                 <p class="tagline">We Care , so we serve</p>
-                <button class="cta-button" onclick=`window.location.href="https://samalaudyog.in/'">View All
-                    Products</button>
+                <a href="https://samalaudyog.in/" target="_blank" class="anchorTag"><button class="cta-button">View All
+                        Products</button></a>
             </div>
         </div>
     </div>

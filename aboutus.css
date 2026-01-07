@@ -467,6 +467,12 @@
   }
 
   /* last Product Explore Section */
+  .anchorTag:focus,
+  .anchorTag:visited,
+  .anchorTag:active {
+      color: #fff;
+  }
+
   .products-section {
       max-width: 1200px;
       margin: 0 auto;
