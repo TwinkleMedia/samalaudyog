@@ -537,6 +537,7 @@ p {
 }
 
 @media (max-width: 768px) {
+
     .section-title,
     .why-title {
         font-size: 1.8rem;
@@ -2116,7 +2117,7 @@ img {
 
 .contact-form h2,
 .map-container h2 {
-    color: #007bff;
+    color: #2A4A7C;
     margin-bottom: 20px;
 }
 
@@ -2128,6 +2129,7 @@ img {
 .contact-form label {
     margin-bottom: 5px;
     font-weight: bold;
+    color: #2A4A7C;
 }
 
 .contact-form input,
@@ -2147,6 +2149,10 @@ img {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+}
+
+.submitBtn {
+    background-color: #2A4A7C;
 }
 
 .contact-form button:hover {
