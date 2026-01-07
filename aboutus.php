@@ -22,18 +22,17 @@
     <section class="hero-section">
         <img src="./assest/slider/aboutBanner.png" alt="Hero Banner" class="hero-img" loading="lazy">
     </section>
-    <div class="about-section">
-        <div class="about-header">
+    <div class="about-sectionn">
+        <div class="about-headerr">
             <h1>About Samala</h1>
         </div>
 
-        <div class="content-wrapper">
-            <div class="image-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23e8e8e8' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='18' fill='%23666'%3EProduct Image%3C/text%3E%3C/svg%3E"
-                    alt="Samala Products">
+        <div class="content-wrapperr">
+            <div class="image-containerr">
+                <img src="./assest/slider/aboutus.png" alt="Samala Products">
             </div>
 
-            <div class="text-container">
+            <div class="text-containerr">
                 <p>
                     We are a leading company in our industry, committed to providing top-notch services to our clients.
                     Our team of experienced professionals is dedicated to delivering the highest quality of work,
