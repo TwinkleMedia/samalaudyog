@@ -1,0 +1,112 @@
+  .about-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background-color: #fff;
+        }
+
+        .about-header h1 {
+            color: #2c5f8d;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 20px;
+            gap: 40px;
+        }
+
+        .image-container {
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .text-container {
+            flex: 1;
+            min-width: 280px;
+            padding: 0 20px;
+        }
+
+        .text-container p {
+            color: #2c5f8d;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-wrapper {
+                flex-direction: column;
+                padding: 20px 15px;
+                gap: 30px;
+            }
+
+            .text-container {
+                padding: 0 10px;
+            }
+
+            .text-container p {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .about-header {
+                padding: 30px 15px 20px;
+            }
+
+            .about-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .content-wrapper {
+                padding: 15px 10px;
+                gap: 20px;
+            }
+
+            .image-container {
+                min-width: 100%;
+            }
+
+            .text-container {
+                padding: 0;
+            }
+
+            .text-container p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+        }
