@@ -170,12 +170,6 @@
 
 <body>
     <?php include './header.php' ?>
-
-    <section class="about-banner">
-        <div class="banner-content">
-            <h1>About Us</h1>
-        </div>
-    </section>
     <div class="container">
         <div class="about-us">
             <div class="about-image" data-aos="fade-left">
