@@ -798,6 +798,10 @@ p {
         padding: 80px 60px;
         gap: 60px;
     }
+    .phone-image {
+        max-width: 500px;
+        position: static;
+    }
 }
 
 @media (max-width: 1024px) {
