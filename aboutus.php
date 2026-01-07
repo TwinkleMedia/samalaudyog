@@ -45,63 +45,60 @@
             </div>
         </div>
     </div>
+    <div class="header">
+        <h1>India's Trusted Choice for Household Hygiene & Safety</h1>
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('tab1')">What We Do</button>
+            <button class="tab-button" onclick="showTab('tab2')">Where We're Headed</button>
+            <button class="tab-button" onclick="showTab('tab3')">What We Stand For</button>
+        </div>
+    </div>
 
-    <div class="container">
-        <div class="header">
-            <h1>India's Trusted Choice for Household Hygiene & Safety</h1>
-            <div class="tabs">
-                <button class="tab-button active" onclick="showTab('tab1')">What We Do</button>
-                <button class="tab-button" onclick="showTab('tab2')">Where We're Headed</button>
-                <button class="tab-button" onclick="showTab('tab3')">What We Stand For</button>
+    <div class="content-section">
+        <!-- Tab 1: What We Do -->
+        <div id="tab1" class="tab-content active">
+            <div class="image-side">
+                <img src="./assest/m1.png" alt="What We Do">
+            </div>
+            <div class="text-side">
+                <h2>What We Do</h2>
+                <p>We specialize in developing and manufacturing innovative cleaning and care products using natural
+                    chemicals and special clay minerals. Our research-driven approach ensures that every product
+                    meets the highest standards of effectiveness and environmental responsibility.</p>
+                <p>From home care essentials to personal care products, we are committed to bringing safe,
+                    effective, and eco-friendly solutions to every household across India.</p>
             </div>
         </div>
 
-        <div class="content-section">
-            <!-- Tab 1: What We Do -->
-            <div id="tab1" class="tab-content active">
-                <div class="image-side">
-                    <img src="./assest/m1.png" alt="What We Do">
-                </div>
-                <div class="text-side">
-                    <h2>What We Do</h2>
-                    <p>We specialize in developing and manufacturing innovative cleaning and care products using natural
-                        chemicals and special clay minerals. Our research-driven approach ensures that every product
-                        meets the highest standards of effectiveness and environmental responsibility.</p>
-                    <p>From home care essentials to personal care products, we are committed to bringing safe,
-                        effective, and eco-friendly solutions to every household across India.</p>
-                </div>
+        <!-- Tab 2: Where We're Headed -->
+        <div id="tab2" class="tab-content">
+            <div class="image-side">
+                <img src="./assest/m2.png" alt="Where We're Headed">
             </div>
-
-            <!-- Tab 2: Where We're Headed -->
-            <div id="tab2" class="tab-content">
-                <div class="image-side">
-                    <img src="./assest/m2.png" alt="Where We're Headed">
-                </div>
-                <div class="text-side">
-                    <h2>Where We're Headed</h2>
-                    <p>Our vision is to become India's leading household hygiene brand, expanding our reach to every
-                        corner of the country. We are continuously investing in research and development to innovate new
-                        products that meet evolving consumer needs.</p>
-                    <p>We aim to establish ourselves as a trusted name in sustainable household care, with plans to
-                        expand internationally and bring our eco-friendly solutions to global markets while maintaining
-                        our commitment to quality and safety.</p>
-                </div>
+            <div class="text-side">
+                <h2>Where We're Headed</h2>
+                <p>Our vision is to become India's leading household hygiene brand, expanding our reach to every
+                    corner of the country. We are continuously investing in research and development to innovate new
+                    products that meet evolving consumer needs.</p>
+                <p>We aim to establish ourselves as a trusted name in sustainable household care, with plans to
+                    expand internationally and bring our eco-friendly solutions to global markets while maintaining
+                    our commitment to quality and safety.</p>
             </div>
+        </div>
 
-            <!-- Tab 3: What We Stand For -->
-            <div id="tab3" class="tab-content">
-                <div class="image-side">
-                    <img src="./assest/m3.png" alt="What We Stand For">
-                </div>
-                <div class="text-side">
-                    <h2>What We Stand For</h2>
-                    <p>We stand for integrity, quality, and environmental responsibility. Our core values drive every
-                        decision we make, from sourcing natural ingredients to ensuring safe manufacturing processes
-                        that protect both people and the planet.</p>
-                    <p>We believe in transparency with our customers, honesty in our business practices, and a
-                        commitment to making products that are not only effective but also safe for families and the
-                        environment. Customer trust is our greatest asset, and we work every day to maintain it.</p>
-                </div>
+        <!-- Tab 3: What We Stand For -->
+        <div id="tab3" class="tab-content">
+            <div class="image-side">
+                <img src="./assest/m3.png" alt="What We Stand For">
+            </div>
+            <div class="text-side">
+                <h2>What We Stand For</h2>
+                <p>We stand for integrity, quality, and environmental responsibility. Our core values drive every
+                    decision we make, from sourcing natural ingredients to ensuring safe manufacturing processes
+                    that protect both people and the planet.</p>
+                <p>We believe in transparency with our customers, honesty in our business practices, and a
+                    commitment to making products that are not only effective but also safe for families and the
+                    environment. Customer trust is our greatest asset, and we work every day to maintain it.</p>
             </div>
         </div>
     </div>
