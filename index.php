@@ -23,7 +23,7 @@
 
     <!-- Carousel slider -->
     <section class="hero-section">
-        <img src="./assest/slider/banner.png" alt="Hero Banner" class="hero-img" loading="lazy">
+        <img src="./assest/slider/homeBanner.png" alt="Hero Banner" class="hero-img" loading="lazy">
     </section>
 
     <!-- About Section -->
@@ -193,51 +193,51 @@
     // }
     
     // Function to render product section
-    function renderProductSection($category, $products)
-    {
-        ?>
-        <section>
-            <div class="container">
-                <div class="sec-title">
-                    <h2><?php echo htmlspecialchars($category); ?></h2>
-                </div>
-                <div class="slick-slider">
-                    <?php if (!empty($products)): ?>
-                        <?php foreach ($products as $product): ?>
-                            <div class="me-3">
-                                <div class="box-img mb-3">
-                                    <!-- Display the first image if available -->
-                                    <?php if (!empty($product['images'])): ?>
-                                        <img src="<?php echo htmlspecialchars($product['images'][0]); ?>"
-                                            alt="<?php echo htmlspecialchars($product['title'] ?? ''); ?>" class="img-fluid"
-                                            style="border-radius: 10px;" loading="lazy">
-                                    <?php else: ?>
-                                        <img src="./admin/default-image.png" alt="Default Image" class="img-fluid"
-                                            style="border-radius: 10px;">
-                                    <?php endif; ?>
-                                </div>
-                                <div class="box-heading">
-                                    <h2><?php echo htmlspecialchars($product['title']); ?></h2>
-                                    <p class="description">
-                                        <?php echo htmlspecialchars(substr($product['description'], 0, 100)) . '...'; ?>
-                                    </p>
-                                    <h5 class="mb-3">
-                                        <s class="text-danger">Rs.<?php echo htmlspecialchars($product['final_price']); ?></s>
-                                        <span>Rs.<?php echo htmlspecialchars($product['discounted_price']); ?></span>
-                                    </h5>
-                                    <button onclick="showProductModal(<?php echo htmlspecialchars(json_encode($product)); ?>)"
-                                        class="btn bg-danger text-white w-100">Buy</button>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <p>No products available in this category.</p>
-                    <?php endif; ?>
-                </div>
-            </div>
-        </section>
-        <?php
-    }
+    // function renderProductSection($category, $products)
+    // {
+    //     ?>
+    <!-- //     <section>
+    //         <div class="container">
+    //             <div class="sec-title">
+    //                 <h2><?php echo htmlspecialchars($category); ?></h2>
+    //             </div>
+    //             <div class="slick-slider">
+    //                 <?php if (!empty($products)): ?>
+    //                     <?php foreach ($products as $product): ?>
+    //                         <div class="me-3">
+    //                             <div class="box-img mb-3"> -->
+                                  <!-- Display the first image if available -->
+    <!-- //                                 <?php if (!empty($product['images'])): ?>
+    //                                     <img src="<?php echo htmlspecialchars($product['images'][0]); ?>"
+    //                                         alt="<?php echo htmlspecialchars($product['title'] ?? ''); ?>" class="img-fluid"
+    //                                         style="border-radius: 10px;" loading="lazy">
+    //                                 <?php else: ?>
+    //                                     <img src="./admin/default-image.png" alt="Default Image" class="img-fluid"
+    //                                         style="border-radius: 10px;">
+    //                                 <?php endif; ?>
+    //                             </div>
+    //                             <div class="box-heading">
+    //                                 <h2><?php echo htmlspecialchars($product['title']); ?></h2>
+    //                                 <p class="description">
+    //                                     <?php echo htmlspecialchars(substr($product['description'], 0, 100)) . '...'; ?>
+    //                                 </p>
+    //                                 <h5 class="mb-3">
+    //                                     <s class="text-danger">Rs.<?php echo htmlspecialchars($product['final_price']); ?></s>
+    //                                     <span>Rs.<?php echo htmlspecialchars($product['discounted_price']); ?></span>
+    //                                 </h5>
+    //                                 <button onclick="showProductModal(<?php echo htmlspecialchars(json_encode($product)); ?>)"
+    //                                     class="btn bg-danger text-white w-100">Buy</button>
+    //                             </div>
+    //                         </div>
+    //                     <?php endforeach; ?>
+    //                 <?php else: ?>
+    //                     <p>No products available in this category.</p>
+    //                 <?php endif; ?>
+    //             </div>
+    //         </div>
+    //     </section>
+    //   
+    // }
 
     // Render product sections
     foreach ($productsByCategory as $category => $products) {
@@ -245,7 +245,7 @@
     }
     ?>
 
-    <!-- -----------------------------------Specialty chemical -->
+     -----------------------------------Specialty chemical -->
 
     <!-- <section class="hero">
         <div class="container">

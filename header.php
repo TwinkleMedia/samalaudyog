@@ -21,8 +21,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="aboutus.php">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="products.php">Products</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="products.php" id="productsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                    <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                        <li>
+                            <a href="homecare.php" class="dropdown-item">Home Care</a>
+                        </li>
+                        <li>
+                            <a href="personalcare.php" class="dropdown-item">Personal Care</a>
+                        </li>
+                        <li>
+                            <a href="hospitalcare.php" class="dropdown-item">Hospital Care</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="career.php">Career</a>
