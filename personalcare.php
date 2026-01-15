@@ -29,68 +29,53 @@
         <div class="product-grid">
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home1.png" alt="">
-                <div class="product-name">Clothesline Fabric Detergent liquid</div>
+                <img src="./assest/products/personalcare/personal1.png" alt="">
+                <div class="product-name">Bodyline Sandal Deodorant talc</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home2.png" alt="">
-                <div class="product-name">NavNatra Super Fresh detergent</div>
+                <img src="./assest/products/personalcare/personal2.png" alt="">
+                <div class="product-name">Bodyline Icy Cool Deodorant talc</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home3.png" alt="">
-                <div class="product-name">Navjot glass cleaner liquid spray</div>
+                <img src="./assest/products/personalcare/personal3.png" alt="">
+                <div class="product-name">Bodyline Shower gel</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home4.png" alt="">
-                <div class="product-name">Clothesline Fabric Detergent liquid</div>
+                <img src="./assest/products/personalcare/personal4.png" alt="">
+                <div class="product-name">HAIRLINE APPLE SHAMPOO</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home5.png" alt="">
-                <div class="product-name">NavBhumy Citrus floor cleaner</div>
+                <img src="./assest/products/personalcare/personal5.png" alt="">
+                <div class="product-name">HAIRLINE SHIKAKAI SHAMPOO</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home6.png" alt="">
-                <div class="product-name">NavBhumy Rose floor cleaner</div>
+                <img src="./assest/products/personalcare/personal6.png" alt="">
+                <div class="product-name">HAIRLINE MILK SHAMPOO</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home7.png" alt="">
-                <div class="product-name">NavBhumy Lavender floor cleaner</div>
+                <img src="./assest/products/personalcare/personal7.png" alt="">
+                <div class="product-name">Bodyline Face Wash</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home8.png" alt="">
-                <div class="product-name">NavPatra Mint dish cleaner</div>
+                <img src="./assest/products/personalcare/personal8.png" alt="">
+                <div class="product-name">Hairline Hair Oil</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home9.png" alt="">
-                <div class="product-name">NavPatra Mint dish cleaner</div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assest/products/homecare/home10.png" alt="">
-                <div class="product-name">Classic touch cleaners spray</div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assest/products/homecare/home11.png" alt="">
-                <div class="product-name">Clotheline Fabric Conditioner</div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assest/products/homecare/home1.png" alt="">
-                <div class="product-name">BOWLINE (Toilet & Tile Cleaner)</div>
+                <img src="./assest/products/personalcare/personal9.png" alt="">
+                <div class="product-name">G-1 Hand & Feet Wash with AV</div>
             </div>
 
         </div>
 
-        <a href="https://samalaudyog.in/categories/8" target="_blank" class="buy-btn">Buy Products Here</a>
+        <a href="https://samalaudyog.in/categories/6" target="_blank" class="buy-btn">Buy Products Here</a>
     </div>
     <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
