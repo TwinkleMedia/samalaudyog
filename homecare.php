@@ -11,7 +11,7 @@
     <link rel="stylesheet" teype="text/css" href="sliderc.css">
     <link rel="stylesheet" teype="text/css" href="aboutus.css">
     <?php include './mainlink.php' ?>
-    <title>Samala Care - Home Care Products</title>
+    <title>Samala Udyog - Home Care Products</title>
 
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
