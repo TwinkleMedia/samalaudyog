@@ -10,7 +10,7 @@
     <link rel="stylesheet" teype="text/css" href="sliderc.css">
     <link rel="stylesheet" teype="text/css" href="aboutus.css">
     <?php include './mainlink.php' ?>
-    <title>About Us - Responsive Page</title>
+    <title>Samala Udyog - About Page</title>
 
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
