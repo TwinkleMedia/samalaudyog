@@ -2,7 +2,7 @@
     <div class="container-fluid px-4">
         <a class="navbar-brand" href="#">
             <div class="logo-container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.php">
                     <img src="./assest/logo/Asset 3300.png" alt="Samala-Logo">
                 </a>
             </div>
