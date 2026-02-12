@@ -40,51 +40,47 @@
 
             <div class="product-card">
                 <img src="./assest/products/homecare/home3.png" alt="">
-                <div class="product-name">Navjot glass cleaner liquid spray</div>
+                <div class="product-name">NavBhumy Jasmin floor cleaner</div>
             </div>
 
             <div class="product-card">
                 <img src="./assest/products/homecare/home4.png" alt="">
-                <div class="product-name">Clothesline Fabric Detergent liquid</div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assest/products/homecare/home5.png" alt="">
                 <div class="product-name">NavBhumy Citrus floor cleaner</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home6.png" alt="">
+                <img src="./assest/products/homecare/home5.png" alt="">
                 <div class="product-name">NavBhumy Rose floor cleaner</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home7.png" alt="">
+                <img src="./assest/products/homecare/home6.png" alt="">
                 <div class="product-name">NavBhumy Lavender floor cleaner</div>
+
+            </div>
+
+            <div class="product-card">
+                <img src="./assest/products/homecare/home7.png" alt="">
+                <div class="product-name">NavPatra Mint dish cleaner</div>
             </div>
 
             <div class="product-card">
                 <img src="./assest/products/homecare/home8.png" alt="">
-                <div class="product-name">NavPatra Mint dish cleaner</div>
+                <div class="product-name">NavPatra Lemon dish cleaner</div>
             </div>
 
             <div class="product-card">
                 <img src="./assest/products/homecare/home9.png" alt="">
-                <div class="product-name">NavPatra Mint dish cleaner</div>
+                <div class="product-name">Classic touch cleansers spray</div>
             </div>
 
             <div class="product-card">
                 <img src="./assest/products/homecare/home10.png" alt="">
-                <div class="product-name">Classic touch cleaners spray</div>
-            </div>
-
-            <div class="product-card">
-                <img src="./assest/products/homecare/home11.png" alt="">
                 <div class="product-name">Clotheline Fabric Conditioner</div>
             </div>
 
             <div class="product-card">
-                <img src="./assest/products/homecare/home1.png" alt="">
+                <img src="./assest/products/homecare/home11.png" alt="">
                 <div class="product-name">BOWLINE (Toilet & Tile Cleaner)</div>
             </div>
 
