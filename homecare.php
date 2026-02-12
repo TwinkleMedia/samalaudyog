@@ -35,7 +35,7 @@
 
             <div class="product-card">
                 <img src="./assest/products/homecare/home2.png" alt="">
-                <div class="product-name">NavNatra Super Fresh detergent</div>
+                <div class="product-name">NavPatra Super Fresh detergent</div>
             </div>
 
             <div class="product-card">
