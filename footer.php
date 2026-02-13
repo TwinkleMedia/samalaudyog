@@ -3,7 +3,7 @@
     <div class="footer-main">
         <div class="footer-content">
             <!-- Quick Links Column -->
-            <div class="footer-column">
+            <!-- <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="quick-links-list">
                     <li><a href="index.php">Home</a></li>
@@ -12,7 +12,7 @@
                     <li><a href="career.php">Career</a></li>
                     <li><a href="contact.php">Contact</a></li>
                 </ul>
-            </div>
+            </div> -->
 
             <!-- Contact Us Column -->
             <div class="footer-column">
